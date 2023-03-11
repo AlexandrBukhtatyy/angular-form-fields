@@ -15,7 +15,7 @@
         <div class="row-cell">
           <h3>Template with hint</h3>
           <ngnx-form-field-select
-            formControlName="selectExample"
+            [formControl]="formGroup.controls.selectExample"
             withHint
             [items]="selectItemsWithHints"
           >
