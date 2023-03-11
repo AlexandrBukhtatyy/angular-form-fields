@@ -1,0 +1,12 @@
+<ng-container [formGroup]="form">
+  <ng-container
+    *ngFor="let item of list.controls; let i = index"
+    [formGroupName]="i"
+  >
+    <div>
+      <tui-checkbox-labeled formControlName="selected">
+        {{ dictionary[item.get('id').value] }}
+      </tui-checkbox-labeled>
+    </div>
+  </ng-container>
+</ng-container>

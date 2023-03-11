@@ -1,0 +1,21 @@
+<tui-select
+  [formControl]="control"
+  [valueContent]="valueContent"
+  [identityMatcher]="identityMatcher"
+>
+  <ng-content></ng-content>
+  <input
+    tuiTextfield
+    [attr.placeholder]="placeholder"
+  />
+  <tui-data-list-wrapper
+    *tuiDataList
+    [items]="items"
+    [itemContent]="itemContent"
+  ></tui-data-list-wrapper>
+</tui-select>
+
+<tui-error
+  [formControl]="control"
+  [error]="[] | tuiFieldError | async"
+></tui-error>

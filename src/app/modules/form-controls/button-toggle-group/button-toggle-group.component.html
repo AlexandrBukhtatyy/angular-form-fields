@@ -1,0 +1,16 @@
+<form
+  tuiGroup
+  [collapsed]="true"
+  [ngModel]="selectedOption"
+  (ngModelChange)="changeOption($event)"
+>
+  <ng-container *ngFor="let option of options">
+    <tui-radio-block
+      size="l"
+      contentAlign="right"
+      [item]="option.id"
+    >
+      {{option.label}}
+    </tui-radio-block>
+  </ng-container>
+</form>
