@@ -1,47 +1,47 @@
 <tui-root>
-<div class="tui-container">
-  <form [formGroup]="formGroup">
-    <h2>form-field-select</h2>
-    <div class="row">
-      <div class="row-cell">
-        <h3>Default template</h3>
-        <ngnx-form-field-select
-          formControlName="selectExample"
-          [items]="selectItems"
-        >
-          select default
-        </ngnx-form-field-select>
+  <div class="tui-container">
+    <form [formGroup]="formGroup">
+      <h2>form-field-select</h2>
+      <div class="row">
+        <div class="row-cell">
+          <h3>Default template</h3>
+          <ngnx-form-field-select
+            formControlName="selectExample"
+            [items]="selectItems"
+          >
+            select default
+          </ngnx-form-field-select>
+        </div>
+        <div class="row-cell">
+          <h3>Template with hint</h3>
+          <ngnx-form-field-select
+            formControlName="selectExample"
+            withHint
+            [items]="selectItemsWithHints"
+          >
+            select with hint
+          </ngnx-form-field-select>
+        </div>
       </div>
-      <div class="row-cell">
-        <h3>Template with hint</h3>
-        <ngnx-form-field-select
-          formControlName="selectExample"
-          withHint
-          [items]="selectItemsWithHints"
-        >
-          select with hint
-        </ngnx-form-field-select>
-      </div>
-    </div>
 
 
-    <h2>form-field-combobox</h2>
-    <div class="row">
-      <div class="row-cell">
-        <h3>Combobox with data provider</h3>
-        <ngnx-form-field-combobox
-          formControlName="comboboxExample"
-          withHint
-          [ngnxComboboxDataProvider]="comboboxDataProvider"
-          [stringify]="comboboxStringify"
-        >
-          combobox with data provider
-        </ngnx-form-field-combobox>
+      <h2>form-field-combobox</h2>
+      <div class="row">
+        <div class="row-cell">
+          <h3>Combobox with data provider</h3>
+          <ngnx-form-field-combobox
+            formControlName="comboboxExample"
+            withHint
+            [ngnxComboboxDataProvider]="comboboxDataProvider"
+            [stringify]="comboboxStringify"
+          >
+            combobox with data provider
+          </ngnx-form-field-combobox>
+        </div>
+        <div class="row-cell"></div>
       </div>
-      <div class="row-cell"></div>
-    </div>
 
-  </form>
-</div>
+    </form>
+  </div>
 
 </tui-root>
