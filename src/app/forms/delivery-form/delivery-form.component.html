@@ -1,0 +1,31 @@
+<div [formGroup]="formGroup">
+  <div class="tui-form__row tui-form__row_multi-fields">
+    <div class="tui-form__multi-field">
+      <aff-combobox
+        formControlName="address"
+        withHint
+        [affComboboxDataProvider]="comboboxDataProvider"
+        [stringify]="comboboxStringify"
+      >
+        address
+      </aff-combobox>
+    </div>
+    <div class="tui-form__multi-field">
+      <aff-input formControlName="entrance">entrance</aff-input>
+    </div>
+  </div>
+  <div class="tui-form__row tui-form__row_multi-fields">
+    <div class="tui-form__multi-field">
+      <aff-input formControlName="floor">floor</aff-input>
+    </div>
+    <div class="tui-form__multi-field">
+      <aff-input formControlName="appartament">appartament</aff-input>
+    </div>
+    <div class="tui-form__multi-field">
+      <aff-input formControlName="code">code</aff-input>
+    </div>
+  </div>
+  <div class="tui-form__row">
+    <aff-textarea formControlName="comment">Type a comment</aff-textarea>
+  </div>
+</div>

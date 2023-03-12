@@ -1,0 +1,15 @@
+<div [formGroup]="formGroup">
+  <aff-select class="tui-form__row"
+              formControlName="paymentMethod"
+              [items]="paymentMethodOptions"
+  >
+    Payment method
+  </aff-select>
+
+  <div class="tui-form__row" *ngIf="formGroup.get('cashCount')?.enabled">
+    <aff-number formControlName="cashCount"
+    >
+      Cash count
+    </aff-number>
+  </div>
+</div>

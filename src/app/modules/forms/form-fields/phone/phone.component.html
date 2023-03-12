@@ -1,0 +1,7 @@
+<tui-input-phone [formControl]="control">
+  <ng-content></ng-content>
+</tui-input-phone>
+<tui-error
+  [formControl]="control"
+  [error]="[] | tuiFieldError | async"
+></tui-error>

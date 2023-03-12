@@ -1,0 +1,7 @@
+<tui-input-number [formControl]="control">
+  <ng-content></ng-content>
+</tui-input-number>
+<tui-error
+  [formControl]="control"
+  [error]="[] | tuiFieldError | async"
+></tui-error>

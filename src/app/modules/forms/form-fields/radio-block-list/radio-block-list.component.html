@@ -1,0 +1,16 @@
+<div
+  tuiGroup
+  [adaptive]="true"
+  [collapsed]="true"
+>
+  <ng-container *ngFor="let option of options">
+    <tui-radio-block
+      contentAlign="left"
+      [formControl]="control"
+      [item]="option.id"
+      size="l"
+    >
+      {{option.label}}
+    </tui-radio-block>
+  </ng-container>
+</div>

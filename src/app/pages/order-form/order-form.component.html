@@ -1,0 +1,44 @@
+<div class="tui-container tui-container_adaptive tui-space_top-8">
+  <h1>Pizza order form</h1>
+  <form [formGroup]="formGroup">
+    <h2 class="tui-space_top-8">Order details</h2>
+    <ng-container formArrayName="orderDetails">
+      <tui-island *ngFor="let pizza of orderDetails.controls; let i = index">
+        <aff-pizza-details-form [formGroupName]="i"></aff-pizza-details-form>
+        <div class="tui-form__row">
+          <button
+            tuiButton
+            type="button"
+            appearance="secondary-destructive"
+            (click)="removePizza(i)"
+          >
+            remove pizza
+          </button>
+        </div>
+      </tui-island>
+    </ng-container>
+    <div class="tui-form__row">
+      <button tuiButton type="button" (click)="addPizza()">add pizza</button>
+    </div>
+
+    <h2 class="tui-space_top-8">Contacts</h2>
+    <aff-contacts-short-form formGroupName="contacts"></aff-contacts-short-form>
+
+    <h2 class="tui-space_top-8">Delivery details</h2>
+    <aff-delivery-form formGroupName="delivaryDetails"></aff-delivery-form>
+
+    <h2 class="tui-space_top-8">Payment method</h2>
+    <aff-payment-form formGroupName="paymentDetails"></aff-payment-form>
+
+    <div class="tui-form__row tui-space_top-8">
+      <button
+        tuiButton
+        type="button"
+        appearance="accent"
+        (click)="submitForm()"
+      >
+        Order
+      </button>
+    </div>
+  </form>
+</div>
