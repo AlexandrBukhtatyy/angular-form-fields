@@ -23,4 +23,4 @@ export * from './form-fields/textarea';
 // export * from './masks';
 
 /** form-validators */
-// export * from './validators';
+export * from './validators';

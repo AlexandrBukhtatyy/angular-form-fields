@@ -1,8 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Toppings} from '../../models/toppings';
-import {emailValidator} from "../../modules/forms/validators/email.validator";
-import {phoneValidator} from "../../modules/forms/validators/phone.validator";
+import {emailValidator, phoneValidator} from '../../modules/forms';
 
 export type ToppingType = { id: string, selected: boolean };
 export type PizzaOptions = { size?: string, borderSize?: string, toppings?: ToppingType[] }
@@ -16,7 +15,7 @@ const DEFAULT_PIZZA_OPTIONS: PizzaOptions = {
   size: 'medium',
   borderSize: 'traditional',
   toppings: DEFAULT_TOPPINGS,
-}
+};
 
 @Injectable()
 export class OrderFormService {
