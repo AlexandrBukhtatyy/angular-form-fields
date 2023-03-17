@@ -4,7 +4,6 @@ import {
   FormControl,
   FormControlDirective,
   FormControlName,
-  FormGroupDirective, FormGroupName,
   NgControl,
   NgModel,
 } from '@angular/forms';
@@ -15,8 +14,7 @@ export class FormFieldBase implements OnInit, OnDestroy, ControlValueAccessor {
   private subscription!: Subscription;
 
   constructor(
-    @Optional() @Self() public ngControl: NgControl,
-    @Optional() public parentFormGroupName: FormGroupName
+    @Optional() @Self() public ngControl: NgControl
   ) {
     if (this.ngControl != null) {
       this.ngControl.valueAccessor = this;
@@ -25,26 +23,19 @@ export class FormFieldBase implements OnInit, OnDestroy, ControlValueAccessor {
 
   control!: FormControl;
 
-  writeValue(obj: any): void {}
-  registerOnChange(fn: (_: any) => void): void {}
-  registerOnTouched(fn: any): void {}
+  writeValue(obj: any): void {
+  }
+
+  registerOnChange(fn: (_: any) => void): void {
+  }
+
+  registerOnTouched(fn: any): void {
+  }
 
   ngOnInit() {
     if (!this.ngControl) throw new Error('ngControl is undefined');
-    // FormGroupName
-    if (this.ngControl instanceof FormControlName) {
-      if (!this.ngControl.name) {
-        throw new Error('Control name doesnt exist');
-      }
-      // TODO: перепроверить
-      const controls = this.parentFormGroupName?.control?.controls
-        ? this.parentFormGroupName.control.controls
-        : (this.ngControl.formDirective as FormGroupDirective).form.controls;
-      if (controls) {
-        this.control = controls[this.ngControl.name] as FormControl;
-      }
-      // FormControlName
-    } else if (this.ngControl instanceof FormControlDirective) {
+
+    if (this.ngControl instanceof FormControlName || this.ngControl instanceof FormControlDirective) {
       this.control = this.ngControl.control;
     } else if (this.ngControl instanceof NgModel) {
       this.control = this.ngControl.control;
