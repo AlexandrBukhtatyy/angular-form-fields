@@ -43,6 +43,9 @@ import {
   SelectComponent,
   TextareaComponent,
 } from './modules/forms';
+import {
+    WithHintOptionTemplateComponent
+} from './modules/forms/form-fields/select/templates/with-hint-option-template/with-hint-option-template.component';
 
 @NgModule({
   declarations: [
@@ -58,33 +61,34 @@ import {
     NumberComponent,
     RadioBlockListComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
-    TuiRootModule,
-    TuiDialogModule,
-    TuiAlertModule,
-    ReactiveFormsModule,
-    TuiInputPhoneModule,
-    TuiErrorModule,
-    TuiFieldErrorPipeModule,
-    TuiInputModule,
-    TuiRadioBlockModule,
-    TuiGroupModule,
-    TuiInputNumberModule,
-    TuiTextAreaModule,
-    TuiButtonModule,
-    TuiIslandModule,
-    TuiCheckboxLabeledModule,
-    CheckboxListComponent,
-    SelectComponent,
-    ComboboxComponent,
-    ComboboxDataProviderDirective,
-    ComboboxWithHintVariantDirective,
-    TuiSvgModule,
-    TuiTabsModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        RouterModule.forRoot(routes),
+        TuiRootModule,
+        TuiDialogModule,
+        TuiAlertModule,
+        ReactiveFormsModule,
+        TuiInputPhoneModule,
+        TuiErrorModule,
+        TuiFieldErrorPipeModule,
+        TuiInputModule,
+        TuiRadioBlockModule,
+        TuiGroupModule,
+        TuiInputNumberModule,
+        TuiTextAreaModule,
+        TuiButtonModule,
+        TuiIslandModule,
+        TuiCheckboxLabeledModule,
+        CheckboxListComponent,
+        SelectComponent,
+        ComboboxComponent,
+        ComboboxDataProviderDirective,
+        ComboboxWithHintVariantDirective,
+        TuiSvgModule,
+        TuiTabsModule,
+        WithHintOptionTemplateComponent
+    ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],
 })

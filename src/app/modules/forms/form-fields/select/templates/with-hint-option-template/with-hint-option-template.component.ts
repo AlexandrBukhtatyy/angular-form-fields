@@ -1,6 +1,11 @@
-import {Component, Inject} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {POLYMORPHEUS_CONTEXT} from "@tinkoff/ng-polymorpheus";
+import {Component, Inject, Input, Optional} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {POLYMORPHEUS_CONTEXT} from '@tinkoff/ng-polymorpheus';
+
+export type WithHintOptionItem<T> = T & {
+  label: string;
+  hint: string;
+};
 
 @Component({
   selector: 'aff-with-hint-option-template',
@@ -10,8 +15,19 @@ import {POLYMORPHEUS_CONTEXT} from "@tinkoff/ng-polymorpheus";
   styleUrls: ['./with-hint-option-template.component.scss'],
 })
 export class WithHintOptionTemplateComponent {
+  @Input('label') inputLabel?: string;
+  @Input('hint') inputHint?: string;
+
+  get label(): string {
+    return this.context?.$implicit?.label || this.inputLabel || '-';
+  }
+
+  get hint(): string {
+    return this.context?.$implicit?.hint || this.inputHint || '-';
+  }
+
   constructor(
-    @Inject(POLYMORPHEUS_CONTEXT) readonly context: { $implicit: any, active: boolean }
+    @Optional() @Inject(POLYMORPHEUS_CONTEXT) readonly context: { $implicit: WithHintOptionItem<any>, active: boolean }
   ) {
   }
 }

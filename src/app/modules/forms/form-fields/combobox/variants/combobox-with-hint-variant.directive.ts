@@ -12,11 +12,7 @@ export class ComboboxWithHintVariantDirective<T> {
   comboboxComponenRef = inject(ComboboxComponent<T>);
 
   constructor() {
-    this.comboboxComponenRef.itemContent = new PolymorpheusComponent(
-      WithHintOptionTemplateComponent
-    );
-    this.comboboxComponenRef.valueContent = new PolymorpheusComponent(
-      WithHintValueTemplateComponent
-    );
+    this.comboboxComponenRef.itemContent = new PolymorpheusComponent(WithHintOptionTemplateComponent);
+    this.comboboxComponenRef.valueContent = new PolymorpheusComponent(WithHintValueTemplateComponent);
   }
 }
