@@ -1,6 +1,8 @@
 import {inject, Injectable} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Toppings} from '../../models/toppings';
+import {emailValidator} from "../../modules/forms/validators/email.validator";
+import {phoneValidator} from "../../modules/forms/validators/phone.validator";
 
 export type ToppingType = { id: string, selected: boolean };
 export type PizzaOptions = { size?: string, borderSize?: string, toppings?: ToppingType[] }
@@ -39,10 +41,6 @@ export class OrderFormService {
     }
   }
 
-  submitForm() {
-    console.log(this.formGroup.value);
-  }
-
   initForm() {
     this.formGroup = this.fb.group({
       orderDetails: this.fb.array([
@@ -58,7 +56,8 @@ export class OrderFormService {
       }),
       contacts: this.fb.group({
         name: [null, Validators.required],
-        phone: [null, Validators.required],
+        phone: [null, [Validators.required, phoneValidator]],
+        email: [null, [Validators.required, emailValidator]],
       }),
       paymentDetails: this.fb.group({
         paymentMethod: ['card'],

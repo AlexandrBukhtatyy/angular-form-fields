@@ -1,12 +1,12 @@
 import {NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
 import {
-  TUI_SANITIZER,
-  TuiAlertModule,
-  TuiButtonModule,
-  TuiDialogModule,
-  TuiErrorModule,
-  TuiGroupModule,
-  TuiRootModule,
+    TUI_SANITIZER,
+    TuiAlertModule,
+    TuiButtonModule,
+    TuiDialogModule,
+    TuiErrorModule,
+    TuiGroupModule,
+    TuiRootModule, TuiSvgModule,
 } from '@taiga-ui/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
@@ -24,7 +24,7 @@ import {
   TuiInputNumberModule,
   TuiInputPhoneModule,
   TuiIslandModule,
-  TuiRadioBlockModule,
+  TuiRadioBlockModule, TuiTabsModule,
   TuiTextAreaModule,
 } from '@taiga-ui/kit';
 import {PizzaDetailsFormComponent} from './forms/pizza-details-form/pizza-details-form.component';
@@ -81,7 +81,9 @@ import {
     SelectComponent,
     ComboboxComponent,
     ComboboxDataProviderDirective,
-    ComboboxWithHintVariantDirective
+    ComboboxWithHintVariantDirective,
+    TuiSvgModule,
+    TuiTabsModule
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],
