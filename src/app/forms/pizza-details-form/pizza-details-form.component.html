@@ -1,15 +1,15 @@
 <div [formGroup]="formGroup">
   <aff-radio-block-list class="tui-form__row"
-                                   formControlName="size"
-                                   [options]="pizzaSizeOptions"
+                        formControlName="size"
+                        [options]="pizzaSizeOptions"
   ></aff-radio-block-list>
   <aff-radio-block-list class="tui-form__row"
-                                   formControlName="borderSize"
-                                   [options]="borderSizeOptions"
+                        formControlName="borderSize"
+                        [options]="borderSizeOptions"
   ></aff-radio-block-list>
 
   <h3>Toppings</h3>
   <aff-checkbox-list formArrayName="toppings"
-                                [dictionary]="toppingsDictionary"
+                     [dictionary]="toppingsDictionary"
   ></aff-checkbox-list>
 </div>
