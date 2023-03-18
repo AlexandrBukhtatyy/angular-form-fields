@@ -17,7 +17,7 @@ export class DefaultOptionTemplateComponent {
   @Input('label') inputLabel?: string;
 
   get label(): string {
-    return this.context?.$implicit?.label || this.inputLabel || '-';
+    return this.context?.$implicit?.label || this.inputLabel || '';
   }
 
   constructor(

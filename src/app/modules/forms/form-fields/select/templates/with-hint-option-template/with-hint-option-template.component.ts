@@ -1,6 +1,7 @@
 import {Component, Inject, Input, Optional} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {POLYMORPHEUS_CONTEXT} from '@tinkoff/ng-polymorpheus';
+import {WithHintMapperDirective} from '../../mappers/with-hint-mapper.directive';
 
 export type WithHintOptionItem<T> = T & {
   label: string;
@@ -19,14 +20,15 @@ export class WithHintOptionTemplateComponent {
   @Input('hint') inputHint?: string;
 
   get label(): string {
-    return this.context?.$implicit?.label || this.inputLabel || '-';
+    return this.withHintMapperDirectiveRef?.mapper?.label(this.context?.$implicit) || this.context?.$implicit?.label || this.inputLabel || '-';
   }
 
   get hint(): string {
-    return this.context?.$implicit?.hint || this.inputHint || '-';
+    return this.withHintMapperDirectiveRef?.mapper?.hint(this.context?.$implicit) || this.context?.$implicit?.hint || this.inputHint || '-';
   }
 
   constructor(
+    @Optional() private withHintMapperDirectiveRef: WithHintMapperDirective,
     @Optional() @Inject(POLYMORPHEUS_CONTEXT) readonly context: { $implicit: WithHintOptionItem<any>, active: boolean }
   ) {
   }

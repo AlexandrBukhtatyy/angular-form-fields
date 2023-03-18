@@ -1,12 +1,13 @@
 import {NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
 import {
-    TUI_SANITIZER,
-    TuiAlertModule,
-    TuiButtonModule,
-    TuiDialogModule,
-    TuiErrorModule,
-    TuiGroupModule,
-    TuiRootModule, TuiSvgModule,
+  TUI_SANITIZER,
+  TuiAlertModule,
+  TuiButtonModule,
+  TuiDialogModule,
+  TuiErrorModule,
+  TuiGroupModule,
+  TuiRootModule,
+  TuiSvgModule,
 } from '@taiga-ui/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
@@ -24,7 +25,8 @@ import {
   TuiInputNumberModule,
   TuiInputPhoneModule,
   TuiIslandModule,
-  TuiRadioBlockModule, TuiTabsModule,
+  TuiRadioBlockModule,
+  TuiTabsModule,
   TuiTextAreaModule,
 } from '@taiga-ui/kit';
 import {PizzaDetailsFormComponent} from './forms/pizza-details-form/pizza-details-form.component';
@@ -40,11 +42,12 @@ import {
   NumberComponent,
   PhoneComponent,
   RadioBlockListComponent,
-  SelectComponent,
+  SelectComponent, SelectWithHintVariantDirective,
   TextareaComponent,
+  WithHintMapperDirective,
 } from './modules/forms';
 import {
-    WithHintOptionTemplateComponent
+  WithHintOptionTemplateComponent
 } from './modules/forms/form-fields/select/templates/with-hint-option-template/with-hint-option-template.component';
 
 @NgModule({
@@ -61,34 +64,36 @@ import {
     NumberComponent,
     RadioBlockListComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        RouterModule.forRoot(routes),
-        TuiRootModule,
-        TuiDialogModule,
-        TuiAlertModule,
-        ReactiveFormsModule,
-        TuiInputPhoneModule,
-        TuiErrorModule,
-        TuiFieldErrorPipeModule,
-        TuiInputModule,
-        TuiRadioBlockModule,
-        TuiGroupModule,
-        TuiInputNumberModule,
-        TuiTextAreaModule,
-        TuiButtonModule,
-        TuiIslandModule,
-        TuiCheckboxLabeledModule,
-        CheckboxListComponent,
-        SelectComponent,
-        ComboboxComponent,
-        ComboboxDataProviderDirective,
-        ComboboxWithHintVariantDirective,
-        TuiSvgModule,
-        TuiTabsModule,
-        WithHintOptionTemplateComponent
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
+    TuiRootModule,
+    TuiDialogModule,
+    TuiAlertModule,
+    ReactiveFormsModule,
+    TuiInputPhoneModule,
+    TuiErrorModule,
+    TuiFieldErrorPipeModule,
+    TuiInputModule,
+    TuiRadioBlockModule,
+    TuiGroupModule,
+    TuiInputNumberModule,
+    TuiTextAreaModule,
+    TuiButtonModule,
+    TuiIslandModule,
+    TuiCheckboxLabeledModule,
+    CheckboxListComponent,
+    SelectComponent,
+    ComboboxComponent,
+    ComboboxDataProviderDirective,
+    ComboboxWithHintVariantDirective,
+    SelectWithHintVariantDirective,
+    TuiSvgModule,
+    TuiTabsModule,
+    WithHintOptionTemplateComponent,
+    WithHintMapperDirective
+  ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],
 })
