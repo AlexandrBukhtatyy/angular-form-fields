@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {ComboboxDataProvider, FormGroupBase} from '../../modules/forms';
 import {of} from 'rxjs';
 import {
-  WithHintOptionItem
-} from '../../modules/forms/form-fields/select/templates/with-hint-option-template/with-hint-option-template.component';
+  OptionWithHint
+} from '../../modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
 
 @Component({
   selector: 'aff-delivery-form',
@@ -11,7 +11,7 @@ import {
   styleUrls: ['./delivery-form.component.less'],
 })
 export class DeliveryFormComponent extends FormGroupBase {
-  selectItemsWithHints: Array<WithHintOptionItem<any>> = [
+  selectItemsWithHints: Array<OptionWithHint<any>> = [
     {id: '1', label: 'Label 1', hint: 'Hint 1'},
     {id: '2', label: 'Label 2', hint: 'Hint 2'},
     {id: '3', label: 'Label 3', hint: 'Hint 3'},

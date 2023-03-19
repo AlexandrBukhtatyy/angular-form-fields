@@ -1,16 +1,16 @@
 import {Directive, Input} from '@angular/core';
 
-export interface WithHintMapper {
+export interface OptionWithHintMapper {
   label: (item: any) => string,
   hint: (item: any) => string,
 };
 
 @Directive({
-  selector: 'aff-select[withHint][mapper]',
+  selector: '[optionWithHint][mapper]',
   standalone: true
 })
-export class WithHintMapperDirective {
-  @Input('mapper') mapper!: WithHintMapper;
+export class OptionWithHintMapperDirective {
+  @Input('mapper') mapper!: OptionWithHintMapper;
 
   constructor() { }
 

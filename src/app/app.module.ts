@@ -44,11 +44,11 @@ import {
   RadioBlockListComponent,
   SelectComponent, SelectWithHintVariantDirective,
   TextareaComponent,
-  WithHintMapperDirective,
+  OptionWithHintMapperDirective,
 } from './modules/forms';
 import {
-  WithHintOptionTemplateComponent
-} from './modules/forms/form-fields/select/templates/with-hint-option-template/with-hint-option-template.component';
+  OptionWithHintContentTemplateComponent
+} from './modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
 
 @NgModule({
   declarations: [
@@ -91,8 +91,8 @@ import {
     SelectWithHintVariantDirective,
     TuiSvgModule,
     TuiTabsModule,
-    WithHintOptionTemplateComponent,
-    WithHintMapperDirective
+    OptionWithHintContentTemplateComponent,
+    OptionWithHintMapperDirective
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],

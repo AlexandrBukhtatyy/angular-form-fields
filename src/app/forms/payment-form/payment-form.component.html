@@ -8,7 +8,7 @@
     Payment method
   </aff-select>
   <ng-template #content let-data>
-    <aff-with-hint-option-template [label]="data.label" [hint]="data.hint"></aff-with-hint-option-template>
+    <aff-option-with-hint-content-template [label]="data.label" [hint]="data.hint"></aff-option-with-hint-content-template>
   </ng-template>
 
   <div class="tui-form__row" *ngIf="formGroup.get('cashCount')?.enabled">

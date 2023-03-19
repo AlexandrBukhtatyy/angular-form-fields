@@ -14,7 +14,7 @@ import {
   PolymorpheusComponent,
   PolymorpheusContent,
 } from '@tinkoff/ng-polymorpheus';
-import { DefaultOptionTemplateComponent } from '../select/templates/default-option-template/default-option-template.component';
+import { DefaultOptionTemplateComponent } from '../../templates/default-option-template/default-option-template.component';
 import { ReplaySubject } from 'rxjs';
 
 @Component({

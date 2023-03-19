@@ -6,11 +6,11 @@ import {filter, Observable, startWith, switchMap} from "rxjs";
 export type ComboboxDataProvider<T> = (term: string) => Observable<Array<T> | null>;
 
 @Directive({
-  selector: '[affComboboxDataProvider]',
+  selector: 'aff-combobox[dataProvider]',
   standalone: true
 })
 export class ComboboxDataProviderDirective<T> implements OnInit {
-  @Input('affComboboxDataProvider') dataFetchFn!: ComboboxDataProvider<T>;
+  @Input('dataProvider') dataFetchFn!: ComboboxDataProvider<T>;
   comboboxComponenRef = inject(ComboboxComponent<T>);
 
   ngOnInit() {

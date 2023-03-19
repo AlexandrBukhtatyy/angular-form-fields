@@ -5,7 +5,7 @@ import {TuiErrorModule, TuiTextfieldControllerModule, TuiValueContentContext} fr
 import {ReactiveFormsModule} from "@angular/forms";
 import {AsyncPipe} from "@angular/common";
 import {PolymorpheusComponent, PolymorpheusContent} from "@tinkoff/ng-polymorpheus";
-import {DefaultOptionTemplateComponent} from "./templates/default-option-template/default-option-template.component";
+import {DefaultOptionTemplateComponent} from "../../templates/default-option-template/default-option-template.component";
 import {TuiItemsHandlers} from "@taiga-ui/kit/tokens";
 
 @Component({
