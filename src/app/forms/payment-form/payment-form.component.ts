@@ -9,5 +9,5 @@ import { PaymentMethodOptions } from '../../models/payment-methods';
 })
 export class PaymentFormComponent extends FormGroupBase {
   paymentMethodOptions = PaymentMethodOptions;
-  selectIdentityMatcher = (paymentMethodOption1: any, paymentMethodOption2: any, ) => paymentMethodOption1.id === paymentMethodOption2.id;
+  selectIdentityMatcher = (option1: any, option2: any, ) => option1.id === option2.id;
 }

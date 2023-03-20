@@ -1,15 +1,44 @@
 <div [formGroup]="formGroup">
-  <aff-select class="tui-form__row"
-              formControlName="paymentMethod"
-              [items]="paymentMethodOptions"
-              [itemContent]="content"
-              [identityMatcher]="selectIdentityMatcher"
+  <!-- EXAMPLE: Variant directive -->
+  <aff-select
+    class="tui-form__row"
+    formControlName="paymentMethod"
+    [items]="paymentMethodOptions"
+    [identityMatcher]="selectIdentityMatcher"
+    optionWithHint
   >
-    Payment method
+    Payment methodss
+  </aff-select>
+
+  <!-- EXAMPLE: Mapper functions-->
+  <!-- <aff-select
+    class="tui-form__row"
+    formControlName="paymentMethod"
+    [items]="paymentMethodOptions"
+    [identityMatcher]="selectIdentityMatcher"
+    optionWithHint
+    [labelFormatter]="labelGetter"
+    [hintFormatter]="hintGetter"
+  >
+    Payment methodss
+  </aff-select> -->
+
+  <!-- EXAMPLE: Template -->
+  <!-- <aff-select
+    class="tui-form__row"
+    formControlName="paymentMethod"
+    [items]="paymentMethodOptions"
+    [identityMatcher]="selectIdentityMatcher"
+    [itemContent]="content"
+  >
+    Payment methodss
   </aff-select>
   <ng-template #content let-data>
-    <aff-option-with-hint-content-template [label]="data.label" [hint]="data.hint"></aff-option-with-hint-content-template>
-  </ng-template>
+    <aff-option-with-hint-content-template
+      [label]="data.label"
+      [hint]="data.hint"
+    ></aff-option-with-hint-content-template>
+  </ng-template> -->
 
   <div class="tui-form__row" *ngIf="formGroup.get('cashCount')?.enabled">
     <aff-number formControlName="cashCount">Cash count</aff-number>

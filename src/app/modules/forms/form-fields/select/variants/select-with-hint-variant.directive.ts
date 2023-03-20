@@ -1,20 +1,42 @@
-import {Directive} from '@angular/core';
+import {Directive, inject, Input} from '@angular/core';
 import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
 import {
   OptionWithHintContentTemplateComponent
 } from '../../../templates/option-with-hint-content-template/option-with-hint-content-template.component';
-import {OptionWithHintValueTemplateComponent} from '../../../templates/option-with-hint-value-template/option-with-hint-value-template.component';
+import {
+  OptionWithHintValueTemplateComponent
+} from '../../../templates/option-with-hint-value-template/option-with-hint-value-template.component';
 import {SelectComponent} from '../select.component';
+import {OPTION_LABEL_PROVIDER} from '../../../tokens/option-label-provider.token';
+import {OPTION_HINT_PROVIDER} from '../../../tokens/option-hint-provider.token';
+import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 
 @Directive({
   selector: 'aff-select[optionWithHint]',
-  standalone: true
+  standalone: true,
+  providers: [
+    {
+      provide: OPTION_LABEL_PROVIDER,
+      useExisting: SelectWithHintVariantDirective,
+    },
+    {
+      provide: OPTION_HINT_PROVIDER,
+      useExisting: SelectWithHintVariantDirective,
+    },
+  ],
 })
-export class SelectWithHintVariantDirective {
+export class SelectWithHintVariantDirective<T> {
+  @Input() labelFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
+  @Input() hintFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
+  selectComponentRef = inject(SelectComponent<T>);
 
-  constructor(private formFieldSelectComponent: SelectComponent<any>) {
-    formFieldSelectComponent.itemContent = new PolymorpheusComponent(OptionWithHintContentTemplateComponent);
-    formFieldSelectComponent.valueContent = new PolymorpheusComponent(OptionWithHintValueTemplateComponent);
+  constructor() {
+    this.selectComponentRef.itemContent = new PolymorpheusComponent(
+      OptionWithHintContentTemplateComponent
+    );
+    this.selectComponentRef.valueContent = new PolymorpheusComponent(
+      OptionWithHintValueTemplateComponent
+    );
   }
 
 }

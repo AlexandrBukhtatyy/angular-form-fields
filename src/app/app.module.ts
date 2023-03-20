@@ -42,9 +42,9 @@ import {
   NumberComponent,
   PhoneComponent,
   RadioBlockListComponent,
-  SelectComponent, SelectWithHintVariantDirective,
+  SelectComponent,
+  SelectWithHintVariantDirective,
   TextareaComponent,
-  OptionWithHintMapperDirective,
 } from './modules/forms';
 import {
   OptionWithHintContentTemplateComponent
@@ -92,7 +92,6 @@ import {
     TuiSvgModule,
     TuiTabsModule,
     OptionWithHintContentTemplateComponent,
-    OptionWithHintMapperDirective
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],
