@@ -49,6 +49,7 @@ import {
 import {
   OptionWithHintContentTemplateComponent
 } from './modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
+import {ShowIfControlExistDirective} from './modules/forms/directives/show-if-control-exist.directive';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import {
     TuiSvgModule,
     TuiTabsModule,
     OptionWithHintContentTemplateComponent,
+    ShowIfControlExistDirective,
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],

@@ -4,6 +4,7 @@ import { HideIfDisabledDirective } from './hide-if-disabled.directive';
 
 @Directive({
   selector: '[hideIfDisabledRegister]',
+  standalone: true,
 })
 export class FormFieldRegistratorDirective {
   constructor(

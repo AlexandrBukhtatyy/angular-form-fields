@@ -1,21 +1,13 @@
-import {
-  Directive,
-  Input,
-  OnInit,
-  TemplateRef,
-  ViewContainerRef,
-} from '@angular/core';
+import {Directive, Input, OnInit, TemplateRef, ViewContainerRef,} from '@angular/core';
 import {AbstractControl, ControlContainer, NgControl} from '@angular/forms';
-import { filter } from 'rxjs';
-import { distinctUntilChanged, map } from 'rxjs/operators';
 
 @Directive({
-  selector: '[hideIfDisabled]',
+  selector: '[showIfControlExist]',
   standalone: true
 })
-export class HideIfDisabledDirective implements OnInit {
+export class ShowIfControlExistDirective implements OnInit {
   _formControl!: NgControl;
-  @Input('hideIfDisabled') formControlName!: string;
+  @Input('showIfControlExist') formControlName!: string;
 
   get control(): AbstractControl {
     // @ts-ignore
@@ -26,17 +18,11 @@ export class HideIfDisabledDirective implements OnInit {
     private controlContainer: ControlContainer,
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
-    this.render(!this.control.disabled);
-    this.control.statusChanges
-      .pipe(
-        distinctUntilChanged(),
-        map((satus) => satus !== 'DISABLED'),
-        filter(Boolean)
-      )
-      .subscribe((satus) => this.render(satus));
+    this.render(!!this.control);
   }
 
   private render(show: boolean) {
