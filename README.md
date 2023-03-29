@@ -1,5 +1,5 @@
 # AngularFormFields
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/AlexandrBukhtatyy/angular-form-fields/tree/e576ac1698d14e0d4dd1640b3ea7a038be81010f)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/AlexandrBukhtatyy/angular-form-fields)
 ## Start
 ```shell
 npm i
