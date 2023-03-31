@@ -1,6 +1,7 @@
 import {Directive, Input, OnInit, TemplateRef, ViewContainerRef,} from '@angular/core';
 import {AbstractControl, ControlContainer, NgControl} from '@angular/forms';
 import {distinctUntilChanged, map} from 'rxjs/operators';
+import {startWith} from 'rxjs';
 
 @Directive({
   selector: '[showIfControlExist]',
@@ -23,10 +24,10 @@ export class ShowIfControlExistDirective implements OnInit {
   }
 
   ngOnInit() {
-    this.render(!!this.control);
     // TODO: takeUntil
     this.controlContainer.valueChanges
       ?.pipe(
+        startWith(!!this.control),
         map(() => !!this.control),
         distinctUntilChanged()
       )
