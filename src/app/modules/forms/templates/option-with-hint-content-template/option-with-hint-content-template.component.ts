@@ -15,7 +15,7 @@ export type OptionWithHint<T> = T & {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './option-with-hint-content-template.component.html',
-  styleUrls: ['./option-with-hint-content-template.component.scss'],
+  styleUrls: ['./option-with-hint-content-template.component.less'],
 })
 export class OptionWithHintContentTemplateComponent<T> {
   @Input('label') inputLabel?: string;

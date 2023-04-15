@@ -10,29 +10,35 @@ import {
 import {
   OptionWithHintValueTemplateComponent
 } from '../../../templates/option-with-hint-value-template/option-with-hint-value-template.component';
+import {
+  OptionWithTooltipContentTemplateComponent
+} from '../../../templates/option-with-tooltip-content-template/option-with-tooltip-content-template.component';
+import {
+  OptionWithTooltipValueTemplateComponent
+} from '../../../templates/option-with-tooltip-value-template/option-with-tooltip-value-template.component';
+import {OPTION_TOOLTIP_PROVIDER} from '../../../tokens/option-tooltip-provider.token';
 
 @Directive({
-  selector: 'aff-select[optionWithHint]',
+  selector: 'aff-select[optionWithTooltip]',
   standalone: true,
   providers: [
     {
       provide: OPTION_LABEL_PROVIDER,
-      useExisting: SelectWithHintVariantDirective,
+      useExisting: SelectWithTooltipVariantDirective,
     },
     {
-      provide: OPTION_HINT_PROVIDER,
-      useExisting: SelectWithHintVariantDirective,
+      provide: OPTION_TOOLTIP_PROVIDER,
+      useExisting: SelectWithTooltipVariantDirective,
     },
   ],
 })
-export class SelectWithHintVariantDirective<T> {
+export class SelectWithTooltipVariantDirective<T> {
   @Input() labelFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
-  @Input() hintFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
+  @Input() tooltipFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
   selectComponentRef = inject(SelectComponent<T>);
 
   constructor() {
-    this.selectComponentRef.itemContent = new PolymorpheusComponent(OptionWithHintContentTemplateComponent);
-    this.selectComponentRef.valueContent = new PolymorpheusComponent(OptionWithHintValueTemplateComponent);
+    this.selectComponentRef.itemContent = new PolymorpheusComponent(OptionWithTooltipContentTemplateComponent);
   }
 
 }

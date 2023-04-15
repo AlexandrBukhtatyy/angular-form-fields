@@ -14,7 +14,7 @@ import {
   PolymorpheusComponent,
   PolymorpheusContent,
 } from '@tinkoff/ng-polymorpheus';
-import { DefaultOptionTemplateComponent } from '../../templates/default-option-template/default-option-template.component';
+import { OptionDefaultTemplateComponent } from '../../templates/option-default-template/option-default-template.component';
 import { ReplaySubject } from 'rxjs';
 
 @Component({
@@ -51,11 +51,11 @@ export class ComboboxComponent<T> extends FormFieldBase {
 
   @Input()
   valueContent: PolymorpheusContent<TuiValueContentContext<T>> =
-    new PolymorpheusComponent(DefaultOptionTemplateComponent);
+    new PolymorpheusComponent(OptionDefaultTemplateComponent);
 
   @Input()
   itemContent: PolymorpheusContent<TuiValueContentContext<T>> =
-    new PolymorpheusComponent(DefaultOptionTemplateComponent);
+    new PolymorpheusComponent(OptionDefaultTemplateComponent);
 
   @Output()
   search$ = new ReplaySubject<string | null>();

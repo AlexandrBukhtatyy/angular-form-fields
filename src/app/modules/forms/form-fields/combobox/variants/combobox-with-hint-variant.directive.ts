@@ -1,15 +1,15 @@
 import {Directive, inject, Input} from '@angular/core';
 import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
+import {ComboboxComponent} from '../combobox.component';
+import {OPTION_LABEL_PROVIDER} from '../../../tokens/option-label-provider.token';
+import {OPTION_HINT_PROVIDER} from '../../../tokens/option-hint-provider.token';
+import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 import {
   OptionWithHintContentTemplateComponent
 } from '../../../templates/option-with-hint-content-template/option-with-hint-content-template.component';
 import {
   OptionWithHintValueTemplateComponent
 } from '../../../templates/option-with-hint-value-template/option-with-hint-value-template.component';
-import {ComboboxComponent} from '../combobox.component';
-import {OPTION_LABEL_PROVIDER} from '../../../tokens/option-label-provider.token';
-import {OPTION_HINT_PROVIDER} from '../../../tokens/option-hint-provider.token';
-import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 
 @Directive({
   selector: 'aff-combobox[optionWithHint]',

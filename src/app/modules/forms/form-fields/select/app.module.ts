@@ -13,10 +13,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppComponent} from './app.component';
-import {OrderFormComponent} from './pages/order-form/order-form.component';
+import {AppComponent} from '../../../../app.component';
+import {OrderFormComponent} from '../../../../pages/order-form/order-form.component';
 import {RouterModule} from '@angular/router';
-import {routes} from './config/routes';
+import {routes} from '../../../../config/routes';
 import {ReactiveFormsModule} from '@angular/forms';
 import {
   TuiCheckboxLabeledModule,
@@ -29,10 +29,10 @@ import {
   TuiTabsModule,
   TuiTextAreaModule,
 } from '@taiga-ui/kit';
-import {PizzaDetailsFormComponent} from './forms/pizza-details-form/pizza-details-form.component';
-import {ContactsShortFormComponent} from './forms/contacts-short-form/contacts-short-form.component';
-import {DeliveryFormComponent} from './forms/delivery-form/delivery-form.component';
-import {PaymentFormComponent} from './forms/payment-form/payment-form.component';
+import {PizzaDetailsFormComponent} from '../../../../forms/pizza-details-form/pizza-details-form.component';
+import {ContactsShortFormComponent} from '../../../../forms/contacts-short-form/contacts-short-form.component';
+import {DeliveryFormComponent} from '../../../../forms/delivery-form/delivery-form.component';
+import {PaymentFormComponent} from '../../../../forms/payment-form/payment-form.component';
 import {
   CheckboxListComponent,
   ComboboxComponent,
@@ -45,11 +45,12 @@ import {
   SelectComponent,
   SelectWithHintVariantDirective,
   TextareaComponent,
-} from './modules/forms';
+} from '../../index';
+import {ShowIfControlExistDirective} from '../../directives/show-if-control-exist.directive';
 import {
   OptionWithHintContentTemplateComponent
-} from './modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
-import {ShowIfControlExistDirective} from './modules/forms/directives/show-if-control-exist.directive';
+} from '../../templates/option-with-hint-content-template/option-with-hint-content-template.component';
+import {SelectWithTooltipVariantDirective} from './variants/select-with-tooltip-variant.directive';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import {ShowIfControlExistDirective} from './modules/forms/directives/show-if-co
     TuiTabsModule,
     OptionWithHintContentTemplateComponent,
     ShowIfControlExistDirective,
+    SelectWithTooltipVariantDirective,
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],

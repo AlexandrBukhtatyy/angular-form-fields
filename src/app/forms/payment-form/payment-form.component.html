@@ -1,14 +1,35 @@
 <div [formGroup]="formGroup">
-  <!-- EXAMPLE: Variant directive -->
+  <!-- EXAMPLE: Without variant directive -->
   <aff-select
     class="tui-form__row"
     formControlName="paymentMethod"
     [items]="paymentMethodOptions"
     [identityMatcher]="selectIdentityMatcher"
-    optionWithHint
   >
     Payment methodss
   </aff-select>
+
+  <!-- EXAMPLE: Variant directive - hint -->
+  <!--  <aff-select-->
+  <!--    class="tui-form__row"-->
+  <!--    formControlName="paymentMethod"-->
+  <!--    [items]="paymentMethodOptions"-->
+  <!--    [identityMatcher]="selectIdentityMatcher"-->
+  <!--    optionWithHint-->
+  <!--  >-->
+  <!--    Payment methodss-->
+  <!--  </aff-select>-->
+
+  <!-- EXAMPLE: Variant directive - tooltip -->
+  <!--  <aff-select-->
+  <!--    class="tui-form__row"-->
+  <!--    formControlName="paymentMethod"-->
+  <!--    [items]="paymentMethodOptions"-->
+  <!--    [identityMatcher]="selectIdentityMatcher"-->
+  <!--    optionWithTooltip-->
+  <!--  >-->
+  <!--    Payment methodss-->
+  <!--  </aff-select>-->
 
   <!-- EXAMPLE: Mapper functions-->
   <!-- <aff-select
@@ -34,10 +55,10 @@
     Payment methodss
   </aff-select>
   <ng-template #content let-data>
-    <aff-option-with-hint-content-template
+    <aff-option-content-with-hint-template
       [label]="data.label"
       [hint]="data.hint"
-    ></aff-option-with-hint-content-template>
+    ></aff-option-content-with-hint-template>
   </ng-template> -->
 
   <div class="tui-form__row" *ngIf="formGroup.get('cashCount')?.enabled">
