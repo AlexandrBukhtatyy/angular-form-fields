@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.2.0",
+    "@angular/cdk": "^15.2.9",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",
     "@angular/core": "^15.2.0",
@@ -27,6 +28,7 @@
     "@ng-web-apis/resize-observer": "^2.0.0",
     "@taiga-ui/cdk": "^3.18.0",
     "@taiga-ui/core": "^3.18.0",
+    "@taiga-ui/i18n": "^3.30.0",
     "@taiga-ui/icons": "^3.20.0",
     "@taiga-ui/kit": "^3.18.0",
     "@taiga-ui/styles": "^3.20.0",
