@@ -18,6 +18,9 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@maskito/angular": "^0.14.0",
+    "@maskito/core": "^0.14.0",
+    "@maskito/kit": "^0.14.0",
     "@taiga-ui/cdk": "^3.18.0",
     "@taiga-ui/core": "^3.18.0",
     "@taiga-ui/icons": "^3.20.0",
@@ -28,6 +31,7 @@
     "@tinkoff/ng-polymorpheus": "^4.0.10",
     "dompurify": "2.2.9",
     "rxjs": "~7.8.0",
+    "text-mask-core": "^5.1.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
