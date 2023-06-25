@@ -39,11 +39,11 @@ export class FormFieldBase implements OnInit, OnDestroy, ControlValueAccessor {
       this.control = this.ngControl.control;
     } else if (this.ngControl instanceof NgModel) {
       this.control = this.ngControl.control;
-      this.subscription = this.control.valueChanges.subscribe((x) =>
-        this.ngControl.viewToModelUpdate(this.control.value)
-      );
-    } else if (!this.ngControl) {
-      this.control = new FormControl();
+      this.subscription = this.control.valueChanges.subscribe((value) => {
+        if ((this.ngControl.control as unknown as { _pendingChange: boolean })._pendingChange) {
+          this.ngControl.viewToModelUpdate(value);
+        }
+      });
     }
   }
 
