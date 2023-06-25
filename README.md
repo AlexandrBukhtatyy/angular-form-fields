@@ -6,7 +6,7 @@ npm i
 ng serve
 ```
 ## Полезные ссылки
-- [Статья на хабре](-) - появится после публикации
+- [Статья на хабре](https://habr.com/ru/companies/tinkoff/articles/740706)
 - [TaigaUI](https://taiga-ui.dev/)
 - Концепция контроллеров компонента в Angular ([часть-1](https://habr.com/ru/company/tinkoff/blog/546178/), [часть-2](https://habr.com/ru/company/tinkoff/blog/578904/))
 - [Использование директив для расширения компонентов которыми вы не владеете](https://timdeschryver.dev/blog/use-angular-directives-to-extend-components-that-you-dont-own)
