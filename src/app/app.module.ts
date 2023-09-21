@@ -51,6 +51,9 @@ import {
   OptionWithHintContentTemplateComponent
 } from './modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
 import {SelectWithTooltipVariantDirective} from './modules/forms/form-fields/select/variants/select-with-tooltip-variant.directive';
+import {
+  ComboboxWithAddButtonDirective
+} from './modules/forms/form-fields/combobox/variants/combobox-with-add-button.directive';
 
 @NgModule({
   declarations: [
@@ -96,6 +99,7 @@ import {SelectWithTooltipVariantDirective} from './modules/forms/form-fields/sel
     OptionWithHintContentTemplateComponent,
     ShowIfControlExistDirective,
     SelectWithTooltipVariantDirective,
+    ComboboxWithAddButtonDirective,
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],

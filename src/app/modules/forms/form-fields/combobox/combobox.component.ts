@@ -65,8 +65,7 @@ export class ComboboxComponent<T> extends FormFieldBase {
     new PolymorpheusComponent(OptionDefaultTemplateComponent);
 
   @Input()
-  dropdownContent: PolymorpheusContent<ComboboxWithAddButtonContext<T>> | null =
-    new PolymorpheusComponent(DropdownWithAddButtonComponent);
+  dropdownContent: PolymorpheusContent<ComboboxWithAddButtonContext<T>> | null = null;
 
   @Output()
   search$ = new ReplaySubject<string | null>();
