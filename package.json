@@ -32,14 +32,14 @@
     "@taiga-ui/icons": "^3.20.0",
     "@taiga-ui/kit": "^3.18.0",
     "@taiga-ui/styles": "^3.20.0",
-    "@tinkoff/ng-dompurify": "3.0.0",
+    "@tinkoff/ng-dompurify": "^3.0.0",
     "@tinkoff/ng-event-plugins": "^3.1.0",
     "@tinkoff/ng-polymorpheus": "^4.0.10",
-    "dompurify": "2.2.9",
-    "rxjs": "~7.8.0",
+    "dompurify": "^2.2.9",
+    "rxjs": "^7.8.0",
     "text-mask-core": "^5.1.2",
     "tslib": "^2.3.0",
-    "zone.js": "~0.12.0"
+    "zone.js": "^0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.2",
