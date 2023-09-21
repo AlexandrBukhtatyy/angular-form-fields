@@ -1,0 +1,10 @@
+<tui-data-list>
+  <button tuiOption (click)="addMore()">
+    <tui-svg src="tuiIconPlusLarge" class="tui-space_right-2"></tui-svg>
+    Add more
+  </button>
+</tui-data-list>
+<tui-data-list-wrapper
+  [items]="items"
+  [itemContent]="itemContent"
+></tui-data-list-wrapper>

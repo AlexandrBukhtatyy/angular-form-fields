@@ -6,18 +6,23 @@
   (searchChange)="search$.next($event)"
 >
   <ng-content></ng-content>
-  <input
-    tuiTextfield
-    [placeholder]="placeholder"
-  />
-  <tui-data-list-wrapper
-    *tuiDataList
-    [items]="items"
-    [itemContent]="itemContent"
-  ></tui-data-list-wrapper>
+  <input tuiTextfield [placeholder]="placeholder" />
+
+  <div *tuiDataList>
+    <ng-container *ngIf="!!dropdownContent; else defaultTmpl">
+      <div *polymorpheusOutlet="dropdownContent; context: context"></div>
+    </ng-container>
+  </div>
 </tui-combo-box>
 
 <tui-error
   [formControl]="control"
   [error]="[] | tuiFieldError | async"
 ></tui-error>
+
+<ng-template #defaultTmpl>
+  <tui-data-list-wrapper
+    [items]="items"
+    [itemContent]="itemContent"
+  ></tui-data-list-wrapper>
+</ng-template>

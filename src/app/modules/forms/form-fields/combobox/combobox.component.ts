@@ -8,14 +8,18 @@ import {
 } from '@taiga-ui/kit';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TuiErrorModule, TuiValueContentContext } from '@taiga-ui/core';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import {AsyncPipe, JsonPipe, NgIf} from '@angular/common';
 import { TuiItemsHandlers } from '@taiga-ui/kit/tokens';
 import {
   PolymorpheusComponent,
-  PolymorpheusContent,
+  PolymorpheusContent, PolymorpheusModule,
 } from '@tinkoff/ng-polymorpheus';
 import { OptionDefaultTemplateComponent } from '../../templates/option-default-template/option-default-template.component';
 import { ReplaySubject } from 'rxjs';
+import {
+  ComboboxWithAddButtonContext,
+  DropdownWithAddButtonComponent
+} from './templates/dropdown-with-add-button/dropdown-with-add-button.component';
 
 @Component({
   selector: 'aff-combobox',
@@ -30,6 +34,9 @@ import { ReplaySubject } from 'rxjs';
     TuiFieldErrorPipeModule,
     AsyncPipe,
     JsonPipe,
+    DropdownWithAddButtonComponent,
+    PolymorpheusModule,
+    NgIf
   ],
 })
 export class ComboboxComponent<T> extends FormFieldBase {
@@ -57,6 +64,17 @@ export class ComboboxComponent<T> extends FormFieldBase {
   itemContent: PolymorpheusContent<TuiValueContentContext<T>> =
     new PolymorpheusComponent(OptionDefaultTemplateComponent);
 
+  @Input()
+  dropdownContent: PolymorpheusContent<ComboboxWithAddButtonContext<T>> | null =
+    new PolymorpheusComponent(DropdownWithAddButtonComponent);
+
   @Output()
   search$ = new ReplaySubject<string | null>();
+
+  get context() {
+    return {
+      items: this.items,
+      itemContent: this.itemContent,
+    };
+  }
 }
