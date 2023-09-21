@@ -4,6 +4,7 @@ import {of} from 'rxjs';
 import {
   OptionWithHint
 } from '../../modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
+import {labelStringify} from '../../modules/forms/utils/stringifiers';
 
 @Component({
   selector: 'aff-delivery-form',
@@ -18,9 +19,7 @@ export class DeliveryFormComponent extends FormGroupBase {
     {id: '4', label: 'Label 4', hint: 'Hint 4'},
   ];
 
-  comboboxStringify(item: { label: string }): string {
-    return item.label;
-  }
+  comboboxStringify = labelStringify;
 
   comboboxDataProvider: ComboboxDataProvider<any> = (term: string) => {
     const foundedItems = this.selectItemsWithHints.filter((item) => term == '' || item.label.toLowerCase() == term.toLowerCase() || item.label.toLowerCase().includes(term.toLowerCase()));
