@@ -61,7 +61,9 @@
     ></aff-option-content-with-hint-template>
   </ng-template> -->
 
-  <div class="tui-form__row" *ngIf="formGroup.get('cashCount')?.enabled">
-    <aff-number formControlName="cashCount">Cash count</aff-number>
-  </div>
+  <ng-container *ngIf="formGroup.get('cashCount')?.enabled">
+    <aff-number class="tui-form__row" formControlName="cashCount"
+      >Cash count</aff-number
+    >
+  </ng-container>
 </div>

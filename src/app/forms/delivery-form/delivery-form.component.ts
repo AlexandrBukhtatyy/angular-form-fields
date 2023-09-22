@@ -1,10 +1,8 @@
-import {Component} from '@angular/core';
-import {ComboboxDataProvider, FormGroupBase} from '../../modules/forms';
-import {of} from 'rxjs';
-import {
-  OptionWithHint
-} from '../../modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
-import {labelStringify} from '../../modules/forms/utils/stringifiers';
+import { Component } from '@angular/core';
+import { ComboboxDataProvider, FormGroupBase } from '../../modules/forms';
+import { of } from 'rxjs';
+import { OptionWithHint } from '../../modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
+import { labelStringify } from '../../modules/forms/utils/stringifiers';
 
 @Component({
   selector: 'aff-delivery-form',
@@ -13,16 +11,25 @@ import {labelStringify} from '../../modules/forms/utils/stringifiers';
 })
 export class DeliveryFormComponent extends FormGroupBase {
   selectItemsWithHints: Array<OptionWithHint<any>> = [
-    {id: '1', label: 'Label 1', hint: 'Hint 1'},
-    {id: '2', label: 'Label 2', hint: 'Hint 2'},
-    {id: '3', label: 'Label 3', hint: 'Hint 3'},
-    {id: '4', label: 'Label 4', hint: 'Hint 4'},
+    { id: '1', label: 'Label 1', hint: 'Hint 1' },
+    { id: '2', label: 'Label 2', hint: 'Hint 2' },
+    { id: '3', label: 'Label 3', hint: 'Hint 3' },
+    { id: '4', label: 'Label 4', hint: 'Hint 4' },
   ];
 
   comboboxStringify = labelStringify;
 
   comboboxDataProvider: ComboboxDataProvider<any> = (term: string) => {
-    const foundedItems = this.selectItemsWithHints.filter((item) => term == '' || item.label.toLowerCase() == term.toLowerCase() || item.label.toLowerCase().includes(term.toLowerCase()));
+    const foundedItems = this.selectItemsWithHints.filter(
+      (item) =>
+        term == '' ||
+        item.label.toLowerCase() == term.toLowerCase() ||
+        item.label.toLowerCase().includes(term.toLowerCase())
+    );
     return foundedItems && foundedItems.length ? of(foundedItems) : of(null);
   };
+
+  addClicked() {
+    console.log('addMore click!!!!');
+  }
 }

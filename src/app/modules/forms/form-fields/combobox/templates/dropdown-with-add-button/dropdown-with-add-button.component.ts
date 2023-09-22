@@ -6,6 +6,7 @@ import {
   OptionDefaultTemplateComponent
 } from '../../../../templates/option-default-template/option-default-template.component';
 import {TuiDataListWrapperModule} from '@taiga-ui/kit';
+import { ComboboxWithAddButtonDirective } from '../../variants/combobox-with-add-button.directive';
 
 export type ComboboxWithAddButtonContext<T> = {
   items: any[] | null;
@@ -40,6 +41,7 @@ export class DropdownWithAddButtonComponent<T> implements OnInit {
   }
 
   constructor(
+    private comboboxWithAddButtonDirective: ComboboxWithAddButtonDirective<T>,
     @Optional()
     @Inject(POLYMORPHEUS_CONTEXT)
     readonly context: {
@@ -54,6 +56,6 @@ export class DropdownWithAddButtonComponent<T> implements OnInit {
   ngOnInit() {}
 
   addMore() {
-    console.log('addMore click');
+    this.comboboxWithAddButtonDirective.addClick();
   }
 }

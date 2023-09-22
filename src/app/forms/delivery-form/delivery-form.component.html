@@ -1,32 +1,32 @@
 <div [formGroup]="formGroup">
   <div class="tui-form__row tui-form__row_multi-fields">
-    <div class="tui-form__multi-field">
-      <aff-combobox
-        formControlName="address"
-        optionWithHint
-        withAddButton
-        [dataProvider]="comboboxDataProvider"
-        [stringify]="comboboxStringify"
-      >
-        address
-      </aff-combobox>
-    </div>
-    <div class="tui-form__multi-field">
-      <aff-input formControlName="entrance">entrance</aff-input>
-    </div>
+    <aff-combobox
+      class="tui-form__multi-field"
+      formControlName="address"
+      optionWithHint
+      withAddButton
+      (addClicked)="addClicked()"
+      [dataProvider]="comboboxDataProvider"
+      [stringify]="comboboxStringify"
+    >
+      address
+    </aff-combobox>
+    <aff-input class="tui-form__multi-field" formControlName="entrance"
+      >entrance</aff-input
+    >
   </div>
   <div class="tui-form__row tui-form__row_multi-fields">
-    <div class="tui-form__multi-field">
-      <aff-input formControlName="floor">floor</aff-input>
-    </div>
-    <div class="tui-form__multi-field">
-      <aff-input formControlName="appartament">appartament</aff-input>
-    </div>
-    <div class="tui-form__multi-field">
-      <aff-input formControlName="code">code</aff-input>
-    </div>
+    <aff-input class="tui-form__multi-field" formControlName="floor"
+      >floor</aff-input
+    >
+    <aff-input class="tui-form__multi-field" formControlName="appartament"
+      >appartament</aff-input
+    >
+    <aff-input class="tui-form__multi-field" formControlName="code"
+      >code</aff-input
+    >
   </div>
-  <div class="tui-form__row">
-    <aff-textarea formControlName="comment">Type a comment</aff-textarea>
-  </div>
+  <aff-textarea class="tui-form__row" formControlName="comment"
+    >Type a comment</aff-textarea
+  >
 </div>
