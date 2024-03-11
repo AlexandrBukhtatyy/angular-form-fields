@@ -27,7 +27,7 @@ import {
   TuiIslandModule,
   TuiRadioBlockModule,
   TuiTabsModule,
-  TuiTextAreaModule,
+  TuiTextareaModule,
 } from '@taiga-ui/kit';
 import {PizzaDetailsFormComponent} from './forms/pizza-details-form/pizza-details-form.component';
 import {ContactsShortFormComponent} from './forms/contacts-short-form/contacts-short-form.component';
@@ -84,7 +84,7 @@ import {
     TuiRadioBlockModule,
     TuiGroupModule,
     TuiInputNumberModule,
-    TuiTextAreaModule,
+    TuiTextareaModule,
     TuiButtonModule,
     TuiIslandModule,
     TuiCheckboxLabeledModule,
