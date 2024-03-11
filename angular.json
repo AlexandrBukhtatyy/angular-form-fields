@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-form-fields:build:production"
+              "buildTarget": "angular-form-fields:build:production"
             },
             "development": {
-              "browserTarget": "angular-form-fields:build:development"
+              "buildTarget": "angular-form-fields:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-form-fields:build"
+            "buildTarget": "angular-form-fields:build"
           }
         },
         "test": {
