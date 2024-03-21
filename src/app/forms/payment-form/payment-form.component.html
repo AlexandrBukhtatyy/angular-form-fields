@@ -1,38 +1,38 @@
 <div [formGroup]="formGroup">
-  <!-- EXAMPLE: Without variant directive -->
-  <aff-select
-    class="tui-form__row"
-    formControlName="paymentMethod"
-    [items]="paymentMethodOptions"
-    [identityMatcher]="selectIdentityMatcher"
-  >
-    Payment methodss
-  </aff-select>
+    <!-- EXAMPLE: Without variant directive -->
+    <aff-select
+        class="tui-form__row"
+        formControlName="paymentMethod"
+        [items]="paymentMethodOptions"
+        [identityMatcher]="selectIdentityMatcher"
+    >
+        Payment method
+    </aff-select>
 
-  <!-- EXAMPLE: Variant directive - hint -->
-  <!--  <aff-select-->
-  <!--    class="tui-form__row"-->
-  <!--    formControlName="paymentMethod"-->
-  <!--    [items]="paymentMethodOptions"-->
-  <!--    [identityMatcher]="selectIdentityMatcher"-->
-  <!--    optionWithHint-->
-  <!--  >-->
-  <!--    Payment methodss-->
-  <!--  </aff-select>-->
+    <!-- EXAMPLE: Variant directive - hint -->
+    <!--  <aff-select-->
+    <!--    class="tui-form__row"-->
+    <!--    formControlName="paymentMethod"-->
+    <!--    [items]="paymentMethodOptions"-->
+    <!--    [identityMatcher]="selectIdentityMatcher"-->
+    <!--    optionWithHint-->
+    <!--  >-->
+    <!--    Payment methodss-->
+    <!--  </aff-select>-->
 
-  <!-- EXAMPLE: Variant directive - tooltip -->
-  <!--  <aff-select-->
-  <!--    class="tui-form__row"-->
-  <!--    formControlName="paymentMethod"-->
-  <!--    [items]="paymentMethodOptions"-->
-  <!--    [identityMatcher]="selectIdentityMatcher"-->
-  <!--    optionWithTooltip-->
-  <!--  >-->
-  <!--    Payment methodss-->
-  <!--  </aff-select>-->
+    <!-- EXAMPLE: Variant directive - tooltip -->
+    <!--  <aff-select-->
+    <!--    class="tui-form__row"-->
+    <!--    formControlName="paymentMethod"-->
+    <!--    [items]="paymentMethodOptions"-->
+    <!--    [identityMatcher]="selectIdentityMatcher"-->
+    <!--    optionWithTooltip-->
+    <!--  >-->
+    <!--    Payment methodss-->
+    <!--  </aff-select>-->
 
-  <!-- EXAMPLE: Mapper functions-->
-  <!-- <aff-select
+    <!-- EXAMPLE: Mapper functions-->
+    <!-- <aff-select
     class="tui-form__row"
     formControlName="paymentMethod"
     [items]="paymentMethodOptions"
@@ -44,8 +44,8 @@
     Payment methodss
   </aff-select> -->
 
-  <!-- EXAMPLE: Template -->
-  <!-- <aff-select
+    <!-- EXAMPLE: Template -->
+    <!-- <aff-select
     class="tui-form__row"
     formControlName="paymentMethod"
     [items]="paymentMethodOptions"
@@ -61,9 +61,9 @@
     ></aff-option-content-with-hint-template>
   </ng-template> -->
 
-  <ng-container *ngIf="formGroup.get('cashCount')?.enabled">
-    <aff-number class="tui-form__row" formControlName="cashCount"
-      >Cash count</aff-number
-    >
-  </ng-container>
+    <ng-container *ngIf="formGroup.get('cashCount')?.enabled">
+        <aff-number class="tui-form__row" formControlName="cashCount"
+            >Cash count</aff-number
+        >
+    </ng-container>
 </div>
