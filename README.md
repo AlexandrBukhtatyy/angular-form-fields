@@ -1,11 +1,24 @@
 # AngularFormFields
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/AlexandrBukhtatyy/angular-form-fields)
+
 ## Start
+
 ```shell
 npm i
 ng serve
 ```
+
+## Концепции
+
+- Обертки для полей форм (soliD)
+- Варианты для полей форм
+- Переиспользование существующих форм форм
+- Сервис отвечающий за работу с formGroup (Solid)
+- Модуль для работы с формами в проекте
+
 ## Полезные ссылки
+
 - [Статья на хабре](https://habr.com/ru/companies/tinkoff/articles/740706)
 - [TaigaUI](https://taiga-ui.dev/)
 - Концепция контроллеров компонента в Angular ([часть-1](https://habr.com/ru/company/tinkoff/blog/546178/), [часть-2](https://habr.com/ru/company/tinkoff/blog/578904/))
