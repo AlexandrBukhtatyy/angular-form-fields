@@ -1,16 +1,17 @@
 import {Component, Inject, Input, Optional} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {OPTION_LABEL_PROVIDER} from '../../tokens/option-label-provider.token';
 import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 import {OPTION_HINT_PROVIDER} from '../../tokens/option-hint-provider.token';
 import {POLYMORPHEUS_CONTEXT} from '@tinkoff/ng-polymorpheus';
 import {OptionWithHint} from '../option-with-hint-content-template/option-with-hint-content-template.component';
-import {TuiTooltipModule} from '@taiga-ui/core';
+import {TuiTooltip} from '@taiga-ui/kit';
+import {TuiIcon} from '@taiga-ui/core';
 
 @Component({
   selector: 'aff-option-with-tooltip-content-template',
   standalone: true,
-  imports: [CommonModule, TuiTooltipModule],
+  imports: [CommonModule, TuiTooltip, TuiIcon],
   templateUrl: './option-with-tooltip-content-template.component.html',
   styleUrls: ['./option-with-tooltip-content-template.component.less']
 })

@@ -1,12 +1,12 @@
 import {Component, Inject, Input, OnInit, Optional} from '@angular/core';
 import {POLYMORPHEUS_CONTEXT, PolymorpheusComponent, PolymorpheusContent} from '@tinkoff/ng-polymorpheus';
 import {ComboboxComponent} from '../../combobox.component';
-import {TuiDataListModule, TuiSvgModule, TuiValueContentContext} from '@taiga-ui/core';
+import {TuiDataList, TuiIcon, TuiValueContentContext} from '@taiga-ui/core';
 import {
   OptionDefaultTemplateComponent
 } from '../../../../templates/option-default-template/option-default-template.component';
-import {TuiDataListWrapperModule} from '@taiga-ui/kit';
-import { ComboboxWithAddButtonDirective } from '../../variants/combobox-with-add-button.directive';
+import {ComboboxWithAddButtonDirective} from '../../variants/combobox-with-add-button.directive';
+import {TuiDataListWrapper} from '@taiga-ui/kit';
 
 export type ComboboxWithAddButtonContext<T> = {
   items: any[] | null;
@@ -19,9 +19,9 @@ export type ComboboxWithAddButtonContext<T> = {
   styleUrls: ['./dropdown-with-add-button.component.less'],
   standalone: true,
   imports: [
-    TuiDataListModule,
-    TuiSvgModule,
-    TuiDataListWrapperModule
+    TuiDataList,
+    TuiIcon,
+    TuiDataListWrapper
   ]
 })
 export class DropdownWithAddButtonComponent<T> implements OnInit {
@@ -51,9 +51,11 @@ export class DropdownWithAddButtonComponent<T> implements OnInit {
     // INFO: из за последовательности рендеринга у нас нету доступа к дерективе со списком, из за чего не рендерится список
     // TODO: найти способ обходится без инжекта родителя (ComboboxComponent)
     private comboboxComponent: ComboboxComponent<T>
-  ) {}
+  ) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   addMore() {
     this.comboboxWithAddButtonDirective.addClick();

@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {FormFieldBase} from '../../core/form-field.class';
-import {TuiFieldErrorPipeModule, TuiInputDateModule} from "@taiga-ui/kit";
+import {TuiFieldErrorPipe} from "@taiga-ui/kit";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AsyncPipe} from "@angular/common";
-import {TuiErrorModule} from "@taiga-ui/core";
+import {TuiInputDateModule} from '@taiga-ui/legacy';
+import {TuiError} from '@taiga-ui/core';
 
 @Component({
   selector: 'aff-date',
@@ -12,9 +13,9 @@ import {TuiErrorModule} from "@taiga-ui/core";
   imports: [
     TuiInputDateModule,
     ReactiveFormsModule,
-    TuiFieldErrorPipeModule,
+    TuiFieldErrorPipe,
     AsyncPipe,
-    TuiErrorModule
+    TuiError
   ],
   standalone: true
 })

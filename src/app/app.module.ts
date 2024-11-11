@@ -1,13 +1,13 @@
 import {NgDompurifySanitizer} from '@tinkoff/ng-dompurify';
 import {
-  TUI_SANITIZER,
-  TuiAlertModule,
-  TuiButtonModule,
-  TuiDialogModule,
-  TuiErrorModule,
-  TuiGroupModule,
-  TuiRootModule,
-  TuiSvgModule,
+  TuiAlert,
+  TuiButton,
+  TuiDialog,
+  TuiError,
+  TuiGroup,
+  TuiIcon,
+  TuiLabel,
+  TuiRoot,
 } from '@taiga-ui/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
@@ -18,17 +18,7 @@ import {OrderFormComponent} from './pages/order-form/order-form.component';
 import {RouterModule} from '@angular/router';
 import {routes} from './config/routes';
 import {ReactiveFormsModule} from '@angular/forms';
-import {
-  TuiCheckboxLabeledModule,
-  TuiFieldErrorPipeModule,
-  TuiInputModule,
-  TuiInputNumberModule,
-  TuiInputPhoneModule,
-  TuiIslandModule,
-  TuiRadioBlockModule,
-  TuiTabsModule,
-  TuiTextareaModule,
-} from '@taiga-ui/kit';
+import {TuiBlock, TuiCheckbox, TuiFieldErrorPipe, TuiRadioComponent} from '@taiga-ui/kit';
 import {PizzaDetailsFormComponent} from './forms/pizza-details-form/pizza-details-form.component';
 import {ContactsShortFormComponent} from './forms/contacts-short-form/contacts-short-form.component';
 import {DeliveryFormComponent} from './forms/delivery-form/delivery-form.component';
@@ -50,10 +40,20 @@ import {ShowIfControlExistDirective} from './modules/forms/directives/show-if-co
 import {
   OptionWithHintContentTemplateComponent
 } from './modules/forms/templates/option-with-hint-content-template/option-with-hint-content-template.component';
-import {SelectWithTooltipVariantDirective} from './modules/forms/form-fields/select/variants/select-with-tooltip-variant.directive';
+import {
+  SelectWithTooltipVariantDirective
+} from './modules/forms/form-fields/select/variants/select-with-tooltip-variant.directive';
 import {
   ComboboxWithAddButtonDirective
 } from './modules/forms/form-fields/combobox/variants/combobox-with-add-button.directive';
+import {
+  TUI_SANITIZER,
+  TuiInputModule,
+  TuiInputNumberModule,
+  TuiInputPhoneModule,
+  TuiIslandDirective,
+  TuiTextareaModule, TuiTextfieldControllerModule
+} from '@taiga-ui/legacy';
 
 @NgModule({
   declarations: [
@@ -73,33 +73,35 @@ import {
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    TuiRootModule,
-    TuiDialogModule,
-    TuiAlertModule,
+    TuiRoot,
+    TuiDialog,
+    TuiAlert,
     ReactiveFormsModule,
     TuiInputPhoneModule,
-    TuiErrorModule,
-    TuiFieldErrorPipeModule,
+    TuiError,
+    TuiFieldErrorPipe,
     TuiInputModule,
-    TuiRadioBlockModule,
-    TuiGroupModule,
+    TuiBlock,
+    TuiGroup,
     TuiInputNumberModule,
+    TuiTextfieldControllerModule,
     TuiTextareaModule,
-    TuiButtonModule,
-    TuiIslandModule,
-    TuiCheckboxLabeledModule,
+    TuiButton,
+    TuiIslandDirective,
+    TuiCheckbox,
     CheckboxListComponent,
     SelectComponent,
     ComboboxComponent,
     ComboboxDataProviderDirective,
     ComboboxWithHintVariantDirective,
     SelectWithHintVariantDirective,
-    TuiSvgModule,
-    TuiTabsModule,
+    TuiIcon,
     OptionWithHintContentTemplateComponent,
     ShowIfControlExistDirective,
     SelectWithTooltipVariantDirective,
     ComboboxWithAddButtonDirective,
+    TuiRadioComponent,
+    TuiLabel,
   ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent],

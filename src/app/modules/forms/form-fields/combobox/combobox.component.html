@@ -6,7 +6,8 @@
   (searchChange)="search$.next($event)"
 >
   <ng-content></ng-content>
-  <input tuiTextfield [placeholder]="placeholder" />
+
+  <input tuiTextfieldLegacy [placeholder]="placeholder" />
 
   <div *tuiDataList>
     <ng-container *ngIf="!!dropdownContent; else defaultTmpl">

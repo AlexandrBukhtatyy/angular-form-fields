@@ -31,6 +31,8 @@
     "@taiga-ui/i18n": "^4.14.0",
     "@taiga-ui/icons": "^4.14.0",
     "@taiga-ui/kit": "^4.14.0",
+    "@taiga-ui/layout": "^4.14.0",
+    "@taiga-ui/legacy": "^4.14.0",
     "@taiga-ui/styles": "^4.14.0",
     "@tinkoff/ng-dompurify": "^3.0.0",
     "@tinkoff/ng-event-plugins": "^3.1.0",
