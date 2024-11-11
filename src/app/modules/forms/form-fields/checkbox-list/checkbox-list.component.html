@@ -1,12 +1,19 @@
 <ng-container [formGroup]="form">
-  <ng-container
+  <div
     *ngFor="let item of list.controls; let ti = index; let last = last"
     [formGroupName]="ti"
+    [class]="{'tui-space_bottom-4': !last}"
   >
-    <tui-checkbox-labeled [class]="{'tui-space_bottom-4': !last}" formControlName="selected" size="l">
+    <label>
+      <input
+        formControlName="selected"
+        tuiCheckbox
+        type="checkbox"
+        size="s"
+      />
       <ng-container *ngIf="item.get('id')?.value as key">
         {{ dictionary[key] }}
       </ng-container>
-    </tui-checkbox-labeled>
-  </ng-container>
+    </label>
+  </div>
 </ng-container>

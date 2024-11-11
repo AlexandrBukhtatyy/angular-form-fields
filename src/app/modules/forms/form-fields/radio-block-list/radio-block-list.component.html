@@ -5,11 +5,10 @@
   <ng-container *ngFor="let option of options">
     <label tuiLabel>
       <input
-        name="test"
         tuiRadio
         type="radio"
         size="s"
-        [value]="{test: 'value'}"
+        [value]="{test: option.id}"
         [formControl]="control"
       />
       {{option.label}}

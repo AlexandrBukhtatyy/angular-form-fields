@@ -14,7 +14,7 @@ import {
   ComboboxWithAddButtonContext,
   DropdownWithAddButtonComponent,
 } from './templates/dropdown-with-add-button/dropdown-with-add-button.component';
-import {TuiComboBoxModule, TuiTextfieldComponent} from '@taiga-ui/legacy';
+import {TuiComboBoxModule} from '@taiga-ui/legacy';
 
 @Component({
   selector: 'aff-combobox',

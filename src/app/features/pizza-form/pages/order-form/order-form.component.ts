@@ -1,8 +1,13 @@
 import {Component, inject} from '@angular/core';
-import {FormArray, FormGroup} from '@angular/forms';
+import {FormArray, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {OrderFormService, PizzaOptions} from './order-form.service';
-import {TuiAppearance} from '@taiga-ui/core';
+import {TuiAppearance, TuiButton} from '@taiga-ui/core';
 import {TuiCardLarge} from '@taiga-ui/layout';
+import {PizzaDetailsFormComponent} from '../../forms/pizza-details-form/pizza-details-form.component';
+import {ContactsShortFormComponent} from '../../forms/contacts-short-form/contacts-short-form.component';
+import {DeliveryFormComponent} from '../../forms/delivery-form/delivery-form.component';
+import {PaymentFormComponent} from '../../forms/payment-form/payment-form.component';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'aff-order-form',
@@ -11,7 +16,19 @@ import {TuiCardLarge} from '@taiga-ui/layout';
   providers: [
     OrderFormService,
     TuiAppearance,
+    TuiCardLarge
+  ],
+  standalone: true,
+  imports: [
+    ContactsShortFormComponent,
+    DeliveryFormComponent,
+    PaymentFormComponent,
+    PizzaDetailsFormComponent,
+    ReactiveFormsModule,
     TuiCardLarge,
+    NgForOf,
+    TuiAppearance,
+    TuiButton
   ]
 })
 export class OrderFormComponent {
