@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
-import {OrderFormComponent} from '@features/pizza-form';
+import {CompositeFormComponent} from '@features/forms';
 
 export const routes: Routes = [
-  {path: '', component: OrderFormComponent}
+  {path: '', component: CompositeFormComponent}
 ]

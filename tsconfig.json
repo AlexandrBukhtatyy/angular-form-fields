@@ -25,7 +25,7 @@
     ],
     "paths": {
       "@modules/forms": ["src/app/modules/forms"],
-      "@features/pizza-form": ["./src/app/features/pizza-form"],
+      "@features/forms": ["./src/app/features/forms"],
     }
   },
   "angularCompilerOptions": {
