@@ -27,6 +27,3 @@ ng serve
 - [Building-Up A Complex Objects Using A Multi-Step Form Workflow In ColdFusion](https://youtu.be/EI0SiXznUTo)
 - [Split an Angular Reactive Form model into child components](https://youtu.be/2DOkiQFB5ic)
 - [A new way to validate Angular Forms](https://timdeschryver.dev/blog/a-new-way-to-validate-angular-forms)
-
-## TODOs
-- поправить баги после актуализации версии angular и TaigaUI
