@@ -5,12 +5,15 @@
   (ngModelChange)="changeOption($event)"
 >
   <ng-container *ngFor="let option of options">
-    <tui-radio-block
-      size="l"
-      contentAlign="right"
-      [item]="option.id"
-    >
+    <label tuiLabel>
+      <input
+        name="test"
+        tuiRadio
+        type="radio"
+        size="s"
+        [value]="{test: 'value'}"
+      />
       {{option.label}}
-    </tui-radio-block>
+    </label>
   </ng-container>
 </form>

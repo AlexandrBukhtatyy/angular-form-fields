@@ -1,8 +1,8 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {TuiGroupModule} from "@taiga-ui/core";
-import {TuiRadioBlockModule} from "@taiga-ui/kit";
-import {CommonModule} from "@angular/common";
+import {TuiBlock, TuiRadio} from '@taiga-ui/kit';
+import {CommonModule} from '@angular/common';
+import {TuiGroup, TuiLabel} from '@taiga-ui/core';
 
 export interface BtnPickerOption {
   id: string | number;
@@ -22,9 +22,11 @@ export interface BtnPickerOption {
   ],
   imports: [
     CommonModule,
-    TuiGroupModule,
+    TuiGroup,
     FormsModule,
-    TuiRadioBlockModule
+    TuiRadio,
+    TuiBlock,
+    TuiLabel
   ],
   standalone: true
 })
@@ -35,13 +37,17 @@ export class ButtonToggleGroupComponent implements OnInit, ControlValueAccessor 
 
   isDisabled!: boolean;
 
-  onChange = (_: any) => {};
+  onChange = (_: any) => {
+  };
 
-  onBlur = (_: any) => {};
+  onBlur = (_: any) => {
+  };
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   writeValue(value: BtnPickerOption) {
     this.selectedOption = value;

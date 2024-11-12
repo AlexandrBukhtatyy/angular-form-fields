@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Toppings} from '../../models/toppings';
-import {emailValidator, phoneValidator} from '../../modules/forms';
+import {emailValidator, phoneValidator} from '@modules/forms';
 import {PaymentMethodOptions} from '../../models/payment-methods';
 
 export type ToppingType = { id: string, selected: boolean };

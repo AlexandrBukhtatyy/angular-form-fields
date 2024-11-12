@@ -1,15 +1,14 @@
-import { Component, Input, Optional } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ControlContainer, FormArray, FormGroup } from '@angular/forms';
-import {TuiCheckboxLabeledModule} from "@taiga-ui/kit";
+import {Component, Input, Optional} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ControlContainer, FormArray, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {TuiCheckbox} from '@taiga-ui/kit';
 
 @Component({
   selector: 'aff-checkbox-list',
   templateUrl: './checkbox-list.component.html',
   styleUrls: ['./checkbox-list.component.less'],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TuiCheckboxLabeledModule],
+  imports: [CommonModule, ReactiveFormsModule, TuiCheckbox],
 })
 export class CheckboxListComponent {
   @Input() dictionary: any;
@@ -22,5 +21,6 @@ export class CheckboxListComponent {
     return this.controlContainerRef.control as FormArray;
   }
 
-  constructor(@Optional() private controlContainerRef: ControlContainer) {}
+  constructor(@Optional() private controlContainerRef: ControlContainer) {
+  }
 }

@@ -17,6 +17,9 @@ export * from './form-fields/select';
 export * from './form-fields/textarea';
 
 /** form-services */
+export * from './templates/option-with-hint-content-template/option-with-hint-content-template.component';
+
+/** form-services */
 // export * from './services';
 
 /** form-masks */
@@ -24,3 +27,11 @@ export * from './form-fields/textarea';
 
 /** form-validators */
 export * from './validators';
+
+/** form-utils */
+export * from './utils/stringifiers';
+
+/** form-directives */
+export * from './directives/show-if-control-exist.directive';
+export * from './directives/hide-if-disabled.directive';
+export * from './directives/hide-if-disabled-register.directive';

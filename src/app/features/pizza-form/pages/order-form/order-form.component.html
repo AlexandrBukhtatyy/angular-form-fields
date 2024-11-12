@@ -3,7 +3,7 @@
   <form [formGroup]="formGroup">
     <h2 class="tui-space_top-8">Order details</h2>
     <ng-container formArrayName="orderDetails">
-      <tui-island *ngFor="let pizza of orderDetails.controls; let i = index">
+      <div tuiCardLarge tuiAppearance="floating" *ngFor="let pizza of orderDetails.controls; let i = index">
         <aff-pizza-details-form [formGroupName]="i"></aff-pizza-details-form>
         <div class="tui-form__row">
           <button
@@ -15,7 +15,7 @@
             remove pizza
           </button>
         </div>
-      </tui-island>
+      </div>
     </ng-container>
     <div class="tui-form__row">
       <button tuiButton type="button" (click)="addPizza()">add pizza</button>
