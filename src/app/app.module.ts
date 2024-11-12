@@ -29,6 +29,7 @@ import {
   TuiTextareaModule,
   TuiTextfieldControllerModule
 } from '@taiga-ui/legacy';
+import {NG_EVENT_PLUGINS} from '@tinkoff/ng-event-plugins';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import {
     TuiRadioComponent,
     TuiLabel,
   ],
-  providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
+  providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}, NG_EVENT_PLUGINS],
   bootstrap: [AppComponent],
 })
 export class AppModule {
