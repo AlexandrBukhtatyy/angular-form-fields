@@ -1,0 +1,18 @@
+<table cdk-table [dataSource]="dataProvider">
+  <ng-container *ngFor="let column of settings.columns">
+    <ng-container [cdkColumnDef]="column.key">
+      <th cdk-header-cell *cdkHeaderCellDef>{{ column.title }}</th>
+      <td cdk-cell *cdkCellDef="let row">{{ row[column.key] }}</td>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="!hideDefaultEmptyMessage">
+    <tr *cdkNoDataRow>
+      <td colspan="2">No data found</td>
+    </tr>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="columntsOrder"></tr>
+
+  <tr cdk-row *cdkRowDef="let row; columns: columntsOrder"></tr>
+</table>

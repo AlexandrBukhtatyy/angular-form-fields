@@ -25,7 +25,9 @@
     ],
     "paths": {
       "@modules/forms": ["src/app/modules/forms"],
+      "@modules/tables": ["src/app/modules/tables"],
       "@features/forms": ["./src/app/features/forms"],
+      "@features/tables": ["./src/app/features/tables"],
     }
   },
   "angularCompilerOptions": {
