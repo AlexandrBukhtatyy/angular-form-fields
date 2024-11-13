@@ -5,7 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {TuiError, TuiValueContentContext} from '@taiga-ui/core';
 import {AsyncPipe, JsonPipe, NgIf} from '@angular/common';
 import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
-import {PolymorpheusComponent, PolymorpheusContent, PolymorpheusModule,} from '@tinkoff/ng-polymorpheus';
+import {PolymorpheusComponent, PolymorpheusContent, PolymorpheusOutlet} from '@taiga-ui/polymorpheus';
 import {
   OptionDefaultTemplateComponent
 } from '../../templates/option-default-template/option-default-template.component';
@@ -30,8 +30,8 @@ import {TuiComboBoxModule} from '@taiga-ui/legacy';
     AsyncPipe,
     JsonPipe,
     DropdownWithAddButtonComponent,
-    PolymorpheusModule,
     NgIf,
+    PolymorpheusOutlet,
   ],
 })
 export class ComboboxComponent<T> extends FormFieldBase {

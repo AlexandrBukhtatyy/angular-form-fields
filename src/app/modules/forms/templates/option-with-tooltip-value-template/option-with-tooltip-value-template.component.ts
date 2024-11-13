@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {OPTION_LABEL_PROVIDER} from '../../tokens/option-label-provider.token';
 import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 import {OPTION_HINT_PROVIDER} from '../../tokens/option-hint-provider.token';
-import {POLYMORPHEUS_CONTEXT} from '@tinkoff/ng-polymorpheus';
+import {POLYMORPHEUS_CONTEXT} from '@taiga-ui/polymorpheus';
 import {OptionWithHint} from '../option-with-hint-content-template/option-with-hint-content-template.component';
 import {TuiTooltip} from '@taiga-ui/kit';
 import {TuiIcon} from '@taiga-ui/core';

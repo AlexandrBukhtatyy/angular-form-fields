@@ -1,5 +1,5 @@
 import {Component, Inject, Input, OnInit, Optional} from '@angular/core';
-import {POLYMORPHEUS_CONTEXT, PolymorpheusComponent, PolymorpheusContent} from '@tinkoff/ng-polymorpheus';
+import {POLYMORPHEUS_CONTEXT, PolymorpheusComponent, PolymorpheusContent} from '@taiga-ui/polymorpheus';
 import {ComboboxComponent} from '../../combobox.component';
 import {TuiDataList, TuiIcon, TuiValueContentContext} from '@taiga-ui/core';
 import {

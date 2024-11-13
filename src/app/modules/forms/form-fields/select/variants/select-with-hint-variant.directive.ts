@@ -1,5 +1,5 @@
 import {Directive, inject, Input} from '@angular/core';
-import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
+import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
 import {SelectComponent} from '../select.component';
 import {OPTION_LABEL_PROVIDER} from '../../../tokens/option-label-provider.token';
 import {OPTION_HINT_PROVIDER} from '../../../tokens/option-hint-provider.token';

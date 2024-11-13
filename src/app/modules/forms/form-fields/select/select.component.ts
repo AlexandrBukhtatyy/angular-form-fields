@@ -4,7 +4,7 @@ import {TUI_ITEMS_HANDLERS, TuiDataListWrapper, TuiFieldErrorPipe} from '@taiga-
 import {TuiError, TuiSelect, TuiValueContentContext, TuiTextfield} from '@taiga-ui/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AsyncPipe} from '@angular/common';
-import {PolymorpheusComponent, PolymorpheusContent} from '@tinkoff/ng-polymorpheus';
+import {PolymorpheusComponent, PolymorpheusContent} from '@taiga-ui/polymorpheus';
 import {
   OptionDefaultTemplateComponent
 } from '../../templates/option-default-template/option-default-template.component';

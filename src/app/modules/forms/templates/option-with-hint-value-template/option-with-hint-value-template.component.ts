@@ -1,6 +1,6 @@
 import {Component, Inject, Input, Optional} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {POLYMORPHEUS_CONTEXT} from '@tinkoff/ng-polymorpheus';
+import {POLYMORPHEUS_CONTEXT} from '@taiga-ui/polymorpheus';
 import {OptionWithHint} from '../option-with-hint-content-template/option-with-hint-content-template.component';
 import {OPTION_LABEL_PROVIDER} from '../../tokens/option-label-provider.token';
 import {OPTION_HINT_PROVIDER} from '../../tokens/option-hint-provider.token';
