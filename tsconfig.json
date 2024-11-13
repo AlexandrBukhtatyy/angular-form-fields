@@ -26,6 +26,7 @@
     "paths": {
       "@modules/forms": ["src/app/modules/forms"],
       "@modules/tables": ["src/app/modules/tables"],
+      "@modules/animations": ["src/app/modules/animations"],
       "@features/forms": ["./src/app/features/forms"],
       "@features/tables": ["./src/app/features/tables"],
     }
