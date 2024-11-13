@@ -7,8 +7,9 @@ import {PaymentFormComponent} from '../../forms/payment-form/payment-form.compon
 import {PizzaDetailsFormComponent} from '../../forms/pizza-details-form/pizza-details-form.component';
 import {TuiAppearance, TuiButton} from '@taiga-ui/core';
 import {TuiCardLarge} from '@taiga-ui/layout';
-import {PizzaOrderFormService, PizzaOptions} from '../composite-form/pizza-order-form.service';
+import {PizzaOptions, PizzaOrderFormService} from '../composite-form/pizza-order-form.service';
 import {TuiConnected, TuiStep, TuiStepperComponent} from '@taiga-ui/kit';
+import {fadeInAnimation} from '@modules/animations';
 
 @Component({
   selector: 'aff-step-by-step-form',
@@ -31,7 +32,10 @@ import {TuiConnected, TuiStep, TuiStepperComponent} from '@taiga-ui/kit';
     NgSwitchCase
   ],
   templateUrl: './step-by-step-form.component.html',
-  providers: [PizzaOrderFormService]
+  providers: [PizzaOrderFormService],
+  animations: [
+    fadeInAnimation
+  ]
 })
 export class StepByStepFormComponent {
   orderFormService = inject(PizzaOrderFormService);

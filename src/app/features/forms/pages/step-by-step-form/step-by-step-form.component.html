@@ -16,9 +16,8 @@
   </tui-stepper>
 
   <form [formGroup]="formGroup">
-    <ng-container [ngSwitch]="activeStepIndex">
-      <ng-container *ngSwitchCase="0">
-        <h2 class="tui-space_top-8">Order details</h2>
+    <div class="tui-space_top-8" [ngSwitch]="activeStepIndex">
+      <div *ngSwitchCase="0" [@enterTrigger]="'fadeIn'">
         <ng-container formArrayName="orderDetails">
           <div tuiCardLarge tuiAppearance="floating" *ngFor="let pizza of orderDetails.controls; let i = index">
             <aff-pizza-details-form [formGroupName]="i"></aff-pizza-details-form>
@@ -37,20 +36,17 @@
         <div class="tui-form__row">
           <button tuiButton type="button" (click)="addPizza()">add pizza</button>
         </div>
-      </ng-container>
-      <ng-container *ngSwitchCase="1">
-        <h2 class="tui-space_top-8">Contacts</h2>
+      </div>
+      <div *ngSwitchCase="1" [@enterTrigger]="'fadeIn'">
         <aff-contacts-short-form formGroupName="contacts"></aff-contacts-short-form>
-      </ng-container>
-      <ng-container *ngSwitchCase="2">
-        <h2 class="tui-space_top-8">Delivery details</h2>
+      </div>
+      <div *ngSwitchCase="2" [@enterTrigger]="'fadeIn'">
         <aff-delivery-form formGroupName="delivaryDetails"></aff-delivery-form>
-      </ng-container>
-      <ng-container *ngSwitchCase="3">
-        <h2 class="tui-space_top-8">Payment method</h2>
+      </div>
+      <div *ngSwitchCase="3" [@enterTrigger]="'fadeIn'">
         <aff-payment-form formGroupName="paymentDetails"></aff-payment-form>
-      </ng-container>
-    </ng-container>
+      </div>
+    </div>
 
     <div class="tui-form__row tui-space_top-8">
       <button
