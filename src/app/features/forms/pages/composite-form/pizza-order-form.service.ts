@@ -19,7 +19,7 @@ const DEFAULT_PIZZA_OPTIONS: PizzaOptions = {
 };
 
 @Injectable()
-export class CompositeFormService {
+export class PizzaOrderFormService {
   formGroup!: FormGroup;
   private fb: FormBuilder = inject(FormBuilder);
 

@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {FormArray, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {CompositeFormService, PizzaOptions} from './composite-form.service';
+import {PizzaOrderFormService, PizzaOptions} from './pizza-order-form.service';
 import {TuiAppearance, TuiButton} from '@taiga-ui/core';
 import {TuiCardLarge} from '@taiga-ui/layout';
 import {PizzaDetailsFormComponent} from '../../forms/pizza-details-form/pizza-details-form.component';
@@ -12,9 +12,8 @@ import {NgForOf} from '@angular/common';
 @Component({
   selector: 'aff-order-form',
   templateUrl: './composite-form.component.html',
-  styleUrls: ['./composite-form.component.less'],
   providers: [
-    CompositeFormService,
+    PizzaOrderFormService,
     TuiAppearance,
     TuiCardLarge
   ],
@@ -32,7 +31,7 @@ import {NgForOf} from '@angular/common';
   ]
 })
 export class CompositeFormComponent {
-  orderFormService = inject(CompositeFormService);
+  orderFormService = inject(PizzaOrderFormService);
   formGroup: FormGroup;
 
   constructor() {
