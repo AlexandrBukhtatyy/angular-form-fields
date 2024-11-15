@@ -10,6 +10,7 @@ import {TuiCardLarge} from '@taiga-ui/layout';
 import {PizzaOptions, PizzaOrderFormService} from '../../common/pizza-order-form.service';
 import {TuiConnected, TuiStep, TuiStepperComponent} from '@taiga-ui/kit';
 import {fadeInAnimation} from '@modules/animations';
+import {FormStepperDirective} from '../../../../modules/forms/directives/form-stepper.directive';
 
 @Component({
   selector: 'aff-step-by-step-form',
@@ -30,10 +31,13 @@ import {fadeInAnimation} from '@modules/animations';
     TuiStep,
     NgSwitch,
     NgSwitchCase,
-    NgClass
+    NgClass,
+    FormStepperDirective
   ],
   templateUrl: './step-by-step-form.component.html',
-  providers: [PizzaOrderFormService],
+  providers: [
+    PizzaOrderFormService
+  ],
   animations: [
     fadeInAnimation
   ]
@@ -41,7 +45,6 @@ import {fadeInAnimation} from '@modules/animations';
 export class StepByStepFormComponent {
   orderFormService = inject(PizzaOrderFormService);
   formGroup: FormGroup;
-  activeStepIndex = 0;
 
   constructor() {
     this.orderFormService.initForm();
@@ -62,13 +65,5 @@ export class StepByStepFormComponent {
 
   submitForm() {
     alert(this.formGroup.value);
-  }
-
-  prevStep() {
-    this.activeStepIndex = this.activeStepIndex > 0 ? this.activeStepIndex - 1 : this.activeStepIndex;
-  }
-
-  nextStep() {
-    this.activeStepIndex = this.activeStepIndex < 3 ? this.activeStepIndex + 1 : this.activeStepIndex;
   }
 }
