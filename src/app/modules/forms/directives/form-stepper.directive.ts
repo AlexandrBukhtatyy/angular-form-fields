@@ -12,7 +12,8 @@ export class FormStepperDirective implements OnInit {
   previousIsDisabled = false;
   nextIsDisabled = false;
 
-  @Input() formGroup!: FormGroup;
+  @Input('affFormStepper') steps!: string[];
+  @Input('affFormStepperIn') formGroup!: FormGroup<any>;
 
   constructor() { }
 
@@ -21,6 +22,9 @@ export class FormStepperDirective implements OnInit {
   }
 
   next() {
+    if(!this.currentStepIsValid) {
+      return;
+    }
     if(this.currentStep < this.maxStep - 1) {
       this.currentStep+=1;
     }
@@ -52,5 +56,17 @@ export class FormStepperDirective implements OnInit {
     } else {
       this.previousIsDisabled = false;
     }
+  }
+
+  get currentStepIsValid(): boolean {
+    return this.isValid(this.currentStep);
+  }
+
+  isValid(step: number): boolean {
+    return !!this.formGroup.get(this.steps[step])?.valid
+  }
+
+  stepIsActive(index: number) {
+    return  this.currentStep > index;
   }
 }

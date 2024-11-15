@@ -56,7 +56,6 @@ export class PizzaOrderFormService {
       }),
       contacts: this.fb.group({
         name: [null, Validators.required],
-        phone: [null, [Validators.required, phoneValidator]],
         email: [null, [Validators.required, emailValidator]],
       }),
       paymentDetails: this.fb.group({

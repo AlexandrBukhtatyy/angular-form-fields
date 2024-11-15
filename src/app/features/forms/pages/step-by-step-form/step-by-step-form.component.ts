@@ -45,6 +45,18 @@ import {FormStepperDirective} from '../../../../modules/forms/directives/form-st
 export class StepByStepFormComponent {
   orderFormService = inject(PizzaOrderFormService);
   formGroup: FormGroup;
+  formSteps = [
+    'orderDetails',
+    'contacts',
+    'delivaryDetails',
+    'paymentDetails',
+  ];
+  formStepsLabels = [
+    'Order details',
+    'Contacts',
+    'Delivery details',
+    'Payment method',
+  ];
 
   constructor() {
     this.orderFormService.initForm();
@@ -66,4 +78,6 @@ export class StepByStepFormComponent {
   submitForm() {
     alert(this.formGroup.value);
   }
+
+  protected readonly FormGroup = FormGroup;
 }
