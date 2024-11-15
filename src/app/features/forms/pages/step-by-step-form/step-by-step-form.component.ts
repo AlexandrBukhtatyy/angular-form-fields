@@ -7,7 +7,7 @@ import {PaymentFormComponent} from '../../forms/payment-form/payment-form.compon
 import {PizzaDetailsFormComponent} from '../../forms/pizza-details-form/pizza-details-form.component';
 import {TuiAppearance, TuiButton} from '@taiga-ui/core';
 import {TuiCardLarge} from '@taiga-ui/layout';
-import {PizzaOptions, PizzaOrderFormService} from '../composite-form/pizza-order-form.service';
+import {PizzaOptions, PizzaOrderFormService} from '../../common/pizza-order-form.service';
 import {TuiConnected, TuiStep, TuiStepperComponent} from '@taiga-ui/kit';
 import {fadeInAnimation} from '@modules/animations';
 

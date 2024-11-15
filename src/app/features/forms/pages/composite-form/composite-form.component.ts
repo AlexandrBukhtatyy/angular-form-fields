@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {FormArray, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {PizzaOrderFormService, PizzaOptions} from './pizza-order-form.service';
+import {PizzaOrderFormService, PizzaOptions} from '../../common/pizza-order-form.service';
 import {TuiAppearance, TuiButton} from '@taiga-ui/core';
 import {TuiCardLarge} from '@taiga-ui/layout';
 import {PizzaDetailsFormComponent} from '../../forms/pizza-details-form/pizza-details-form.component';
