@@ -113,123 +113,53 @@
         <span tuiFade>A very very long product name</span>
       </button>
     </header>
-    <button
-      iconStart="@tui.search"
-      tuiAsideItem
-      type="button"
-    >
-      Search
-    </button>
-    <a
-      iconStart="@tui.users"
-      tuiAsideItem
-      [routerLink]="routes.Navigation"
-    >
-      Groups
-    </a>
     <tui-aside-group>
       <button
-        automation-id="setting"
-        iconStart="@tui.settings"
+        automation-id="forms-link"
+        iconStart="@tui.list-checks"
         tuiAsideItem
         tuiChevron
         type="button"
       >
-        Settings
+        Forms
         <ng-template>
           <button
             tuiAsideItem
             type="button"
+            routerLink="./forms/composite"
           >
-            Account
+            Composite form
           </button>
           <button
             tuiAsideItem
             type="button"
+            routerLink="./forms/step-by-step"
           >
-            Notifications
-          </button>
-          <button
-            tuiAsideItem
-            type="button"
-          >
-            Privacy
+            Step by step form
           </button>
         </ng-template>
       </button>
     </tui-aside-group>
-    <button
-      automation-id="hint"
-      iconStart="@tui.heart"
-      tuiAsideItem
-      type="button"
-    >
-      <span tuiFade>By default ellipsis is used but you can use fade too</span>
-    </button>
-    <button
-      iconEnd="@tui.chevron-right"
-      iconStart="@tui.ellipsis"
-      tuiAsideItem
-      tuiDropdownHover
-      tuiDropdownOpen
-      type="button"
-      [tuiDropdown]="more"
-    >
-      More
-      <ng-template
-        #more
-        let-close
+    <tui-aside-group>
+      <button
+        automation-id="tables-link"
+        iconStart="@tui.table"
+        tuiAsideItem
+        tuiChevron
+        type="button"
       >
-        <tui-data-list tuiDataListDropdownManager>
+        Tables
+        <ng-template>
           <button
-            iconStart="@tui.pencil"
             tuiAsideItem
             type="button"
+            routerLink="./tables/default"
           >
-            Write
+            Default table
           </button>
-          <button
-            iconStart="@tui.pie-chart"
-            tuiAsideItem
-            type="button"
-            [tuiDropdown]="submenu"
-          >
-            Categories
-            <ng-template #submenu>
-              <tui-data-list>
-                <button
-                  tuiAsideItem
-                  type="button"
-                  (click)="close()"
-                >
-                  Fiction (will close menu)
-                </button>
-                <button
-                  tuiAsideItem
-                  type="button"
-                >
-                  Non-Fiction
-                </button>
-                <button
-                  tuiAsideItem
-                  type="button"
-                >
-                  Children
-                </button>
-              </tui-data-list>
-            </ng-template>
-          </button>
-        </tui-data-list>
-      </ng-template>
-    </button>
-    <hr />
-    <button
-      iconStart="@tui.plus"
-      tuiAsideItem
-      type="button"
-    >
-      Add
-    </button>
+        </ng-template>
+      </button>
+    </tui-aside-group>
     <footer>
       <button
         iconStart="@tui.star"

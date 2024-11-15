@@ -16,7 +16,7 @@ export const routes: Routes = [
         loadComponent: () => import('@features/forms').then(m => m.StepByStepFormComponent)
       },
       {
-        path: 'tables',
+        path: 'tables/default',
 
         loadComponent: () => import('@features/tables').then(m => m.TablesComponent)
       },
