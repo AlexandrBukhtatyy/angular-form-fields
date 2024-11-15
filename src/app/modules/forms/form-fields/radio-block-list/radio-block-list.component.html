@@ -1,15 +1,21 @@
 <div
+  orientation="horizontal"
   tuiGroup
+  class="group"
   [collapsed]="true"
 >
   <ng-container *ngFor="let option of options">
-    <label tuiLabel>
+    <label
+      tuiBlock
+      [style.align-items]="'center'"
+    >
       <input
         tuiRadio
         type="radio"
         size="s"
         [value]="{test: option.id}"
         [formControl]="control"
+        [name]="$any(ngControl)?.name"
       />
       {{option.label}}
     </label>

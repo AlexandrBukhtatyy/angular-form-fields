@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {FormFieldBase} from '../../core/form-field.class';
 import {TuiGroup, TuiLabel} from '@taiga-ui/core';
-import {TuiRadio} from '@taiga-ui/kit';
+import {TuiBlock, TuiRadio} from '@taiga-ui/kit';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
 
@@ -15,7 +15,8 @@ import {NgForOf} from '@angular/common';
     TuiLabel,
     TuiRadio,
     ReactiveFormsModule,
-    NgForOf
+    NgForOf,
+    TuiBlock
   ]
 })
 export class RadioBlockListComponent extends FormFieldBase {
