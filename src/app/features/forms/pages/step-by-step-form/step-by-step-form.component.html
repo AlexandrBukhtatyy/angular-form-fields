@@ -1,5 +1,5 @@
 <div class="tui-container tui-container_adaptive tui-space_top-8">
-  <h1 class="tui-text_h2">Step by step form</h1>
+  <h1 class="tui-text_h2 tui-space_bottom-4">Step by step form</h1>
 
   <tui-stepper
     orientation="horizontal"
@@ -19,12 +19,18 @@
     <div class="tui-space_top-8" [ngSwitch]="activeStepIndex">
       <div *ngSwitchCase="0" [@enterTrigger]="'fadeIn'">
         <ng-container formArrayName="orderDetails">
-          <div tuiCardLarge tuiAppearance="floating" *ngFor="let pizza of orderDetails.controls; let i = index">
+          <div
+            tuiCardLarge
+            tuiAppearance="floating"
+            [ngClass]="{'tui-space_bottom-8': !last}"
+            *ngFor="let pizza of orderDetails.controls; let i = index;let last = last"
+          >
             <aff-pizza-details-form [formGroupName]="i"></aff-pizza-details-form>
             <div class="tui-form__row">
               <button
                 tuiButton
                 type="button"
+                size="s"
                 appearance="secondary-destructive"
                 (click)="removePizza(i)"
               >
@@ -48,13 +54,15 @@
       </div>
     </div>
 
-    <div class="tui-form__row tui-space_top-8">
-      <button tuiButton type="button" appearance="primary" (click)="prevStep()">
-        Prev
-      </button>
-      <button tuiButton type="button" appearance="primary" (click)="nextStep()">
-        next
-      </button>
+    <div class="tui-space_top-8 flex justify-between">
+      <div class="flex gap-2">
+        <button tuiButton type="button" appearance="primary" (click)="prevStep()">
+          Prev
+        </button>
+        <button tuiButton type="button" appearance="primary" (click)="nextStep()">
+          next
+        </button>
+      </div>
       <button tuiButton type="button" appearance="accent" (click)="submitForm()">
         Order
       </button>

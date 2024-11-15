@@ -2,7 +2,7 @@ import {Component, inject} from '@angular/core';
 import {ContactsShortFormComponent} from '../../forms/contacts-short-form/contacts-short-form.component';
 import {DeliveryFormComponent} from '../../forms/delivery-form/delivery-form.component';
 import {FormArray, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgForOf, NgSwitch, NgSwitchCase} from '@angular/common';
+import {NgClass, NgForOf, NgSwitch, NgSwitchCase} from '@angular/common';
 import {PaymentFormComponent} from '../../forms/payment-form/payment-form.component';
 import {PizzaDetailsFormComponent} from '../../forms/pizza-details-form/pizza-details-form.component';
 import {TuiAppearance, TuiButton} from '@taiga-ui/core';
@@ -29,7 +29,8 @@ import {fadeInAnimation} from '@modules/animations';
     TuiConnected,
     TuiStep,
     NgSwitch,
-    NgSwitchCase
+    NgSwitchCase,
+    NgClass
   ],
   templateUrl: './step-by-step-form.component.html',
   providers: [PizzaOrderFormService],
