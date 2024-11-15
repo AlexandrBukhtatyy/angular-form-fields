@@ -1,9 +1,25 @@
 import {Routes} from '@angular/router';
-import {CompositeFormComponent, StepByStepFormComponent} from '@features/forms';
-import {TablesComponent} from '@features/tables';
+import {MainComponent} from '../layouts';
 
 export const routes: Routes = [
-  {path: 'forms/composite', component: CompositeFormComponent},
-  {path: 'forms/step-by-step', component: StepByStepFormComponent},
-  {path: 'tables', component: TablesComponent},
+  {
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        path: 'forms/composite',
+        loadComponent: () => import('@features/forms').then(m => m.CompositeFormComponent)
+      },
+      {
+        path: 'forms/step-by-step',
+
+        loadComponent: () => import('@features/forms').then(m => m.StepByStepFormComponent)
+      },
+      {
+        path: 'tables',
+
+        loadComponent: () => import('@features/tables').then(m => m.TablesComponent)
+      },
+    ]
+  },
 ];
