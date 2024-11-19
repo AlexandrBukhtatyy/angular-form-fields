@@ -17,4 +17,5 @@ export interface TableColumnSettings<T> {
 
 export interface TableSettings<T> {
   columns: TableColumnSettings<T>[];
+  hideDefaultEmptyMessage?: boolean;
 }

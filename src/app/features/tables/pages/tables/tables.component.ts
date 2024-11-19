@@ -53,5 +53,6 @@ export class TablesComponent {
         component: new PolymorpheusComponent(TableCellCustomComponentComponent)
       },
     ],
+    hideDefaultEmptyMessage: true,
   };
 }

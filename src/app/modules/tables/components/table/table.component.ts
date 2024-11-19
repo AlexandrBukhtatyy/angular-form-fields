@@ -41,7 +41,9 @@ import {TableCellComponent} from '../table-cell/table-cell.component';
 export class TableComponent {
   @Input() settings!: TableSettings<any>;
   @Input() dataProvider!: any[];
-  @Input() hideDefaultEmptyMessage: boolean = false;
+  get hideDefaultEmptyMessage(): boolean {
+    return !!this.settings.hideDefaultEmptyMessage;
+  };
 
   get columntsOrder() {
     return this.settings?.columns?.map((i) => i.key) ?? [];
