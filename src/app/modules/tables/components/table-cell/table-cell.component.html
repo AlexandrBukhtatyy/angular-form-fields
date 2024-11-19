@@ -1,7 +1,7 @@
 <ng-container [ngSwitch]="config.type">
   <!-- the same view can be shown in more than one case -->
   <ng-container *ngSwitchCase="TABLE_COLUMN_TYPES.Polymorpheus">
-    <div *polymorpheusOutlet="config.component; context: {$implicit: value[config.key]}"></div>
+    <div *polymorpheusOutlet="config.component; context: {$implicit: value[config.key], config: config}"></div>
   </ng-container>
   <!--default case when there are no matches -->
   <ng-container *ngSwitchDefault>{{ value[config.key] }}</ng-container>

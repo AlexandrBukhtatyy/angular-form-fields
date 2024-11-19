@@ -13,6 +13,7 @@ export interface TableColumnSettings<T> {
   title: string;
   type?: TableColumnTypes;
   component?: PolymorpheusContent<T>;
+  componentEventCallback?: ($event: any) => void
 }
 
 export interface TableSettings<T> {

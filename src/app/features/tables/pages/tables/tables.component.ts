@@ -50,9 +50,13 @@ export class TablesComponent {
       { key: 'title', title: 'Title' },
       { key: 'component', title: 'Component',
         type: TableColumnTypes.Polymorpheus,
-        component: new PolymorpheusComponent(TableCellCustomComponentComponent)
+        component: new PolymorpheusComponent(TableCellCustomComponentComponent<any>),
+        componentEventCallback: ($event: any) => {
+          console.log('Component event callback: ', $event)
+        },
       },
     ],
     hideDefaultEmptyMessage: true,
   };
+
 }
