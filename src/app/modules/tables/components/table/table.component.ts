@@ -15,6 +15,7 @@ import {
 import {NgForOf, NgIf} from '@angular/common';
 import {TableSettings} from '../../interfaces/teble-config';
 import {TableCellComponent} from '../table-cell/table-cell.component';
+import {TableHeaderCellComponent} from '../table-header-cell/table-header-cell.component';
 
 @Component({
   selector: 'aff-table',
@@ -33,7 +34,8 @@ import {TableCellComponent} from '../table-cell/table-cell.component';
     CdkHeaderRowDef,
     CdkRowDef,
     CdkRow,
-    TableCellComponent
+    TableCellComponent,
+    TableHeaderCellComponent
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.less'

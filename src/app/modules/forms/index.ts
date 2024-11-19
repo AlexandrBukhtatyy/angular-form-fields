@@ -35,3 +35,5 @@ export * from './utils/stringifiers';
 export * from './directives/show-if-control-exist.directive';
 export * from './directives/hide-if-disabled.directive';
 export * from './directives/hide-if-disabled-register.directive';
+
+export * from './directives/form-stepper.directive';

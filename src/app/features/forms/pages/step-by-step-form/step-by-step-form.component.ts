@@ -10,7 +10,7 @@ import {TuiCardLarge} from '@taiga-ui/layout';
 import {PizzaOptions, PizzaOrderFormService} from '../../common/pizza-order-form.service';
 import {TuiConnected, TuiStep, TuiStepperComponent} from '@taiga-ui/kit';
 import {fadeInAnimation} from '@modules/animations';
-import {FormStepperDirective} from '../../../../modules/forms/directives/form-stepper.directive';
+import {FormStepperDirective} from '@modules/forms';
 
 @Component({
   selector: 'aff-step-by-step-form',

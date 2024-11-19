@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {FormGroupBase, InputComponent} from '@modules/forms';
+import {Component} from '@angular/core';
+import {FormGroupBase, InputComponent, PhoneComponent} from '@modules/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 
 
@@ -10,7 +10,8 @@ import {ReactiveFormsModule} from '@angular/forms';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    InputComponent
+    InputComponent,
+    PhoneComponent
   ]
 })
 export class ContactsShortFormComponent extends FormGroupBase {}

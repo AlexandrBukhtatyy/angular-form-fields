@@ -7,6 +7,10 @@ export const routes: Routes = [
     component: MainComponent,
     children: [
       {
+        path: 'forms/form-field-description',
+        loadComponent: () => import('@features/forms').then(m => m.FormFieldDescriptionComponent)
+      },
+      {
         path: 'forms/composite',
         loadComponent: () => import('@features/forms').then(m => m.CompositeFormComponent)
       },

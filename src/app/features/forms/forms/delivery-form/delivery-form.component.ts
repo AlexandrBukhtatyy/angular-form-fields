@@ -8,7 +8,8 @@ import {
   FormGroupBase,
   InputComponent,
   labelStringify,
-  OptionWithHint, TextareaComponent
+  OptionWithHint,
+  TextareaComponent
 } from '@modules/forms';
 import {of} from 'rxjs';
 import {ReactiveFormsModule} from '@angular/forms';
