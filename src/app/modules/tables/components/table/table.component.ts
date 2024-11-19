@@ -4,12 +4,17 @@ import {
   CdkCellDef,
   CdkColumnDef,
   CdkHeaderCell,
-  CdkHeaderCellDef, CdkHeaderRow, CdkHeaderRowDef,
-  CdkNoDataRow, CdkRow, CdkRowDef,
+  CdkHeaderCellDef,
+  CdkHeaderRow,
+  CdkHeaderRowDef,
+  CdkNoDataRow,
+  CdkRow,
+  CdkRowDef,
   CdkTable
 } from '@angular/cdk/table';
 import {NgForOf, NgIf} from '@angular/common';
 import {TableSettings} from '../../interfaces/teble-config';
+import {TableCellComponent} from '../table-cell/table-cell.component';
 
 @Component({
   selector: 'aff-table',
@@ -27,13 +32,14 @@ import {TableSettings} from '../../interfaces/teble-config';
     CdkHeaderRow,
     CdkHeaderRowDef,
     CdkRowDef,
-    CdkRow
+    CdkRow,
+    TableCellComponent
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.less'
 })
 export class TableComponent {
-  @Input() settings!: TableSettings;
+  @Input() settings!: TableSettings<any>;
   @Input() dataProvider!: any[];
   @Input() hideDefaultEmptyMessage: boolean = false;
 

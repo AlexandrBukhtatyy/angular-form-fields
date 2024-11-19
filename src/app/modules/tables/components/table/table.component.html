@@ -1,8 +1,12 @@
 <table cdk-table [dataSource]="dataProvider">
   <ng-container *ngFor="let column of settings.columns">
     <ng-container [cdkColumnDef]="column.key">
-      <th cdk-header-cell *cdkHeaderCellDef>{{ column.title }}</th>
-      <td cdk-cell *cdkCellDef="let row">{{ row[column.key] }}</td>
+      <th cdk-header-cell *cdkHeaderCellDef>
+        {{ column.title }}
+      </th>
+      <td cdk-cell *cdkCellDef="let row">
+        <aff-table-cell [config]="column" [value]="row"></aff-table-cell>
+      </td>
     </ng-container>
   </ng-container>
 

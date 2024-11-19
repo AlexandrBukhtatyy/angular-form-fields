@@ -99,20 +99,18 @@
   </button>
   <tui-avatar src="AI" />
 </header>
-<div
-  [style.height.%]="100"
-  [style.display]="'flex'"
->
+<div class="sidebar">
   <aside [tuiNavigationAside]="expanded">
-    <header>
-      <button
-        iconStart="@tui.home"
-        tuiAsideItem
-        type="button"
-      >
-        <span tuiFade>A very very long product name</span>
-      </button>
-    </header>
+    <h3>Documentation</h3>
+    <a
+      iconStart="@tui.book-open-text"
+      tuiAsideItem
+      [routerLink]="routes.Navigation"
+    >
+      Introduction
+    </a>
+    <hr>
+    <h3>Modules</h3>
     <tui-aside-group>
       <button
         automation-id="forms-link"
@@ -160,6 +158,7 @@
         </ng-template>
       </button>
     </tui-aside-group>
+    <hr>
     <footer>
       <button
         iconStart="@tui.star"
