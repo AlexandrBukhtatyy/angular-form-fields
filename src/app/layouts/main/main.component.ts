@@ -54,7 +54,7 @@ const ICON =
 })
 export class MainComponent {
   protected expanded = false;
-  protected open = false;
+  protected open = true;
   protected switch = false;
   protected readonly routes: any = {};
 

@@ -1,0 +1,30 @@
+<div class="tui-container tui-container_adaptive tui-space_top-8">
+  <h1 class="tui-text_h2 tui-space_bottom-4">Feature toggle</h1>
+  <div>
+    <h2 class="tui-text_h3">Feature keys</h2>
+    <pre>
+      {{featureKeys}}
+    </pre>
+    <hr>
+    <h2 class="tui-text_h3">Примеры</h2>
+    <h4 class="tui-text_h4">Инициализация модуля</h4>
+    <pre>
+      {{moduleInitialization}}
+    </pre>
+    <p>FeatureFlagsStorageService - сервис ответственный за хранение и проверку переключателя фичи, который реализуется клиентом модуля.</p>
+    <h4 class="tui-text_h4">Гуард - для роутинга</h4>
+    <pre>
+      {{guardExample}}
+    </pre>
+    <h4 class="tui-text_h4">Директива - для html-шаблонов</h4>
+    <pre>
+    {{directiveExample}}
+    </pre>
+    <h4 class="tui-text_h4">Сервис - для програмного переключения фич</h4>
+    <pre>
+    {{serviceExample}}
+    </pre>
+    <h4 class="tui-text_h4">Обновление флагов через аргументы строки запроса</h4>
+    <pre>URL?eft=SOME_KEY_1,SOME_KEY_2&dft=SOME_KEY_3,SOME_KEY_4</pre>
+  </div>
+</div>

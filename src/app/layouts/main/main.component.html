@@ -37,42 +37,6 @@
       </tui-opt-group>
     </tui-data-list>
   </button>
-  <span tuiNavigationLogo>
-        <tui-icon icon="@tui.home" />
-        <span tuiFade>A very very long product name</span>
-        <tui-badge>Test</tui-badge>
-    </span>
-  <button
-    appearance="secondary-grayscale"
-    tuiButton
-    tuiChevron
-    tuiDropdownOpen
-    type="button"
-    [tuiDropdown]="products"
-  >
-    <span tuiFade>A very very long project</span>
-    <ng-template #products>
-      <tui-data-list size="s">
-        <button
-          tuiOption
-          type="button"
-        >
-          A very very long project
-          <tui-icon
-            icon="@tui.check"
-            [style.font-size.em]="1"
-            [style.margin-left.rem]="0.5"
-          />
-        </button>
-        <button
-          tuiOption
-          type="button"
-        >
-          Something else
-        </button>
-      </tui-data-list>
-    </ng-template>
-  </button>
   <hr />
   <button
     appearance="secondary-grayscale"
@@ -111,6 +75,26 @@
     </a>
     <hr>
     <h3>Modules</h3>
+    <tui-aside-group>
+      <button
+        automation-id="forms-link"
+        iconStart="@tui.list-checks"
+        tuiAsideItem
+        tuiChevron
+        type="button"
+      >
+        Feature toggle
+        <ng-template>
+          <button
+            tuiAsideItem
+            type="button"
+            routerLink="./feature-toggle/introduction"
+          >
+            Introduction
+          </button>
+        </ng-template>
+      </button>
+    </tui-aside-group>
     <tui-aside-group>
       <button
         automation-id="forms-link"
@@ -168,13 +152,6 @@
     <hr>
     <footer>
       <button
-        iconStart="@tui.star"
-        tuiAsideItem
-        type="button"
-      >
-        Favorites
-      </button>
-      <button
         tuiAsideItem
         type="button"
         [iconStart]="expanded ? '@tui.chevron-left' : '@tui.chevron-right'"
@@ -184,7 +161,7 @@
       </button>
     </footer>
   </aside>
-  <main [style.flex-grow]="1">
+  <main class="content" [style.flex-grow]="1">
     <router-outlet/>
   </main>
 </div>

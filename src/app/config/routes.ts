@@ -7,6 +7,10 @@ export const routes: Routes = [
     component: MainComponent,
     children: [
       {
+        path: 'feature-toggle/introduction',
+        loadComponent: () => import('@features/feature-toggle').then(m => m.IntroductionComponent)
+      },
+      {
         path: 'forms/form-field-description',
         loadComponent: () => import('@features/forms').then(m => m.FormFieldDescriptionComponent)
       },
@@ -16,7 +20,6 @@ export const routes: Routes = [
       },
       {
         path: 'forms/step-by-step',
-
         loadComponent: () => import('@features/forms').then(m => m.StepByStepFormComponent)
       },
       {
