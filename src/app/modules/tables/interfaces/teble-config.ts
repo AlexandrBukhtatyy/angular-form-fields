@@ -1,5 +1,6 @@
 import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
 import {PolymorpheusContent} from '@taiga-ui/polymorpheus/types/content';
+import {DataProvider} from '../classes/provider-factory';
 
 export enum TableColumnTypes {
   String,
@@ -17,6 +18,7 @@ export interface TableColumnSettings<T> {
 }
 
 export interface TableSettings<T> {
+  dataProvider: DataProvider<T>
   columns: TableColumnSettings<T>[];
   hideDefaultEmptyMessage?: boolean;
 }

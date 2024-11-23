@@ -1,4 +1,4 @@
-<table cdk-table [dataSource]="dataProvider">
+<table cdk-table [dataSource]="settings.dataProvider.data$">
   <ng-container *ngFor="let column of settings.columns">
     <ng-container [cdkColumnDef]="column.key">
       <th cdk-header-cell *cdkHeaderCellDef>

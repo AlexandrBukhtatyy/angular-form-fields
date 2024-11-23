@@ -12,7 +12,7 @@ import {
   CdkRowDef,
   CdkTable
 } from '@angular/cdk/table';
-import {NgForOf, NgIf} from '@angular/common';
+import {AsyncPipe, JsonPipe, NgForOf, NgIf} from '@angular/common';
 import {TableSettings} from '../../interfaces/teble-config';
 import {TableCellComponent} from '../table-cell/table-cell.component';
 import {TableHeaderCellComponent} from '../table-header-cell/table-header-cell.component';
@@ -35,14 +35,16 @@ import {TableHeaderCellComponent} from '../table-header-cell/table-header-cell.c
     CdkRowDef,
     CdkRow,
     TableCellComponent,
-    TableHeaderCellComponent
+    TableHeaderCellComponent,
+    JsonPipe,
+    AsyncPipe
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.less'
 })
 export class TableComponent {
   @Input() settings!: TableSettings<any>;
-  @Input() dataProvider!: any[];
+
   get hideDefaultEmptyMessage(): boolean {
     return !!this.settings.hideDefaultEmptyMessage;
   };
