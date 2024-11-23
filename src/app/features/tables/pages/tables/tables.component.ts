@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {
+  DefaultTableLayoutComponent,
   ProviderFactory,
   TableCellCustomComponentComponent,
   TableColumnTypes,
@@ -15,7 +16,8 @@ import {JsonPipe} from '@angular/common';
   imports: [
     TableComponent,
     PolymorpheusOutlet,
-    JsonPipe
+    JsonPipe,
+    DefaultTableLayoutComponent
   ],
   templateUrl: './tables.component.html',
   styleUrl: './tables.component.less'

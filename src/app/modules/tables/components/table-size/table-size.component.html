@@ -1,0 +1,15 @@
+<button
+  appearance="flat"
+  tuiButton
+  tuiButtonSelect
+  size="xs"
+  type="button"
+  [(ngModel)]="size"
+>
+  {{ index * size + 1 }}-{{ (index + 1) * size }} rows
+  <tui-data-list-wrapper
+    *tuiTextfieldDropdown
+    [itemContent]="content"
+    [items]="items"
+  />
+</button>
