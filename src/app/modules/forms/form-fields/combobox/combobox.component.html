@@ -14,16 +14,15 @@
       <div *polymorpheusOutlet="dropdownContent; context: context"></div>
     </ng-container>
   </div>
+  <ng-template #defaultTmpl>
+    <tui-data-list-wrapper
+      [items]="items"
+      [itemContent]="itemContent"
+    ></tui-data-list-wrapper>
+  </ng-template>
 </tui-combo-box>
 
 <tui-error
   [formControl]="control"
   [error]="[] | tuiFieldError | async"
 ></tui-error>
-
-<ng-template #defaultTmpl>
-  <tui-data-list-wrapper
-    [items]="items"
-    [itemContent]="itemContent"
-  ></tui-data-list-wrapper>
-</ng-template>
