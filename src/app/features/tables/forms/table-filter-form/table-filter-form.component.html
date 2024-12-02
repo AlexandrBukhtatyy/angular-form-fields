@@ -1,0 +1,9 @@
+<form [formGroup]="formGroup">
+  <div class="tui-form__row tui-form__row_multi-fields">
+    <aff-input class="tui-form__multi-field" formControlName="search">search</aff-input>
+    <aff-date class="tui-form__multi-field" formControlName="date">date</aff-date>
+    <aff-combobox class="tui-form__multi-field" formControlName="type" [dataProvider]="comboboxDataProvider" [stringify]="comboboxStringify">type</aff-combobox>
+    <button class="tui-form__multi-field" appearance="accent" tuiButton type="button">Reset</button>
+    <button class="tui-form__multi-field" appearance="primary" tuiButton type="button">Search</button>
+  </div>
+</form>

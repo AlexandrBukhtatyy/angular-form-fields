@@ -5,31 +5,39 @@ import {
   ComboboxDataProviderDirective,
   ComboboxWithAddButtonDirective,
   ComboboxWithHintVariantDirective,
+  DateComponent,
   FormGroupBase,
   InputComponent,
   labelStringify,
-  OptionWithHint,
+  OptionWithHint, SelectComponent,
   TextareaComponent
 } from '@modules/forms';
 import {of} from 'rxjs';
 import {ReactiveFormsModule} from '@angular/forms';
+import {JsonPipe} from '@angular/common';
+import {TuiButton} from '@taiga-ui/core';
+import {PaymentMethodOptions} from '../../../forms/models/payment-methods';
 
 @Component({
-  selector: 'aff-delivery-form',
-  templateUrl: './delivery-form.component.html',
-  styleUrls: ['./delivery-form.component.less'],
+  selector: 'aff-table-filter-form',
+  templateUrl: './table-filter-form.component.html',
+  styleUrls: ['./table-filter-form.component.less'],
   standalone: true,
   imports: [
     ReactiveFormsModule,
+    InputComponent,
+    TextareaComponent,
+    DateComponent,
     ComboboxComponent,
     ComboboxWithHintVariantDirective,
     ComboboxWithAddButtonDirective,
     ComboboxDataProviderDirective,
-    InputComponent,
-    TextareaComponent
+    JsonPipe,
+    TuiButton,
+    SelectComponent
   ]
 })
-export class DeliveryFormComponent extends FormGroupBase {
+export class TableFilterFormComponent extends FormGroupBase {
 
   comboboxStringify = labelStringify;
 
@@ -48,8 +56,10 @@ export class DeliveryFormComponent extends FormGroupBase {
     );
     return foundedItems && foundedItems.length ? of(foundedItems) : of(null);
   };
+  protected readonly paymentMethodOptions = PaymentMethodOptions;
+  selectIdentityMatcher = (option1: any, option2: any,) => option1.id === option2.id;
 
   addClicked() {
-    console.log('addMore click!!!!');
+
   }
 }

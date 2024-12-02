@@ -1,4 +1,7 @@
-<table cdk-table [dataSource]="settings.dataProvider.data$">
+<table class="tui-table tui-table_layout_fixed"
+       cdk-table
+       [dataSource]="settings.dataProvider.data$"
+>
   <ng-container *ngFor="let column of settings.columns">
     <ng-container [cdkColumnDef]="column.key">
       <th cdk-header-cell *cdkHeaderCellDef>

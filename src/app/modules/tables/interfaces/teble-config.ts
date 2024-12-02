@@ -1,6 +1,6 @@
-import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
 import {PolymorpheusContent} from '@taiga-ui/polymorpheus/types/content';
 import {DataProvider} from '../classes/provider-factory';
+import {FormGroup} from '@angular/forms';
 
 export enum TableColumnTypes {
   String,
@@ -14,11 +14,12 @@ export interface TableColumnSettings<T> {
   title: string;
   type?: TableColumnTypes;
   component?: PolymorpheusContent<T>;
-  componentEventCallback?: ($event: any) => void
+  componentEventCallback?: ($event: any) => void;
 }
 
 export interface TableSettings<T> {
-  dataProvider: DataProvider<T>
+  filterProvider?: FormGroup;
+  dataProvider: DataProvider<T>;
   columns: TableColumnSettings<T>[];
   hideDefaultEmptyMessage?: boolean;
 }
