@@ -7,25 +7,16 @@ export const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: 'feature-toggle/introduction',
-        loadComponent: () => import('@features/feature-toggle').then(m => m.IntroductionComponent)
+        path: 'feature-toggle',
+        loadChildren: () => import('@features/feature-toggle').then(m => m.FeatureToggleRoutingModule)
       },
       {
-        path: 'forms/form-field-description',
-        loadComponent: () => import('@features/forms').then(m => m.FormFieldDescriptionComponent)
+        path: 'forms',
+        loadChildren: () => import('@features/forms').then(m => m.FormsRoutingModule)
       },
       {
-        path: 'forms/composite',
-        loadComponent: () => import('@features/forms').then(m => m.CompositeFormComponent)
-      },
-      {
-        path: 'forms/step-by-step',
-        loadComponent: () => import('@features/forms').then(m => m.StepByStepFormComponent)
-      },
-      {
-        path: 'tables/default',
-
-        loadComponent: () => import('@features/tables').then(m => m.TablesComponent)
+        path: 'tables',
+        loadChildren: () => import('@features/tables').then(m => m.TablesRoutingModule)
       },
     ]
   },

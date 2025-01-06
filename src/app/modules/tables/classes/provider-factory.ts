@@ -32,8 +32,8 @@ class InfiniteTableDataProvider extends DataProvider<any> {
 }
 
 export class ProviderFactory {
-  static makeStatic(data: any[]) {
-    return new StaticTableDataProvider(data);
+  static makeStatic<T>(data: Array<T>) {
+    return new StaticTableDataProvider<T>(data);
   }
   static makePreload() {
     return new PreloadTableDataProvider();

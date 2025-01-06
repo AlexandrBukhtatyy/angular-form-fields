@@ -32,6 +32,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 })
 export class TablesComponent {
   tableFilterFormService = inject(TableFilterFormService);
+  tableFilterForm = this.tableFilterFormService.formGroup;
   staticTableSettings: TableSettings<any> = {
     filterProvider: this.tableFilterFormService.formGroup,
     dataProvider: ProviderFactory.makeStatic([

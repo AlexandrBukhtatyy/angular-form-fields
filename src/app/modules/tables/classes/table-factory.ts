@@ -1,29 +1,35 @@
-import {DataProvider} from './provider-factory';
+import {DataProvider, ProviderFactory} from './provider-factory';
 
-export class StaticTable<T> {
+export class Table {}
+
+export class StaticTable<T> extends Table {
   constructor(dataProvider: DataProvider<T>) {
+    super();
   }
 }
 
-export class PreloadTable<T> {
+export class PreloadTable<T> extends Table {
   constructor(dataProvider: DataProvider<T>) {
+    super();
   }
 }
 
-export class PaginatedTable<T> {
+export class PaginatedTable<T> extends Table {
   constructor(dataProvider: DataProvider<T>) {
+    super();
   }
 }
 
-export class InfiniteTable<T> {
+export class InfiniteTable<T> extends Table {
   constructor(dataProvider: DataProvider<T>) {
+    super();
   }
 }
 
 export class TableFactory {
-  // static makeStatic() {
-  //   return new StaticTable(new StaticTableDataProvider());
-  // }
+  static makeStatic<T>(data: Array<T>) {
+    return new StaticTable(ProviderFactory.makeStatic(data));
+  }
   // static makePreload() {
   //   return new PreloadTable(new PreloadTableDataProvider());
   // }
