@@ -1,13 +1,12 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TableComponent} from '../../components/table/table.component';
-import {TableSettings} from '../../interfaces/teble-config';
 import {TuiButton, TuiTextfieldDropdownDirective} from '@taiga-ui/core';
 import {TuiButtonSelect, TuiDataListWrapperComponent, TuiPagination} from '@taiga-ui/kit';
 import {FormsModule} from '@angular/forms';
-import {TuiContext, TuiStringHandler} from '@taiga-ui/cdk';
 import {TablePaginationComponent} from '../../components/table-pagination/table-pagination.component';
 import {TableSizeComponent} from '../../components/table-size/table-size.component';
 import {TableTotalComponent} from '../../components/table-total/table-total.component';
+import {Table} from '../../classes/table-factory';
 
 @Component({
   selector: 'aff-default-table-layout',
@@ -27,12 +26,22 @@ import {TableTotalComponent} from '../../components/table-total/table-total.comp
   templateUrl: './default-table-layout.component.html',
   styleUrl: './default-table-layout.component.less'
 })
-export class DefaultTableLayoutComponent {
-  @Input() settings!: TableSettings<any>;
+export class DefaultTableLayoutComponent implements OnInit {
+  @Input() table!: Table<any>;
 
-  protected index = 4;
-  protected length = 10;
-  protected size = 10;
-  protected total = 100;
+  protected index = 0;
+  protected size = 0;
+  protected total = 0;
 
+  ngOnInit() {
+    // TODO: Завести сервис который будет отвечать за поведение формы?
+    this.index = this.table.pagination.index;
+    this.size = this.table.pagination.size;
+    this.total = this.table.pagination.total;
+  }
+
+  indexChangedHandler(index: any) {
+    this.index = index;
+    this.table.pagination.goToPage(this.index);
+  }
 }

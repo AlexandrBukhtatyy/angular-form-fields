@@ -4,7 +4,7 @@ import {
   ProviderFactory,
   TableCellCustomComponentComponent,
   TableColumnTypes,
-  TableComponent,
+  TableComponent, TableFactory,
   TableSettings,
 } from '@modules/tables';
 import {PolymorpheusComponent, PolymorpheusOutlet} from '@taiga-ui/polymorpheus';
@@ -12,6 +12,7 @@ import {JsonPipe} from '@angular/common';
 import {TableFilterFormComponent} from '../../forms/table-filter-form/table-filter-form.component';
 import {TableFilterFormService} from '../../forms/table-filter-form/table-filter-form.service';
 import {ReactiveFormsModule} from '@angular/forms';
+import {TuiButton} from '@taiga-ui/core';
 
 @Component({
   selector: 'aff-tables',
@@ -22,7 +23,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     JsonPipe,
     DefaultTableLayoutComponent,
     TableFilterFormComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TuiButton
   ],
   templateUrl: './tables.component.html',
   styleUrl: './tables.component.less',
@@ -33,7 +35,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 export class TablesComponent {
   tableFilterFormService = inject(TableFilterFormService);
   tableFilterForm = this.tableFilterFormService.formGroup;
-  staticTableSettings: TableSettings<any> = {
+  staticTableRef = TableFactory.makeStatic({
     filterProvider: this.tableFilterFormService.formGroup,
     dataProvider: ProviderFactory.makeStatic([
       {
@@ -70,6 +72,6 @@ export class TablesComponent {
       },
     ],
     hideDefaultEmptyMessage: true,
-  };
+  })
 
 }

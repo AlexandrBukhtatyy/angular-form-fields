@@ -13,9 +13,9 @@ import {
   CdkTable
 } from '@angular/cdk/table';
 import {AsyncPipe, JsonPipe, NgForOf, NgIf} from '@angular/common';
-import {TableSettings} from '../../interfaces/teble-config';
 import {TableCellComponent} from '../table-cell/table-cell.component';
 import {TableHeaderCellComponent} from '../table-header-cell/table-header-cell.component';
+import {Table} from '../../classes/table-factory';
 
 @Component({
   selector: 'aff-table',
@@ -43,13 +43,13 @@ import {TableHeaderCellComponent} from '../table-header-cell/table-header-cell.c
   styleUrl: './table.component.less'
 })
 export class TableComponent {
-  @Input() settings!: TableSettings<any>;
+  @Input() table!: Table<any>;
 
   get hideDefaultEmptyMessage(): boolean {
-    return !!this.settings.hideDefaultEmptyMessage;
+    return !!this.table.settings.hideDefaultEmptyMessage;
   };
 
   get columntsOrder() {
-    return this.settings?.columns?.map((i) => i.key) ?? [];
+    return this.table.settings?.columns?.map((i) => i.key) ?? [];
   }
 }

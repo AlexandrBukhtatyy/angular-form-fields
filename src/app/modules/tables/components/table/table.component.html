@@ -1,8 +1,8 @@
 <table class="tui-table tui-table_layout_fixed"
        cdk-table
-       [dataSource]="settings.dataProvider.data$"
+       [dataSource]="table.settings.dataProvider.data$"
 >
-  <ng-container *ngFor="let column of settings.columns">
+  <ng-container *ngFor="let column of table.settings.columns">
     <ng-container [cdkColumnDef]="column.key">
       <th cdk-header-cell *cdkHeaderCellDef>
         <aff-table-header-cell [config]="column"></aff-table-header-cell>
