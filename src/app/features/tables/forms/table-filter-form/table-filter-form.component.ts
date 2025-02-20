@@ -9,7 +9,8 @@ import {
   FormGroupBase,
   InputComponent,
   labelStringify,
-  OptionWithHint, SelectComponent,
+  OptionWithHint,
+  SelectComponent,
   TextareaComponent
 } from '@modules/forms';
 import {of} from 'rxjs';
@@ -61,5 +62,13 @@ export class TableFilterFormComponent extends FormGroupBase {
 
   addClicked() {
 
+  }
+
+  resetHandler() {
+    this.formGroup.reset();
+  }
+
+  searchHandler() {
+    // TODO: Добавить обраточик на форму - придумать сопосб каким буду обновлять таблицу (либо по подписке либо по изменению формы)
   }
 }
