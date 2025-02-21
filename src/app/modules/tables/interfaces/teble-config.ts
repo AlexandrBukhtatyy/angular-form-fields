@@ -1,6 +1,6 @@
 import {PolymorpheusContent} from '@taiga-ui/polymorpheus/types/content';
-import {DataProvider} from '../classes/provider-factory';
 import {FormGroup} from '@angular/forms';
+import {DataProvider} from '../classes/data-providers';
 
 export enum TableColumnTypes {
   String,

@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {TablePaginationComponent} from '../../components/table-pagination/table-pagination.component';
 import {TableSizeComponent} from '../../components/table-size/table-size.component';
 import {TableTotalComponent} from '../../components/table-total/table-total.component';
-import {Table} from '../../classes/table-factory';
+import {Table} from '../../classes/table';
 
 @Component({
   selector: 'aff-default-table-layout',
@@ -29,19 +29,22 @@ import {Table} from '../../classes/table-factory';
 export class DefaultTableLayoutComponent implements OnInit {
   @Input() table!: Table<any>;
 
-  protected index = 0;
-  protected size = 0;
-  protected total = 0;
+  get index() {
+    return this.table.pagination.index;
+  }
+  get size() {
+    return this.table.pagination.size;
+  }
+  get total() {
+    return this.table.pagination.total;
+  }
 
   ngOnInit() {
     // TODO: Завести сервис который будет отвечать за поведение формы?
-    this.index = this.table.pagination.index;
-    this.size = this.table.pagination.size;
-    this.total = this.table.pagination.total;
   }
 
   indexChangedHandler(index: any) {
-    this.index = index;
+    this.table.pagination.index = index;
     this.table.pagination.goToPage(this.index);
   }
 }

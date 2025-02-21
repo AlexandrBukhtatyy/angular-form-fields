@@ -15,7 +15,7 @@ import {
 import {AsyncPipe, JsonPipe, NgForOf, NgIf} from '@angular/common';
 import {TableCellComponent} from '../table-cell/table-cell.component';
 import {TableHeaderCellComponent} from '../table-header-cell/table-header-cell.component';
-import {Table} from '../../classes/table-factory';
+import {Table} from '../../classes/table';
 
 @Component({
   selector: 'aff-table',

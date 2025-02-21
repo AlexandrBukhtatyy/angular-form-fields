@@ -1,18 +1,19 @@
 import {Component, inject} from '@angular/core';
 import {
   DefaultTableLayoutComponent,
-  ProviderFactory,
+  DataProviderFactory,
   TableCellCustomComponentComponent,
   TableColumnTypes,
-  TableComponent, TableFactory,
-  TableSettings,
+  TableComponent,
+  TableFactory,
 } from '@modules/tables';
-import {PolymorpheusComponent, PolymorpheusOutlet} from '@taiga-ui/polymorpheus';
+import {PolymorpheusComponent, PolymorpheusOutlet,} from '@taiga-ui/polymorpheus';
 import {JsonPipe} from '@angular/common';
 import {TableFilterFormComponent} from '../../forms/table-filter-form/table-filter-form.component';
 import {TableFilterFormService} from '../../forms/table-filter-form/table-filter-form.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TuiButton} from '@taiga-ui/core';
+import {preloadDataLoader} from './data-loaders';
 
 @Component({
   selector: 'aff-tables',
@@ -24,54 +25,37 @@ import {TuiButton} from '@taiga-ui/core';
     DefaultTableLayoutComponent,
     TableFilterFormComponent,
     ReactiveFormsModule,
-    TuiButton
+    TuiButton,
   ],
   templateUrl: './tables.component.html',
   styleUrl: './tables.component.less',
-  providers: [
-    TableFilterFormService
-  ]
+  providers: [TableFilterFormService],
 })
 export class TablesComponent {
   tableFilterFormService = inject(TableFilterFormService);
   tableFilterForm = this.tableFilterFormService.formGroup;
-  staticTableRef = TableFactory.makeStatic({
+  staticTableRef = TableFactory.makePaginated({
     filterProvider: this.tableFilterFormService.formGroup,
-    dataProvider: ProviderFactory.makeStatic([
-      {
-        id: '1',
-        title: 'title 1',
-        component: 'component 1'
-      },
-      {
-        id: '2',
-        title: 'title 2',
-        component: 'component 2'
-      },
-      {
-        id: '3',
-        title: 'title 3',
-        component: 'component 3'
-      },
-      {
-        id: '4',
-        title: 'title 4',
-        component: 'component 4'
-      },
-    ]),
+    // TODO: you can use ONE OF THIS DataProviders
+    // dataProvider: ProviderFactory.makeStatic(ITEMS),
+    dataProvider: DataProviderFactory.makePreload(preloadDataLoader),
+    // dataProvider: ProviderFactory.makePaginated(paginatedDataLoader),
+    // dataProvider: ProviderFactory.makePreload(infiniteDataLoader),
     columns: [
       {key: 'id', title: 'Id'},
       {key: 'title', title: 'Title'},
       {
-        key: 'component', title: 'Component',
+        key: 'component',
+        title: 'Component',
         type: TableColumnTypes.Polymorpheus,
-        component: new PolymorpheusComponent(TableCellCustomComponentComponent<any>),
+        component: new PolymorpheusComponent(
+          TableCellCustomComponentComponent<any>
+        ),
         componentEventCallback: ($event: any) => {
           console.log('Component event callback: ', $event);
         },
       },
     ],
     hideDefaultEmptyMessage: true,
-  })
-
+  });
 }
