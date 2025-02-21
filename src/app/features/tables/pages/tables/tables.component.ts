@@ -1,9 +1,9 @@
 import {Component, inject} from '@angular/core';
 import {
-  DefaultTableLayoutComponent,
   DataProviderFactory,
-  TableCellCustomComponentComponent,
-  TableColumnTypes,
+  DefaultTableLayoutComponent,
+  TableHeadCellCustomComponent,
+  TableCellTypes,
   TableComponent,
   TableFactory,
 } from '@modules/tables';
@@ -14,6 +14,9 @@ import {TableFilterFormService} from '../../forms/table-filter-form/table-filter
 import {ReactiveFormsModule} from '@angular/forms';
 import {TuiButton} from '@taiga-ui/core';
 import {preloadDataLoader} from './data-loaders';
+import {
+  TableCellCustomComponent
+} from '../../../../modules/tables/components/table-cell-types/table-head-cell-custom-component/table-cell-custom.component';
 
 @Component({
   selector: 'aff-tables',
@@ -42,18 +45,37 @@ export class TablesComponent {
     // dataProvider: ProviderFactory.makePaginated(paginatedDataLoader),
     // dataProvider: ProviderFactory.makePreload(infiniteDataLoader),
     columns: [
-      {key: 'id', title: 'Id'},
-      {key: 'title', title: 'Title'},
+      {
+        key: 'id',
+        headCell: {
+          type: TableCellTypes.String,
+          value: 'Id'
+        }
+      },
+      {
+        key: 'title',
+        headCell: {
+          type: TableCellTypes.String,
+          value: 'Title'
+        }
+      },
       {
         key: 'component',
-        title: 'Component',
-        type: TableColumnTypes.Polymorpheus,
-        component: new PolymorpheusComponent(
-          TableCellCustomComponentComponent<any>
-        ),
-        componentEventCallback: ($event: any) => {
-          console.log('Component event callback: ', $event);
+        headCell: {
+          type: TableCellTypes.Polymorpheus,
+          value: 'Component',
+          component: new PolymorpheusComponent(TableHeadCellCustomComponent<any>),
+          componentEventCallback: ($event: any) => {
+            console.log('Header cell event callback: ', $event);
+          },
         },
+        cell: {
+          type: TableCellTypes.Polymorpheus,
+          component: new PolymorpheusComponent(TableCellCustomComponent<any>),
+          componentEventCallback: ($event: any) => {
+            console.log('Cell event callback: ', $event);
+          },
+        }
       },
     ],
     hideDefaultEmptyMessage: true,

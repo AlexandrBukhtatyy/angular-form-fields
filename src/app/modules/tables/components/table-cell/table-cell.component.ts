@@ -1,13 +1,12 @@
 import {Component, Input} from '@angular/core';
-import {JsonPipe, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
+import {NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
 import {PolymorpheusOutlet} from '@taiga-ui/polymorpheus';
-import {TableColumnTypes} from '@modules/tables';
+import {TableCellTypes, TableColumnSettings} from '@modules/tables';
 
 @Component({
   selector: 'aff-table-cell',
   standalone: true,
   imports: [
-    JsonPipe,
     PolymorpheusOutlet,
     NgSwitch,
     NgSwitchCase,
@@ -17,8 +16,9 @@ import {TableColumnTypes} from '@modules/tables';
   styleUrl: './table-cell.component.less'
 })
 export class TableCellComponent {
-  @Input() config!: any;
+  TABLE_COLUMN_TYPES = TableCellTypes;
+
+  @Input() config!: TableColumnSettings<any>;
   @Input() value!: any;
-  TABLE_COLUMN_TYPES = TableColumnTypes;
 
 }
