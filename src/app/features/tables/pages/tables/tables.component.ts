@@ -41,11 +41,8 @@ export class TablesComponent {
   tableFilterForm = this.tableFilterFormService.formGroup;
   staticTableRef = TableFactory.makePaginated({
     filterProvider: this.tableFilterFormService.formGroup,
-    // TODO: you can use ONE OF THIS DataProviders
-    // dataProvider: ProviderFactory.makeStatic(ITEMS),
+    // TODO: you can use ONE OF THIS DataProviders: ProviderFactory.[makeStatic(ITEMS)|makePaginated(paginatedDataLoader)|makePreload(infiniteDataLoader)]
     dataProvider: DataProviderFactory.makePreload(preloadDataLoader),
-    // dataProvider: ProviderFactory.makePaginated(paginatedDataLoader),
-    // dataProvider: ProviderFactory.makePreload(infiniteDataLoader),
     columns: [
       {
         key: 'id',

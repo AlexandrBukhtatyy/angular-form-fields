@@ -9,18 +9,14 @@ npm i
 ng serve
 ```
 
-## Концепции
-
-- Обертки для полей форм (soliD)
-- Варианты для полей форм
-- Переиспользование существующих форм форм
-- Сервис отвечающий за работу с formGroup (Solid)
-- Модуль для работы с формами в проекте
-- Модуль для работы с таблицами
-- Модуль для работы с Фича-тоглами
+## Модули
+Модуль - сущность которую можно переиспользовать независимо от проекта
+- [Модуль для работы с анимациями](./src/app/modules/animations/README.md)
+- [Модуль для работы с формами](./src/app/modules/forms/README.md)
+- [Модуль для работы с таблицами](./src/app/modules/tables/README.md)
+- [Модуль для работы с Фича-тоглами](./src/app/modules/feature-toggle/README.md)
 
 ## Полезные ссылки
-
 - [Статья на хабре](https://habr.com/ru/companies/tinkoff/articles/740706)
 - [TaigaUI](https://taiga-ui.dev/)
 - Концепция контроллеров компонента в Angular ([часть-1](https://habr.com/ru/company/tinkoff/blog/546178/), [часть-2](https://habr.com/ru/company/tinkoff/blog/578904/))
