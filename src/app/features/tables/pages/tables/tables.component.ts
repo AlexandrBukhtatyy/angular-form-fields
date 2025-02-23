@@ -1,8 +1,9 @@
-import {Component, inject, TemplateRef, ViewChild} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {
   DataProviderFactory,
   DefaultTableLayoutComponent,
   FunctionParamsTableCell,
+  TableCellCustomComponent,
   TableCellTypes,
   TableComponent,
   TableFactory,
@@ -15,9 +16,7 @@ import {TableFilterFormService} from '../../forms/table-filter-form/table-filter
 import {ReactiveFormsModule} from '@angular/forms';
 import {TuiButton} from '@taiga-ui/core';
 import {preloadDataLoader} from './data-loaders';
-import {
-  TableCellCustomComponent
-} from '../../../../modules/tables/components/table-cell-types/table-cell-custom-component/table-cell-custom.component';
+import {PolymorpheusModule} from '@tinkoff/ng-polymorpheus';
 
 @Component({
   selector: 'aff-tables',
@@ -30,14 +29,14 @@ import {
     TableFilterFormComponent,
     ReactiveFormsModule,
     TuiButton,
+    PolymorpheusModule,
   ],
   templateUrl: './tables.component.html',
   styleUrl: './tables.component.less',
   providers: [TableFilterFormService],
 })
 export class TablesComponent {
-  @ViewChild('cellTemplateRef') cellTemplateRef!: TemplateRef<any>;
-
+  // Table settings
   tableFilterFormService = inject(TableFilterFormService);
   tableFilterForm = this.tableFilterFormService.formGroup;
   staticTableRef = TableFactory.makePaginated({
@@ -69,17 +68,6 @@ export class TablesComponent {
           value: (context: FunctionParamsTableCell<any>) => {
             return `${context.row.title} (modified)`;
           }
-        }
-      },
-      {
-        key: 'template',
-        headCell: {
-          type: TableCellTypes.String,
-          value: 'Title (TemplateRef)'
-        },
-        cell: {
-          type: TableCellTypes.TemplateRef,
-          value: this.cellTemplateRef
         }
       },
       {

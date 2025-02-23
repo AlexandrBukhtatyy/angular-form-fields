@@ -1,13 +1,8 @@
-<ng-container [ngSwitch]="config.cell?.type">
+<ng-container [ngSwitch]="$any(config.cell)?.type">
   <!-- the same view can be shown in more than one case -->
-  <ng-container *ngSwitchCase="TABLE_COLUMN_TYPES.String">
-    {{ value[config.key] }}
-  </ng-container>
+  <ng-container *ngSwitchCase="TABLE_COLUMN_TYPES.String">{{ value[config.key] }}</ng-container>
   <ng-container *ngSwitchCase="TABLE_COLUMN_TYPES.Function">
     <ng-container *polymorpheusOutlet="$any(config.cell?.value) as text; context: { row: value, config: config }">{{text}}</ng-container>
-  </ng-container>
-  <ng-container *ngSwitchCase="TABLE_COLUMN_TYPES.TemplateRef">
-    <ng-container *polymorpheusOutlet="config.cell?.value"></ng-container>
   </ng-container>
   <ng-container *ngSwitchCase="TABLE_COLUMN_TYPES.Polymorpheus">
     <ng-container *polymorpheusOutlet="$any(config.cell?.value)?.component; context: {row: value, config: config}"></ng-container>
