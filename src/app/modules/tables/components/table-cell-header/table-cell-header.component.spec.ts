@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableHeaderCellComponent } from './table-header-cell.component';
+import { TableCellHeaderComponent } from './table-cell-header.component';
 
 describe('TableHeaderCellComponent', () => {
-  let component: TableHeaderCellComponent;
-  let fixture: ComponentFixture<TableHeaderCellComponent>;
+  let component: TableCellHeaderComponent;
+  let fixture: ComponentFixture<TableCellHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TableHeaderCellComponent]
+      imports: [TableCellHeaderComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TableHeaderCellComponent);
+    fixture = TestBed.createComponent(TableCellHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

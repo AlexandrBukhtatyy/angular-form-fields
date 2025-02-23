@@ -13,10 +13,10 @@ import {PolymorpheusOutlet} from '@taiga-ui/polymorpheus';
     NgSwitchCase,
     NgSwitchDefault,
   ],
-  templateUrl: './table-header-cell.component.html',
-  styleUrl: './table-header-cell.component.less'
+  templateUrl: './table-cell-header.component.html',
+  styleUrl: './table-cell-header.component.less'
 })
-export class TableHeaderCellComponent {
+export class TableCellHeaderComponent {
   TABLE_COLUMN_TYPES = TableCellTypes;
 
   @Input() config!: TableColumnSettings<any>;

@@ -3,6 +3,7 @@ import {POLYMORPHEUS_CONTEXT} from '@taiga-ui/polymorpheus';
 import {TableColumnSettings} from '../../../interfaces/teble-config';
 import {JsonPipe} from '@angular/common';
 import {TuiButton} from '@taiga-ui/core';
+import {config} from 'rxjs';
 
 @Component({
   selector: 'aff-table-cell-custom-component',
@@ -11,15 +12,15 @@ import {TuiButton} from '@taiga-ui/core';
     JsonPipe,
     TuiButton
   ],
-  templateUrl: './table-head-cell-custom.component.html',
-  styleUrl: './table-head-cell-custom.component.less'
+  templateUrl: './table-cell-custom.component.html',
+  styleUrl: './table-cell-custom.component.less'
 })
-export class TableHeadCellCustomComponent<T> {
-  context: Record<any, { $implicit: T, config: TableColumnSettings<T> }> | null = inject(POLYMORPHEUS_CONTEXT, {optional: true});
+export class TableCellCustomComponent<T> {
+  context: Record<any, { row: T, config: TableColumnSettings<T> }> | null = inject(POLYMORPHEUS_CONTEXT, {optional: true});
 
   clickHandler() {
     // TODO: Разобраться с тем почему ругается линтер
     // @ts-ignore
-    this.context?.config?.headCell?.componentEventCallback('TableCellCustomComponentComponent button click');
+    this.context?.config?.cell?.value.componentEventCallback('TableCellCustomComponentComponent button click');
   }
 }

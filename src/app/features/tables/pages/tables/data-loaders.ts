@@ -8,21 +8,25 @@ const ITEMS = [
   {
     id: '1',
     title: 'title 1',
+    template: 'template 1',
     component: 'component 1',
   },
   {
     id: '2',
     title: 'title 2',
+    template: 'template 2',
     component: 'component 2',
   },
   {
     id: '3',
     title: 'title 3',
+    template: 'template 3',
     component: 'component 3',
   },
   {
     id: '4',
     title: 'title 4',
+    template: 'template 4',
     component: 'component 4',
   },
 ];

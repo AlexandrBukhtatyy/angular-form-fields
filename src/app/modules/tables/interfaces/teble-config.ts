@@ -1,6 +1,7 @@
 import {PolymorpheusContent} from '@taiga-ui/polymorpheus/types/content';
 import {FormGroup} from '@angular/forms';
 import {DataProvider} from '../classes/data-providers';
+import {TemplateRef} from '@angular/core';
 
 export enum TableCellTypes {
   String,
@@ -9,20 +10,23 @@ export enum TableCellTypes {
   Function
 }
 
+export type FunctionParamsTableCell<T> = {row: any, config: TableCellSettings<T>};
+export type FunctionTableCell<T> = (context: FunctionParamsTableCell<T>) => string;
+
+export type ComponentTableCell<T> = {
+  component?: PolymorpheusContent<T>;
+  componentEventCallback?: ($event: any) => void;
+};
+
+export interface TableCellSettings<T> {
+  type?: TableCellTypes;
+  value?: string | FunctionTableCell<T> | ComponentTableCell<T> | TemplateRef<T>;
+}
+
 export interface TableColumnSettings<T> {
   key: string;
-  headCell: {
-    type?: TableCellTypes;
-    value?: string;
-    component?: PolymorpheusContent<T>;
-    componentEventCallback?: ($event: any) => void;
-  }
-  cell?: {
-    type?: TableCellTypes;
-    text?: string;
-    component?: PolymorpheusContent<T>;
-    componentEventCallback?: ($event: any) => void;
-  }
+  headCell: TableCellSettings<T>;
+  cell: TableCellSettings<T>;
 }
 
 export interface TableSettings<T> {

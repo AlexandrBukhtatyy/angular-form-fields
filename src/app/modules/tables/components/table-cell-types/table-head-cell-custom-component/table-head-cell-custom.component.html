@@ -1,4 +1,4 @@
 <div class="tui-row">
-  <span>Custom Header: {{context?.['$implicit']}}</span>
+  <span>Custom Header: {{$any(context)?.config?.['key']}}</span>
   <button tuiButton size="xs" type="button" (click)="clickHandler()">(click me!)</button>
 </div>

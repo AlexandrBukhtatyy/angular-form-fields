@@ -14,8 +14,8 @@ import {
 } from '@angular/cdk/table';
 import {AsyncPipe, JsonPipe, NgForOf, NgIf} from '@angular/common';
 import {TableCellComponent} from '../table-cell/table-cell.component';
-import {TableHeaderCellComponent} from '../table-header-cell/table-header-cell.component';
 import {Table} from '../../classes/table';
+import {TableCellHeaderComponent} from '../table-cell-header/table-cell-header.component';
 
 @Component({
   selector: 'aff-table',
@@ -35,7 +35,7 @@ import {Table} from '../../classes/table';
     CdkRowDef,
     CdkRow,
     TableCellComponent,
-    TableHeaderCellComponent,
+    TableCellHeaderComponent,
     JsonPipe,
     AsyncPipe
   ],

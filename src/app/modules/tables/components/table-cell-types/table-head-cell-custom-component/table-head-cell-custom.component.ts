@@ -11,15 +11,15 @@ import {TuiButton} from '@taiga-ui/core';
     JsonPipe,
     TuiButton
   ],
-  templateUrl: './table-cell-custom.component.html',
-  styleUrl: './table-cell-custom.component.less'
+  templateUrl: './table-head-cell-custom.component.html',
+  styleUrl: './table-head-cell-custom.component.less'
 })
-export class TableCellCustomComponent<T> {
-  context: Record<any, { $implicit: T, config: TableColumnSettings<T> }> | null = inject(POLYMORPHEUS_CONTEXT, {optional: true});
+export class TableHeadCellCustomComponent<T> {
+  context: Record<any, { config: TableColumnSettings<T> }> | null = inject(POLYMORPHEUS_CONTEXT, {optional: true});
 
   clickHandler() {
     // TODO: Разобраться с тем почему ругается линтер
     // @ts-ignore
-    this.context?.config?.cell?.componentEventCallback('TableCellCustomComponentComponent button click');
+    this.context?.config?.headCell?.value.componentEventCallback('TableCellCustomComponentComponent button click');
   }
 }

@@ -1,8 +1,0 @@
-<ng-container [ngSwitch]="config.headCell?.type">
-  <!-- the same view can be shown in more than one case -->
-  <ng-container *ngSwitchCase="TABLE_COLUMN_TYPES.Polymorpheus">
-    <div *polymorpheusOutlet="config.headCell?.component; context: {$implicit: config.headCell?.value, config: config}"></div>
-  </ng-container>
-  <!--default case when there are no matches -->
-  <ng-container *ngSwitchDefault>{{ config.headCell?.value }}</ng-container>
-</ng-container>

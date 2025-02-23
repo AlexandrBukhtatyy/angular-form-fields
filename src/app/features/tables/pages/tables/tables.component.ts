@@ -1,11 +1,12 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, TemplateRef, ViewChild} from '@angular/core';
 import {
   DataProviderFactory,
   DefaultTableLayoutComponent,
-  TableHeadCellCustomComponent,
+  FunctionParamsTableCell,
   TableCellTypes,
   TableComponent,
   TableFactory,
+  TableHeadCellCustomComponent,
 } from '@modules/tables';
 import {PolymorpheusComponent, PolymorpheusOutlet,} from '@taiga-ui/polymorpheus';
 import {JsonPipe} from '@angular/common';
@@ -16,7 +17,7 @@ import {TuiButton} from '@taiga-ui/core';
 import {preloadDataLoader} from './data-loaders';
 import {
   TableCellCustomComponent
-} from '../../../../modules/tables/components/table-cell-types/table-head-cell-custom-component/table-cell-custom.component';
+} from '../../../../modules/tables/components/table-cell-types/table-cell-custom-component/table-cell-custom.component';
 
 @Component({
   selector: 'aff-tables',
@@ -35,6 +36,8 @@ import {
   providers: [TableFilterFormService],
 })
 export class TablesComponent {
+  @ViewChild('cellTemplateRef') cellTemplateRef!: TemplateRef<any>;
+
   tableFilterFormService = inject(TableFilterFormService);
   tableFilterForm = this.tableFilterFormService.formGroup;
   staticTableRef = TableFactory.makePaginated({
@@ -49,32 +52,55 @@ export class TablesComponent {
         key: 'id',
         headCell: {
           type: TableCellTypes.String,
-          value: 'Id'
+          value: 'Id (String)'
+        },
+        cell: {
+          type: TableCellTypes.String,
         }
       },
       {
         key: 'title',
         headCell: {
+          type: TableCellTypes.Function,
+          value: (context: FunctionParamsTableCell<any>) => `Title (Function)`
+        },
+        cell: {
+          type: TableCellTypes.Function,
+          value: (context: FunctionParamsTableCell<any>) => {
+            return `${context.row.title} (modified)`;
+          }
+        }
+      },
+      {
+        key: 'template',
+        headCell: {
           type: TableCellTypes.String,
-          value: 'Title'
+          value: 'Title (TemplateRef)'
+        },
+        cell: {
+          type: TableCellTypes.TemplateRef,
+          value: this.cellTemplateRef
         }
       },
       {
         key: 'component',
         headCell: {
           type: TableCellTypes.Polymorpheus,
-          value: 'Component',
-          component: new PolymorpheusComponent(TableHeadCellCustomComponent<any>),
-          componentEventCallback: ($event: any) => {
-            console.log('Header cell event callback: ', $event);
-          },
+          value: {
+            component: new PolymorpheusComponent(TableHeadCellCustomComponent<any>),
+            componentEventCallback: ($event: any) => {
+              console.log('Header cell event callback: ', $event);
+            },
+          }
         },
         cell: {
           type: TableCellTypes.Polymorpheus,
-          component: new PolymorpheusComponent(TableCellCustomComponent<any>),
-          componentEventCallback: ($event: any) => {
-            console.log('Cell event callback: ', $event);
-          },
+          value: {
+            component: new PolymorpheusComponent(TableCellCustomComponent<any>),
+            componentEventCallback: ($event: any) => {
+              console.log('Cell event callback: ', $event);
+            },
+          }
         }
       },
     ],

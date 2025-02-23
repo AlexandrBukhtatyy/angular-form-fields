@@ -18,7 +18,7 @@ import {TableCellTypes, TableColumnSettings} from '@modules/tables';
 export class TableCellComponent {
   TABLE_COLUMN_TYPES = TableCellTypes;
 
-  @Input() config!: TableColumnSettings<any>;
   @Input() value!: any;
+  @Input() config!: TableColumnSettings<any>;
 
 }
