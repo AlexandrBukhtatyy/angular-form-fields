@@ -11,6 +11,7 @@ ng serve
 
 ## Модули
 Модуль - сущность которую можно переиспользовать независимо от проекта
+- [Модуль авторизации](./src/app/modules/auth/README.md)
 - [Модуль для работы с анимациями](./src/app/modules/animations/README.md)
 - [Модуль для работы с формами](./src/app/modules/forms/README.md)
 - [Модуль для работы с таблицами](./src/app/modules/tables/README.md)
@@ -19,6 +20,7 @@ ng serve
 ## Полезные ссылки
 - [Статья на хабре](https://habr.com/ru/companies/tinkoff/articles/740706)
 - [TaigaUI](https://taiga-ui.dev/)
+- [tailwindcss](https://tailwindcss.com/)
 - Концепция контроллеров компонента в Angular ([часть-1](https://habr.com/ru/company/tinkoff/blog/546178/), [часть-2](https://habr.com/ru/company/tinkoff/blog/578904/))
 - [Использование директив для расширения компонентов которыми вы не владеете](https://timdeschryver.dev/blog/use-angular-directives-to-extend-components-that-you-dont-own)
 - [Real world angular reactive form](https://blog.grossman.io/real-world-angular-reactive-forms/)
