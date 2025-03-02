@@ -8,6 +8,9 @@ import {RouterModule} from '@angular/router';
 import {routes} from './config/routes';
 import {TUI_SANITIZER} from '@taiga-ui/legacy';
 import {NG_EVENT_PLUGINS} from '@tinkoff/ng-event-plugins';
+import {AuthModule} from '@modules/auth';
+import {AuthService} from './core/services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +21,10 @@ import {NG_EVENT_PLUGINS} from '@tinkoff/ng-event-plugins';
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     TuiRoot,
+    AuthModule.forRoot({
+      origin: document.location.origin,
+      authSeviceToken: AuthService,
+    }),
   ],
   providers: [
     {provide: TUI_SANITIZER, useClass: NgDompurifySanitizer},
