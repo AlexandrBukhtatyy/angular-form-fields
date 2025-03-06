@@ -24,7 +24,7 @@
       "dom"
     ],
     "paths": {
-      "@core": ["src/app/core"],
+      "@core/*": ["src/app/core/*"],
       "@modules/feature-toggle": ["src/app/modules/feature-toggle"],
       "@modules/auth": ["src/app/modules/auth"],
       "@modules/forms": ["src/app/modules/forms"],
