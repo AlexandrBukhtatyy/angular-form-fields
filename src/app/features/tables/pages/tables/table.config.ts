@@ -37,9 +37,16 @@ export function tableConfig() {
         },
         cell: {
           type: TableCellTypes.Function,
-          value: (context: FunctionParamsTableCell<any>) => {
-            return `${context.row.title} (modified)`;
-          }
+          value: (context: FunctionParamsTableCell<any>) => `${context.row.title} (modified)`        }
+      },
+      {
+        key: 'titleTwo',
+        headCell: {
+          type: TableCellTypes.Function,
+          value: 'Title (modified by DataProvider)'
+        },
+        cell: {
+          type: TableCellTypes.String,
         }
       },
       {

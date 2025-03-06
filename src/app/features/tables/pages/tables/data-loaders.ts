@@ -33,7 +33,7 @@ const ITEMS = [
 
 export const preloadDataLoader: PreloadDataLoader<any> = (params?: DataLoaderParams) => {
   return Promise.resolve({
-    items: ITEMS,
+    items: ITEMS.map((item: any) => ({...item, titleTwo: `titleTwo: ${item.id}` })),
     offset: 0,
     size: 2,
     total: ITEMS.length,
