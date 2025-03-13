@@ -14,6 +14,7 @@ ng serve
 - [Модуль авторизации](./src/app/modules/auth/README.md)
 - [Модуль для работы с анимациями](./src/app/modules/animations/README.md)
 - [Модуль для работы с формами](./src/app/modules/forms/README.md)
+- [Модуль для работы с генератором форм](./src/app/modules/forms-generation/README.md)
 - [Модуль для работы с таблицами](./src/app/modules/tables/README.md)
 - [Модуль для работы с Фича-тоглами](./src/app/modules/feature-toggle/README.md)
 
