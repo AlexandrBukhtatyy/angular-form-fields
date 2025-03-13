@@ -12,20 +12,19 @@ import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 import {TuiSelectModule} from '@taiga-ui/legacy';
 
 @Component({
-  selector: 'aff-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.less'],
-  standalone: true,
-  imports: [
-    TuiSelect,
-    TuiTextfield,
-    ReactiveFormsModule,
-    TuiDataListWrapper,
-    TuiError,
-    TuiFieldErrorPipe,
-    AsyncPipe,
-    TuiSelectModule
-  ]
+    selector: 'aff-select',
+    templateUrl: './select.component.html',
+    styleUrls: ['./select.component.less'],
+    imports: [
+        TuiSelect,
+        TuiTextfield,
+        ReactiveFormsModule,
+        TuiDataListWrapper,
+        TuiError,
+        TuiFieldErrorPipe,
+        AsyncPipe,
+        TuiSelectModule
+    ]
 })
 export class SelectComponent<T> extends FormFieldBase {
   private readonly itemsHandlers: TuiItemsHandlers<T> = inject(TUI_ITEMS_HANDLERS);

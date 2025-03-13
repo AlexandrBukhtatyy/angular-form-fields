@@ -10,25 +10,24 @@ export interface BtnPickerOption {
 }
 
 @Component({
-  selector: 'aff-button-toggle-group',
-  templateUrl: './button-toggle-group.component.html',
-  styleUrls: ['./button-toggle-group.component.less'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ButtonToggleGroupComponent),
-      multi: true,
-    },
-  ],
-  imports: [
-    CommonModule,
-    TuiGroup,
-    FormsModule,
-    TuiRadio,
-    TuiBlock,
-    TuiLabel
-  ],
-  standalone: true
+    selector: 'aff-button-toggle-group',
+    templateUrl: './button-toggle-group.component.html',
+    styleUrls: ['./button-toggle-group.component.less'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => ButtonToggleGroupComponent),
+            multi: true,
+        },
+    ],
+    imports: [
+        CommonModule,
+        TuiGroup,
+        FormsModule,
+        TuiRadio,
+        TuiBlock,
+        TuiLabel
+    ]
 })
 export class ButtonToggleGroupComponent implements OnInit, ControlValueAccessor {
   @Input() options!: BtnPickerOption[];

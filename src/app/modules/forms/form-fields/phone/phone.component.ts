@@ -7,16 +7,15 @@ import {AsyncPipe} from '@angular/common';
 import {TuiFieldErrorPipe} from '@taiga-ui/kit';
 
 @Component({
-  selector: 'aff-phone',
-  templateUrl: './phone.component.html',
-  styleUrls: ['./phone.component.less'],
-  standalone: true,
-  imports: [
-    TuiInputPhoneModule,
-    ReactiveFormsModule,
-    TuiError,
-    AsyncPipe,
-    TuiFieldErrorPipe
-  ]
+    selector: 'aff-phone',
+    templateUrl: './phone.component.html',
+    styleUrls: ['./phone.component.less'],
+    imports: [
+        TuiInputPhoneModule,
+        ReactiveFormsModule,
+        TuiError,
+        AsyncPipe,
+        TuiFieldErrorPipe
+    ]
 })
 export class PhoneComponent extends FormFieldBase {}

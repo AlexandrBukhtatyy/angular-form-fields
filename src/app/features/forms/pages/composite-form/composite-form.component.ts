@@ -10,26 +10,25 @@ import {PaymentFormComponent} from '../../forms/payment-form/payment-form.compon
 import {NgClass, NgForOf} from '@angular/common';
 
 @Component({
-  selector: 'aff-order-form',
-  templateUrl: './composite-form.component.html',
-  providers: [
-    PizzaOrderFormService,
-    TuiAppearance,
-    TuiCardLarge
-  ],
-  standalone: true,
-  imports: [
-    ContactsShortFormComponent,
-    DeliveryFormComponent,
-    PaymentFormComponent,
-    PizzaDetailsFormComponent,
-    ReactiveFormsModule,
-    TuiCardLarge,
-    NgForOf,
-    TuiAppearance,
-    TuiButton,
-    NgClass
-  ]
+    selector: 'aff-order-form',
+    templateUrl: './composite-form.component.html',
+    providers: [
+        PizzaOrderFormService,
+        TuiAppearance,
+        TuiCardLarge
+    ],
+    imports: [
+        ContactsShortFormComponent,
+        DeliveryFormComponent,
+        PaymentFormComponent,
+        PizzaDetailsFormComponent,
+        ReactiveFormsModule,
+        TuiCardLarge,
+        NgForOf,
+        TuiAppearance,
+        TuiButton,
+        NgClass
+    ]
 })
 export class CompositeFormComponent {
   orderFormService = inject(PizzaOrderFormService);

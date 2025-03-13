@@ -4,11 +4,10 @@ import {ControlContainer, FormArray, FormGroup, ReactiveFormsModule} from '@angu
 import {TuiCheckbox} from '@taiga-ui/kit';
 
 @Component({
-  selector: 'aff-checkbox-list',
-  templateUrl: './checkbox-list.component.html',
-  styleUrls: ['./checkbox-list.component.less'],
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TuiCheckbox],
+    selector: 'aff-checkbox-list',
+    templateUrl: './checkbox-list.component.html',
+    styleUrls: ['./checkbox-list.component.less'],
+    imports: [CommonModule, ReactiveFormsModule, TuiCheckbox]
 })
 export class CheckboxListComponent {
   @Input() dictionary: any;

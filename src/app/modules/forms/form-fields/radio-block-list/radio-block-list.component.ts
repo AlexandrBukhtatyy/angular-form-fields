@@ -6,18 +6,17 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
 
 @Component({
-  selector: 'aff-radio-block-list',
-  templateUrl: './radio-block-list.component.html',
-  styleUrls: ['./radio-block-list.component.less'],
-  standalone: true,
-  imports: [
-    TuiGroup,
-    TuiLabel,
-    TuiRadio,
-    ReactiveFormsModule,
-    NgForOf,
-    TuiBlock
-  ]
+    selector: 'aff-radio-block-list',
+    templateUrl: './radio-block-list.component.html',
+    styleUrls: ['./radio-block-list.component.less'],
+    imports: [
+        TuiGroup,
+        TuiLabel,
+        TuiRadio,
+        ReactiveFormsModule,
+        NgForOf,
+        TuiBlock
+    ]
 })
 export class RadioBlockListComponent extends FormFieldBase {
   @Input() options: any;

@@ -4,17 +4,16 @@ import {NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
 import {PolymorpheusOutlet} from '@taiga-ui/polymorpheus';
 
 @Component({
-  selector: 'aff-table-header-cell',
-  standalone: true,
-  imports: [
-    NgSwitchCase,
-    PolymorpheusOutlet,
-    NgSwitch,
-    NgSwitchCase,
-    NgSwitchDefault,
-  ],
-  templateUrl: './table-cell-header.component.html',
-  styleUrl: './table-cell-header.component.less'
+    selector: 'aff-table-header-cell',
+    imports: [
+        NgSwitchCase,
+        PolymorpheusOutlet,
+        NgSwitch,
+        NgSwitchCase,
+        NgSwitchDefault,
+    ],
+    templateUrl: './table-cell-header.component.html',
+    styleUrl: './table-cell-header.component.less'
 })
 export class TableCellHeaderComponent {
   TABLE_COLUMN_TYPES = TableCellTypes;

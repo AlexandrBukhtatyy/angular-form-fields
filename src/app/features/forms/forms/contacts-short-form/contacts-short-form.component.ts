@@ -4,14 +4,13 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 
 @Component({
-  selector: 'aff-contacts-short-form',
-  templateUrl: './contacts-short-form.component.html',
-  styleUrls: ['./contacts-short-form.component.less'],
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    InputComponent,
-    PhoneComponent
-  ]
+    selector: 'aff-contacts-short-form',
+    templateUrl: './contacts-short-form.component.html',
+    styleUrls: ['./contacts-short-form.component.less'],
+    imports: [
+        ReactiveFormsModule,
+        InputComponent,
+        PhoneComponent
+    ]
 })
 export class ContactsShortFormComponent extends FormGroupBase {}

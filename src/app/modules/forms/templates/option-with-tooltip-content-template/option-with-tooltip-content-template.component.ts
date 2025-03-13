@@ -9,11 +9,10 @@ import {TuiTooltip} from '@taiga-ui/kit';
 import {TuiIcon} from '@taiga-ui/core';
 
 @Component({
-  selector: 'aff-option-with-tooltip-content-template',
-  standalone: true,
-  imports: [CommonModule, TuiTooltip, TuiIcon],
-  templateUrl: './option-with-tooltip-content-template.component.html',
-  styleUrls: ['./option-with-tooltip-content-template.component.less']
+    selector: 'aff-option-with-tooltip-content-template',
+    imports: [CommonModule, TuiTooltip, TuiIcon],
+    templateUrl: './option-with-tooltip-content-template.component.html',
+    styleUrls: ['./option-with-tooltip-content-template.component.less']
 })
 export class OptionWithTooltipContentTemplateComponent<T> {
   @Input('label') inputLabel?: string;

@@ -14,15 +14,14 @@ export type ComboboxWithAddButtonContext<T> = {
 };
 
 @Component({
-  selector: 'aff-dropdown-with-add-button',
-  templateUrl: './dropdown-with-add-button.component.html',
-  styleUrls: ['./dropdown-with-add-button.component.less'],
-  standalone: true,
-  imports: [
-    TuiDataList,
-    TuiIcon,
-    TuiDataListWrapper
-  ]
+    selector: 'aff-dropdown-with-add-button',
+    templateUrl: './dropdown-with-add-button.component.html',
+    styleUrls: ['./dropdown-with-add-button.component.less'],
+    imports: [
+        TuiDataList,
+        TuiIcon,
+        TuiDataListWrapper
+    ]
 })
 export class DropdownWithAddButtonComponent<T> implements OnInit {
   @Input('items')

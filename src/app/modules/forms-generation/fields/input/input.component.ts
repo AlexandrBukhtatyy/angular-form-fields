@@ -6,11 +6,10 @@ interface InputProps {
 }
 
 @Component({
-  selector: 'fgen-input',
-  standalone: true,
-  imports: [],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.less'
+    selector: 'fgen-input',
+    imports: [],
+    templateUrl: './input.component.html',
+    styleUrl: './input.component.less'
 })
 export class InputComponent extends FieldType<FieldTypeConfig<InputProps>> {
   get type() {

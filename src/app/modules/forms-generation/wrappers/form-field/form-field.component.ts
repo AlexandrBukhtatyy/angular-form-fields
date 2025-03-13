@@ -8,11 +8,10 @@ export interface FormlyFieldProps extends CoreFormlyFieldProps {
 }
 
 @Component({
-  selector: 'fgen-form-field',
-  standalone: true,
-  imports: [],
-  templateUrl: './form-field.component.html',
-  styleUrl: './form-field.component.less'
+    selector: 'fgen-form-field',
+    imports: [],
+    templateUrl: './form-field.component.html',
+    styleUrl: './form-field.component.less'
 })
 export class FormFieldComponent extends FieldWrapper<FormlyFieldConfig<FormlyFieldProps>> {
 

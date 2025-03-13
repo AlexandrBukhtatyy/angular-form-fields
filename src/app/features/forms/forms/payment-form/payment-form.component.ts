@@ -5,16 +5,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
 
 @Component({
-  selector: 'aff-payment-form',
-  templateUrl: './payment-form.component.html',
-  styleUrls: ['./payment-form.component.less'],
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    SelectComponent,
-    NumberComponent,
-    NgIf
-  ]
+    selector: 'aff-payment-form',
+    templateUrl: './payment-form.component.html',
+    styleUrls: ['./payment-form.component.less'],
+    imports: [
+        ReactiveFormsModule,
+        SelectComponent,
+        NumberComponent,
+        NgIf
+    ]
 })
 export class PaymentFormComponent extends FormGroupBase {
   paymentMethodOptions = PaymentMethodOptions;

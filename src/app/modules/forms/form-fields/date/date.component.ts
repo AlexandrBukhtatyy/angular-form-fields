@@ -7,17 +7,16 @@ import {TuiInputDateModule} from '@taiga-ui/legacy';
 import {TuiError} from '@taiga-ui/core';
 
 @Component({
-  selector: 'aff-date',
-  templateUrl: './date.component.html',
-  styleUrls: ['./date.component.less'],
-  imports: [
-    TuiInputDateModule,
-    ReactiveFormsModule,
-    TuiFieldErrorPipe,
-    AsyncPipe,
-    TuiError
-  ],
-  standalone: true
+    selector: 'aff-date',
+    templateUrl: './date.component.html',
+    styleUrls: ['./date.component.less'],
+    imports: [
+        TuiInputDateModule,
+        ReactiveFormsModule,
+        TuiFieldErrorPipe,
+        AsyncPipe,
+        TuiError
+    ]
 })
 export class DateComponent extends FormFieldBase {
 }

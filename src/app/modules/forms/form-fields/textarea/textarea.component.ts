@@ -7,16 +7,15 @@ import {TuiFieldErrorPipe} from '@taiga-ui/kit';
 import {AsyncPipe} from '@angular/common';
 
 @Component({
-  selector: 'aff-textarea',
-  templateUrl: './textarea.component.html',
-  styleUrls: ['./textarea.component.less'],
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    TuiTextareaModule,
-    TuiError,
-    TuiFieldErrorPipe,
-    AsyncPipe
-  ]
+    selector: 'aff-textarea',
+    templateUrl: './textarea.component.html',
+    styleUrls: ['./textarea.component.less'],
+    imports: [
+        ReactiveFormsModule,
+        TuiTextareaModule,
+        TuiError,
+        TuiFieldErrorPipe,
+        AsyncPipe
+    ]
 })
 export class TextareaComponent extends FormFieldBase {}

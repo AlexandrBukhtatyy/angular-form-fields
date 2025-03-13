@@ -9,22 +9,21 @@ import {TableTotalComponent} from '../../components/table-total/table-total.comp
 import {Table} from '../../classes/table';
 
 @Component({
-  selector: 'aff-default-table-layout',
-  standalone: true,
-  imports: [
-    TableComponent,
-    TuiButton,
-    TuiButtonSelect,
-    FormsModule,
-    TuiDataListWrapperComponent,
-    TuiTextfieldDropdownDirective,
-    TuiPagination,
-    TablePaginationComponent,
-    TableSizeComponent,
-    TableTotalComponent
-  ],
-  templateUrl: './default-table-layout.component.html',
-  styleUrl: './default-table-layout.component.less'
+    selector: 'aff-default-table-layout',
+    imports: [
+        TableComponent,
+        TuiButton,
+        TuiButtonSelect,
+        FormsModule,
+        TuiDataListWrapperComponent,
+        TuiTextfieldDropdownDirective,
+        TuiPagination,
+        TablePaginationComponent,
+        TableSizeComponent,
+        TableTotalComponent
+    ],
+    templateUrl: './default-table-layout.component.html',
+    styleUrl: './default-table-layout.component.less'
 })
 export class DefaultTableLayoutComponent implements OnInit {
   @Input() table!: Table<any>;

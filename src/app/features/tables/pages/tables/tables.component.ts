@@ -10,21 +10,20 @@ import {PolymorpheusModule} from '@tinkoff/ng-polymorpheus';
 import {tableConfig} from './table.config';
 
 @Component({
-  selector: 'aff-tables',
-  standalone: true,
-  imports: [
-    TableComponent,
-    PolymorpheusOutlet,
-    JsonPipe,
-    DefaultTableLayoutComponent,
-    TableFilterFormComponent,
-    ReactiveFormsModule,
-    TuiButton,
-    PolymorpheusModule,
-  ],
-  templateUrl: './tables.component.html',
-  styleUrl: './tables.component.less',
-  providers: [TableFilterFormService],
+    selector: 'aff-tables',
+    imports: [
+        TableComponent,
+        PolymorpheusOutlet,
+        JsonPipe,
+        DefaultTableLayoutComponent,
+        TableFilterFormComponent,
+        ReactiveFormsModule,
+        TuiButton,
+        PolymorpheusModule,
+    ],
+    templateUrl: './tables.component.html',
+    styleUrl: './tables.component.less',
+    providers: [TableFilterFormService]
 })
 export class TablesComponent {
   tableFilterForm = inject(TableFilterFormService).formGroup;

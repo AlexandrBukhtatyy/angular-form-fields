@@ -9,11 +9,10 @@ export type DefaultOptionItem<T> = T & {
 };
 
 @Component({
-  selector: 'aff-option-default-template',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './option-default-template.component.html',
-  styleUrls: ['./option-default-template.component.less'],
+    selector: 'aff-option-default-template',
+    imports: [CommonModule],
+    templateUrl: './option-default-template.component.html',
+    styleUrls: ['./option-default-template.component.less']
 })
 export class OptionDefaultTemplateComponent<T> {
   @Input('label') inputLabel?: string;

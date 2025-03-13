@@ -7,11 +7,10 @@ import {OPTION_HINT_PROVIDER} from '../../tokens/option-hint-provider.token';
 import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 
 @Component({
-  selector: 'aff-option-option-with-hint-value-template',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './option-with-hint-value-template.component.html',
-  styleUrls: ['./option-with-hint-value-template.component.scss'],
+    selector: 'aff-option-option-with-hint-value-template',
+    imports: [CommonModule],
+    templateUrl: './option-with-hint-value-template.component.html',
+    styleUrls: ['./option-with-hint-value-template.component.scss']
 })
 export class OptionWithHintValueTemplateComponent<T> {
   @Input('label') inputLabel?: string;

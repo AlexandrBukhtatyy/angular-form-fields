@@ -11,11 +11,10 @@ export type OptionWithHint<T> = T & {
 };
 
 @Component({
-  selector: 'aff-option-with-hint-content-template',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './option-with-hint-content-template.component.html',
-  styleUrls: ['./option-with-hint-content-template.component.less'],
+    selector: 'aff-option-with-hint-content-template',
+    imports: [CommonModule],
+    templateUrl: './option-with-hint-content-template.component.html',
+    styleUrls: ['./option-with-hint-content-template.component.less']
 })
 export class OptionWithHintContentTemplateComponent<T> {
   @Input('label') inputLabel?: string;

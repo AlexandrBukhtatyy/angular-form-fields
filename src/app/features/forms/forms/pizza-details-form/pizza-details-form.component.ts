@@ -6,15 +6,14 @@ import {CheckboxListComponent, FormGroupBase, RadioBlockListComponent} from '@mo
 import {ReactiveFormsModule} from '@angular/forms';
 
 @Component({
-  selector: 'aff-pizza-details-form',
-  templateUrl: './pizza-details-form.component.html',
-  styleUrls: ['./pizza-details-form.component.less'],
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    RadioBlockListComponent,
-    CheckboxListComponent
-  ]
+    selector: 'aff-pizza-details-form',
+    templateUrl: './pizza-details-form.component.html',
+    styleUrls: ['./pizza-details-form.component.less'],
+    imports: [
+        ReactiveFormsModule,
+        RadioBlockListComponent,
+        CheckboxListComponent
+    ]
 })
 export class PizzaDetailsFormComponent extends FormGroupBase {
   toppingsDictionary = ToppingsDictionary;
