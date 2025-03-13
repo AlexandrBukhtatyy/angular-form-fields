@@ -1,4 +1,4 @@
 # Модуль для работы с генератором форм
 
 ## Полезные ссылки
-* [Formly](https://formly.dev/)
+- [Formly](https://formly.dev/)
