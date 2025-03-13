@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {FormsGenerationModule} from '@modules/forms-generation';
 import {FormlyFieldConfig, FormlyModule} from '@ngx-formly/core';
+import {TuiButton} from '@taiga-ui/core';
 
 @Component({
   selector: 'aff-simple-form-generation',
@@ -10,6 +11,7 @@ import {FormlyFieldConfig, FormlyModule} from '@ngx-formly/core';
     ReactiveFormsModule,
     FormsGenerationModule,
     FormlyModule,
+    TuiButton,
   ],
   templateUrl: './simple-form-generation.component.html',
   styleUrl: './simple-form-generation.component.less'

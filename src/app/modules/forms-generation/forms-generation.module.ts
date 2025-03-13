@@ -1,11 +1,13 @@
 import {importProvidersFrom, NgModule} from '@angular/core';
-import {FormsGenerationInputModule} from './fields/forms-generation-input/forms-generation-input.module';
 import {FormlyModule} from '@ngx-formly/core';
+import {InputModule} from './fields/input/input.module';
+import {FormFieldModule} from './wrappers/form-field/form-field.module';
 
 
 @NgModule({
   imports: [
-    FormsGenerationInputModule,
+    FormFieldModule,
+    InputModule,
   ],
   providers: [importProvidersFrom(FormlyModule.forRoot())],
 })

@@ -1,11 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
-import {
-  FormsGenerationFormFieldModule
-} from '../../wrappers/forms-generation-form-field/forms-generation-form-field.module';
 import {FormlyModule} from '@ngx-formly/core';
-import {FormsGenerationInputComponent} from './forms-generation-input.component';
+import {InputComponent} from './input.component';
+import {FormFieldModule} from '../../wrappers/form-field/form-field.module';
 
 
 @NgModule({
@@ -13,13 +11,13 @@ import {FormsGenerationInputComponent} from './forms-generation-input.component'
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsGenerationInputComponent,
-    FormsGenerationFormFieldModule,
+    InputComponent,
+    FormFieldModule,
     FormlyModule.forChild({
       types: [
         {
           name: 'input',
-          component: FormsGenerationInputComponent,
+          component: InputComponent,
           wrappers: ['form-field'],
         },
         {name: 'string', extends: 'input'},
@@ -45,5 +43,5 @@ import {FormsGenerationInputComponent} from './forms-generation-input.component'
     }),
   ]
 })
-export class FormsGenerationInputModule {
+export class InputModule {
 }

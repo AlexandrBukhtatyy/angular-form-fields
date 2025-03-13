@@ -6,13 +6,13 @@ interface InputProps {
 }
 
 @Component({
-  selector: 'aff-forms-generation-input',
+  selector: 'fgen-input',
   standalone: true,
   imports: [],
-  templateUrl: './forms-generation-input.component.html',
-  styleUrl: './forms-generation-input.component.less'
+  templateUrl: './input.component.html',
+  styleUrl: './input.component.less'
 })
-export class FormsGenerationInputComponent extends FieldType<FieldTypeConfig<InputProps>> {
+export class InputComponent extends FieldType<FieldTypeConfig<InputProps>> {
   get type() {
     return this.props.type || 'text';
   }

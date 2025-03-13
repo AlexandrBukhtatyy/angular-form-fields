@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormlyModule} from '@ngx-formly/core';
-import {FormsGenerationFormFieldComponent} from './forms-generation-form-field.component';
+import {FormFieldComponent} from './form-field.component';
 
 
 
@@ -11,15 +11,15 @@ import {FormsGenerationFormFieldComponent} from './forms-generation-form-field.c
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsGenerationFormFieldComponent,
+    FormFieldComponent,
     FormlyModule.forChild({
       wrappers: [
         {
           name: 'form-field',
-          component: FormsGenerationFormFieldComponent,
+          component: FormFieldComponent,
         },
       ],
     }),
   ]
 })
-export class FormsGenerationFormFieldModule { }
+export class FormFieldModule { }
