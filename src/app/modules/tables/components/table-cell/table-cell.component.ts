@@ -4,15 +4,16 @@ import {PolymorpheusOutlet} from '@taiga-ui/polymorpheus';
 import {TableCellTypes, TableColumnSettings} from '@modules/tables';
 
 @Component({
-    selector: 'aff-table-cell',
-    imports: [
-        PolymorpheusOutlet,
-        NgSwitch,
-        NgSwitchCase,
-        NgSwitchDefault,
-    ],
-    templateUrl: './table-cell.component.html',
-    styleUrl: './table-cell.component.less'
+  selector: 'aff-table-cell',
+  imports: [
+    PolymorpheusOutlet,
+    NgSwitch,
+    NgSwitchCase,
+    NgSwitchDefault,
+  ],
+  templateUrl: './table-cell.component.html',
+  styleUrl: './table-cell.component.less',
+  standalone: true
 })
 export class TableCellComponent {
   TABLE_COLUMN_TYPES = TableCellTypes;

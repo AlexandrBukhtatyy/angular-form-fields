@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {JsonPipe} from '@angular/common';
 
 @Component({
-    selector: 'aff-introduction',
-    imports: [
-        JsonPipe
-    ],
-    templateUrl: './introduction.component.html',
-    styleUrl: './introduction.component.less'
+  selector: 'aff-introduction',
+  imports: [],
+  templateUrl: './introduction.component.html',
+  styleUrl: './introduction.component.less',
+  standalone: true
 })
 export class IntroductionComponent {
   featureKeys = `{SOME_KEY_01: true, SOME_KEY_012: true,SOME_KEY_013: true,SOME_KEY_03: true,SOME_KEY_02: true,SOME_KEY_014: true}`;

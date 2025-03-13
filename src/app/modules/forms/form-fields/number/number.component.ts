@@ -7,16 +7,17 @@ import {TuiFieldErrorPipe} from '@taiga-ui/kit';
 import {AsyncPipe} from '@angular/common';
 
 @Component({
-    selector: 'aff-number',
-    templateUrl: './number.component.html',
-    styleUrls: ['./number.component.less'],
-    imports: [
-        ReactiveFormsModule,
-        TuiInputNumberModule,
-        TuiError,
-        TuiFieldErrorPipe,
-        AsyncPipe
-    ]
+  selector: 'aff-number',
+  templateUrl: './number.component.html',
+  styleUrls: ['./number.component.less'],
+  imports: [
+    ReactiveFormsModule,
+    TuiInputNumberModule,
+    TuiError,
+    TuiFieldErrorPipe,
+    AsyncPipe
+  ],
+  standalone: true,
 })
 export class NumberComponent extends FormFieldBase {
 }

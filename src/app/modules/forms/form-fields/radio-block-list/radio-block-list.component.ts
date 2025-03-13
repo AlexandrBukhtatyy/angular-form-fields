@@ -11,12 +11,12 @@ import {NgForOf} from '@angular/common';
     styleUrls: ['./radio-block-list.component.less'],
     imports: [
         TuiGroup,
-        TuiLabel,
         TuiRadio,
         ReactiveFormsModule,
         NgForOf,
         TuiBlock
-    ]
+    ],
+  standalone: true,
 })
 export class RadioBlockListComponent extends FormFieldBase {
   @Input() options: any;

@@ -15,27 +15,22 @@ import {
 } from '@modules/forms';
 import {of} from 'rxjs';
 import {ReactiveFormsModule} from '@angular/forms';
-import {JsonPipe} from '@angular/common';
 import {TuiButton} from '@taiga-ui/core';
 import {PaymentMethodOptions} from '../../../forms/models/payment-methods';
 
 @Component({
-    selector: 'aff-table-filter-form',
-    templateUrl: './table-filter-form.component.html',
-    styleUrls: ['./table-filter-form.component.less'],
-    imports: [
-        ReactiveFormsModule,
-        InputComponent,
-        TextareaComponent,
-        DateComponent,
-        ComboboxComponent,
-        ComboboxWithHintVariantDirective,
-        ComboboxWithAddButtonDirective,
-        ComboboxDataProviderDirective,
-        JsonPipe,
-        TuiButton,
-        SelectComponent
-    ]
+  selector: 'aff-table-filter-form',
+  templateUrl: './table-filter-form.component.html',
+  styleUrls: ['./table-filter-form.component.less'],
+  imports: [
+    ReactiveFormsModule,
+    InputComponent,
+    DateComponent,
+    ComboboxComponent,
+    ComboboxDataProviderDirective,
+    TuiButton
+  ],
+  standalone: true
 })
 export class TableFilterFormComponent extends FormGroupBase {
 

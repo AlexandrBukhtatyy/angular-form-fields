@@ -8,26 +8,25 @@ import {
   FormGroupBase,
   InputComponent,
   labelStringify,
-  OptionWithHint,
   TextareaComponent
 } from '@modules/forms';
-import {of} from 'rxjs';
 import {ReactiveFormsModule} from '@angular/forms';
 import {addressDataProvider} from '../../data-providers/address.provider';
 
 @Component({
-    selector: 'aff-delivery-form',
-    templateUrl: './delivery-form.component.html',
-    styleUrls: ['./delivery-form.component.less'],
-    imports: [
-        ReactiveFormsModule,
-        ComboboxComponent,
-        ComboboxWithHintVariantDirective,
-        ComboboxWithAddButtonDirective,
-        ComboboxDataProviderDirective,
-        InputComponent,
-        TextareaComponent
-    ]
+  selector: 'aff-delivery-form',
+  templateUrl: './delivery-form.component.html',
+  styleUrls: ['./delivery-form.component.less'],
+  imports: [
+    ReactiveFormsModule,
+    ComboboxComponent,
+    ComboboxWithHintVariantDirective,
+    ComboboxWithAddButtonDirective,
+    ComboboxDataProviderDirective,
+    InputComponent,
+    TextareaComponent
+  ],
+  standalone: true
 })
 export class DeliveryFormComponent extends FormGroupBase {
 

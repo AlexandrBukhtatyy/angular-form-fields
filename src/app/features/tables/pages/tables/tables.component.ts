@@ -1,7 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {DefaultTableLayoutComponent, TableComponent,} from '@modules/tables';
-import {PolymorpheusOutlet,} from '@taiga-ui/polymorpheus';
-import {JsonPipe} from '@angular/common';
+import {DefaultTableLayoutComponent,} from '@modules/tables';
 import {TableFilterFormComponent} from '../../forms/table-filter-form/table-filter-form.component';
 import {TableFilterFormService} from '../../forms/table-filter-form/table-filter-form.service';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -10,20 +8,18 @@ import {PolymorpheusModule} from '@tinkoff/ng-polymorpheus';
 import {tableConfig} from './table.config';
 
 @Component({
-    selector: 'aff-tables',
-    imports: [
-        TableComponent,
-        PolymorpheusOutlet,
-        JsonPipe,
-        DefaultTableLayoutComponent,
-        TableFilterFormComponent,
-        ReactiveFormsModule,
-        TuiButton,
-        PolymorpheusModule,
-    ],
-    templateUrl: './tables.component.html',
-    styleUrl: './tables.component.less',
-    providers: [TableFilterFormService]
+  selector: 'aff-tables',
+  imports: [
+    DefaultTableLayoutComponent,
+    TableFilterFormComponent,
+    ReactiveFormsModule,
+    TuiButton,
+    PolymorpheusModule,
+  ],
+  templateUrl: './tables.component.html',
+  styleUrl: './tables.component.less',
+  providers: [TableFilterFormService],
+  standalone: true
 })
 export class TablesComponent {
   tableFilterForm = inject(TableFilterFormService).formGroup;

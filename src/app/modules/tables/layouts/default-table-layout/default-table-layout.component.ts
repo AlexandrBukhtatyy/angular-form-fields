@@ -9,21 +9,17 @@ import {TableTotalComponent} from '../../components/table-total/table-total.comp
 import {Table} from '../../classes/table';
 
 @Component({
-    selector: 'aff-default-table-layout',
-    imports: [
-        TableComponent,
-        TuiButton,
-        TuiButtonSelect,
-        FormsModule,
-        TuiDataListWrapperComponent,
-        TuiTextfieldDropdownDirective,
-        TuiPagination,
-        TablePaginationComponent,
-        TableSizeComponent,
-        TableTotalComponent
-    ],
-    templateUrl: './default-table-layout.component.html',
-    styleUrl: './default-table-layout.component.less'
+  selector: 'aff-default-table-layout',
+  imports: [
+    TableComponent,
+    FormsModule,
+    TablePaginationComponent,
+    TableSizeComponent,
+    TableTotalComponent
+  ],
+  templateUrl: './default-table-layout.component.html',
+  styleUrl: './default-table-layout.component.less',
+  standalone: true,
 })
 export class DefaultTableLayoutComponent implements OnInit {
   @Input() table!: Table<any>;
@@ -31,9 +27,11 @@ export class DefaultTableLayoutComponent implements OnInit {
   get index() {
     return this.table.pagination.index;
   }
+
   get size() {
     return this.table.pagination.size;
   }
+
   get total() {
     return this.table.pagination.total;
   }

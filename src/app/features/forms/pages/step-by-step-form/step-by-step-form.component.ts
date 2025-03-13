@@ -13,33 +13,33 @@ import {fadeInAnimation} from '@modules/animations';
 import {FormStepperDirective} from '@modules/forms';
 
 @Component({
-    selector: 'aff-step-by-step-form',
-    imports: [
-        ContactsShortFormComponent,
-        DeliveryFormComponent,
-        FormsModule,
-        NgForOf,
-        PaymentFormComponent,
-        PizzaDetailsFormComponent,
-        ReactiveFormsModule,
-        TuiAppearance,
-        TuiButton,
-        TuiCardLarge,
-        TuiStepperComponent,
-        TuiConnected,
-        TuiStep,
-        NgSwitch,
-        NgSwitchCase,
-        NgClass,
-        FormStepperDirective
-    ],
-    templateUrl: './step-by-step-form.component.html',
-    providers: [
-        PizzaOrderFormService
-    ],
-    animations: [
-        fadeInAnimation
-    ]
+  selector: 'aff-step-by-step-form',
+  imports: [
+    ContactsShortFormComponent,
+    DeliveryFormComponent,
+    FormsModule,
+    NgForOf,
+    PaymentFormComponent,
+    PizzaDetailsFormComponent,
+    ReactiveFormsModule,
+    TuiAppearance,
+    TuiButton,
+    TuiCardLarge,
+    TuiStepperComponent,
+    TuiStep,
+    NgSwitch,
+    NgSwitchCase,
+    NgClass,
+    FormStepperDirective
+  ],
+  templateUrl: './step-by-step-form.component.html',
+  providers: [
+    PizzaOrderFormService
+  ],
+  animations: [
+    fadeInAnimation
+  ],
+  standalone: true
 })
 export class StepByStepFormComponent {
   orderFormService = inject(PizzaOrderFormService);

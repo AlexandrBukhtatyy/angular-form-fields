@@ -7,16 +7,17 @@ import {TuiFieldErrorPipe} from '@taiga-ui/kit';
 import {AsyncPipe} from '@angular/common';
 
 @Component({
-    selector: 'aff-input',
-    templateUrl: './input.component.html',
-    styleUrls: ['./input.component.less'],
-    imports: [
-        ReactiveFormsModule,
-        TuiInputModule,
-        TuiError,
-        TuiFieldErrorPipe,
-        AsyncPipe
-    ]
+  selector: 'aff-input',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.less'],
+  imports: [
+    ReactiveFormsModule,
+    TuiInputModule,
+    TuiError,
+    TuiFieldErrorPipe,
+    AsyncPipe
+  ],
+  standalone: true,
 })
 export class InputComponent extends FormFieldBase {
 }

@@ -1,7 +1,7 @@
 import {Component, inject, Input} from '@angular/core';
 import {FormFieldBase} from '../../core/form-field.class';
 import {TUI_ITEMS_HANDLERS, TuiDataListWrapper, TuiFieldErrorPipe} from '@taiga-ui/kit';
-import {TuiError, TuiSelect, TuiValueContentContext, TuiTextfield} from '@taiga-ui/core';
+import {TuiError, TuiSelect, TuiTextfield, TuiValueContentContext} from '@taiga-ui/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AsyncPipe} from '@angular/common';
 import {PolymorpheusComponent, PolymorpheusContent} from '@taiga-ui/polymorpheus';
@@ -12,19 +12,19 @@ import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 import {TuiSelectModule} from '@taiga-ui/legacy';
 
 @Component({
-    selector: 'aff-select',
-    templateUrl: './select.component.html',
-    styleUrls: ['./select.component.less'],
-    imports: [
-        TuiSelect,
-        TuiTextfield,
-        ReactiveFormsModule,
-        TuiDataListWrapper,
-        TuiError,
-        TuiFieldErrorPipe,
-        AsyncPipe,
-        TuiSelectModule
-    ]
+  selector: 'aff-select',
+  templateUrl: './select.component.html',
+  styleUrls: ['./select.component.less'],
+  imports: [
+    TuiTextfield,
+    ReactiveFormsModule,
+    TuiDataListWrapper,
+    TuiError,
+    TuiFieldErrorPipe,
+    AsyncPipe,
+    TuiSelectModule
+  ],
+  standalone: true,
 })
 export class SelectComponent<T> extends FormFieldBase {
   private readonly itemsHandlers: TuiItemsHandlers<T> = inject(TUI_ITEMS_HANDLERS);

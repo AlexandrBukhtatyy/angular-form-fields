@@ -5,16 +5,17 @@ import {FormsModule} from '@angular/forms';
 import {TuiContext, TuiStringHandler} from '@taiga-ui/cdk';
 
 @Component({
-    selector: 'aff-table-size',
-    imports: [
-        TuiButton,
-        TuiButtonSelect,
-        TuiDataListWrapperComponent,
-        FormsModule,
-        TuiTextfieldDropdownDirective
-    ],
-    templateUrl: './table-size.component.html',
-    styleUrl: './table-size.component.less'
+  selector: 'aff-table-size',
+  imports: [
+    TuiButton,
+    TuiButtonSelect,
+    TuiDataListWrapperComponent,
+    FormsModule,
+    TuiTextfieldDropdownDirective
+  ],
+  templateUrl: './table-size.component.html',
+  styleUrl: './table-size.component.less',
+  standalone: true,
 })
 export class TableSizeComponent {
   @Input() index!: number;

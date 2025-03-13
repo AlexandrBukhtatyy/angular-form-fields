@@ -17,21 +17,20 @@ import {
 import {TuiComboBoxModule} from '@taiga-ui/legacy';
 
 @Component({
-    selector: 'aff-combobox',
-    templateUrl: './combobox.component.html',
-    styleUrls: ['./combobox.component.less'],
-    imports: [
-        TuiComboBoxModule,
-        ReactiveFormsModule,
-        TuiDataListWrapper,
-        TuiError,
-        TuiFieldErrorPipe,
-        AsyncPipe,
-        JsonPipe,
-        DropdownWithAddButtonComponent,
-        NgIf,
-        PolymorpheusOutlet,
-    ]
+  selector: 'aff-combobox',
+  templateUrl: './combobox.component.html',
+  styleUrls: ['./combobox.component.less'],
+  imports: [
+    TuiComboBoxModule,
+    ReactiveFormsModule,
+    TuiDataListWrapper,
+    TuiError,
+    TuiFieldErrorPipe,
+    AsyncPipe,
+    NgIf,
+    PolymorpheusOutlet,
+  ],
+  standalone: true,
 })
 export class ComboboxComponent<T> extends FormFieldBase {
   private readonly itemsHandlers: TuiItemsHandlers<T> =
