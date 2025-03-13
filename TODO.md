@@ -13,7 +13,7 @@
   - Localization 
   - HotKeys
   - Auth
-  - Graphics
+  - Graphics (Canvas)
   - FeatureToggles
   - Permissions RBAC ABAC
   - Table

@@ -1,21 +1,11 @@
 import {Component, inject} from '@angular/core';
-import {
-  DataProviderFactory,
-  DefaultTableLayoutComponent,
-  FunctionParamsTableCell,
-  TableCellCustomComponent,
-  TableCellTypes,
-  TableComponent,
-  TableFactory,
-  TableHeadCellCustomComponent,
-} from '@modules/tables';
-import {PolymorpheusComponent, PolymorpheusOutlet,} from '@taiga-ui/polymorpheus';
+import {DefaultTableLayoutComponent, TableComponent,} from '@modules/tables';
+import {PolymorpheusOutlet,} from '@taiga-ui/polymorpheus';
 import {JsonPipe} from '@angular/common';
 import {TableFilterFormComponent} from '../../forms/table-filter-form/table-filter-form.component';
 import {TableFilterFormService} from '../../forms/table-filter-form/table-filter-form.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TuiButton} from '@taiga-ui/core';
-import {preloadDataLoader} from './data-loaders';
 import {PolymorpheusModule} from '@tinkoff/ng-polymorpheus';
 import {tableConfig} from './table.config';
 
@@ -38,5 +28,9 @@ import {tableConfig} from './table.config';
 })
 export class TablesComponent {
   tableFilterForm = inject(TableFilterFormService).formGroup;
-  tableRef = tableConfig();
+  tableRef = tableConfig(this);
+
+  tableCellClickHandler($event: any) {
+    console.log('TablesComponent.tableCellClickHandler: ', $event);
+  }
 }

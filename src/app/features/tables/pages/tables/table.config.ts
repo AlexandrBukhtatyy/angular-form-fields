@@ -10,13 +10,18 @@ import {preloadDataLoader} from './data-loaders';
 import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
 import {inject} from '@angular/core';
 import {TableFilterFormService} from '../../forms/table-filter-form/table-filter-form.service';
+import {TablesComponent} from '@features/tables';
 
 // Table settings
-export function tableConfig() {
+export function tableConfig(componentRef: TablesComponent) {
   const tableFilterForm = inject(TableFilterFormService).formGroup;
   return TableFactory.makePaginated({
     filterProvider: tableFilterForm,
-    // TODO: you can use ONE OF THIS DataProviders: ProviderFactory.[makeStatic(ITEMS)|makePaginated(paginatedDataLoader)|makePreload(infiniteDataLoader)]
+    // TODO: you can use ONE OF THIS DataProviders:
+    //  - DataProviderFactory.makeStatic(ITEMS)
+    //  - DataProviderFactory.makePreload(preloadDataLoader)
+    //  - DataProviderFactory.makePaginated(paginatedDataLoader)
+    //  - DataProviderFactory.makeInfinite(infiniteDataLoader)
     dataProvider: DataProviderFactory.makePreload(preloadDataLoader),
     columns: [
       {
@@ -56,7 +61,7 @@ export function tableConfig() {
           value: {
             component: new PolymorpheusComponent(TableHeadCellCustomComponent<any>),
             componentEventCallback: ($event: any) => {
-              console.log('Cell event callback: ', $event);
+              console.log('Header cell event callback: ', $event);
             }
           }
         },
@@ -65,7 +70,8 @@ export function tableConfig() {
           value: {
             component: new PolymorpheusComponent(TableCellCustomComponent<any>),
             componentEventCallback: ($event: any) => {
-              console.log('Header cell event callback: ', $event);
+              console.log('Cell event callback: ', $event);
+              componentRef.tableCellClickHandler($event);
             }
           }
         }

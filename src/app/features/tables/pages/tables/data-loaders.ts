@@ -2,7 +2,7 @@ import {
   DataLoaderParams, InfiniteDataLoader,
   PaginatedDataLoader,
   PreloadDataLoader
-} from '../../../../modules/tables/classes/data-loaders';
+} from '@modules/tables';
 
 const ITEMS = [
   {
