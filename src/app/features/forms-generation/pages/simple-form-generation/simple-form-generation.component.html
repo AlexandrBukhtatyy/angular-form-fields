@@ -1,0 +1,7 @@
+<div class="tui-container tui-container_adaptive tui-space_top-8">
+  <h1 class="tui-text_h2 tui-space_bottom-4">Simple generated form</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+    <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

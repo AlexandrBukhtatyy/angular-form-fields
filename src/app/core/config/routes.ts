@@ -15,6 +15,10 @@ export const routes: Routes = [
         loadChildren: () => import('@features/forms').then(m => m.FormsRoutingModule)
       },
       {
+        path: 'forms-generation',
+        loadChildren: () => import('@features/forms-generation').then(m => m.FormsGenerationRoutingModule)
+      },
+      {
         path: 'tables',
         loadChildren: () => import('@features/tables').then(m => m.TablesRoutingModule)
       },

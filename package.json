@@ -26,6 +26,7 @@
     "@ng-web-apis/intersection-observer": "^4.11.1",
     "@ng-web-apis/mutation-observer": "^4.11.1",
     "@ng-web-apis/resize-observer": "^4.11.1",
+    "@ngx-formly/core": "^6.3.12",
     "@taiga-ui/cdk": "^4.14.0",
     "@taiga-ui/core": "^4.14.0",
     "@taiga-ui/i18n": "^4.14.0",

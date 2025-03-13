@@ -138,6 +138,26 @@
     </tui-aside-group>
     <tui-aside-group>
       <button
+        automation-id="forms-generation-link"
+        iconStart="@tui.list-checks"
+        tuiAsideItem
+        tuiChevron
+        type="button"
+      >
+        Forms generation
+        <ng-template>
+          <button
+            tuiAsideItem
+            type="button"
+            routerLink="./forms-generation/simple-form"
+          >
+            Simple form
+          </button>
+        </ng-template>
+      </button>
+    </tui-aside-group>
+    <tui-aside-group>
+      <button
         automation-id="tables-link"
         iconStart="@tui.table"
         tuiAsideItem
