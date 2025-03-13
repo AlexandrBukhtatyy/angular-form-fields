@@ -1,0 +1,35 @@
+<div class="tui-container tui-container_adaptive tui-space_top-8">
+  <h1 class="tui-text_h2 tui-space_bottom-4">Simple form</h1>
+  <form [formGroup]="formGroup">
+    <div class="tui-form__row tui-form__row_multi-fields">
+      <aff-combobox
+        class="tui-form__multi-field"
+        formControlName="address"
+        optionWithHint
+        withAddButton
+        (addClicked)="addClicked()"
+        [dataProvider]="addressDataProvider"
+        [stringify]="addressStringify"
+      >
+        address
+      </aff-combobox>
+      <aff-input class="tui-form__multi-field" formControlName="entrance">entrance</aff-input>
+    </div>
+    <div class="tui-form__row tui-form__row_multi-fields">
+      <aff-input class="tui-form__multi-field" formControlName="floor">floor</aff-input>
+      <aff-input class="tui-form__multi-field" formControlName="appartament">appartament</aff-input>
+      <aff-input class="tui-form__multi-field" formControlName="code">code</aff-input>
+    </div>
+    <aff-textarea class="tui-form__row" formControlName="comment">Type a comment</aff-textarea>
+    <div class="tui-form__row tui-space_top-8">
+      <button
+        tuiButton
+        type="button"
+        appearance="accent"
+        (click)="submitForm()"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>

@@ -7,6 +7,10 @@ const routes: Routes = [
         loadComponent: () => import('@features/forms').then(m => m.FormFieldDescriptionComponent)
       },
       {
+        path: 'simple-form',
+        loadComponent: () => import('@features/forms').then(m => m.SimpleFormComponent)
+      },
+      {
         path: 'composite',
         loadComponent: () => import('@features/forms').then(m => m.CompositeFormComponent)
       },
