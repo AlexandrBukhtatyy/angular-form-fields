@@ -7,7 +7,10 @@ export interface DataLoaderResponse<T> {
 
 export interface DataLoaderParams {
   filters?: any;
-  pagination?: any;
+  pagination?: {
+    page: number;
+    size: number;
+  };
   sort?: any;
 }
 

@@ -12,7 +12,7 @@ import {
   CdkRowDef,
   CdkTable
 } from '@angular/cdk/table';
-import {AsyncPipe, JsonPipe, NgForOf, NgIf} from '@angular/common';
+import {AsyncPipe, NgForOf, NgIf} from '@angular/common';
 import {TableCellComponent} from '../table-cell/table-cell.component';
 import {Table} from '../../classes/table';
 import {TableCellHeaderComponent} from '../table-cell-header/table-cell-header.component';
@@ -34,7 +34,8 @@ import {TableCellHeaderComponent} from '../table-cell-header/table-cell-header.c
     CdkRowDef,
     CdkRow,
     TableCellHeaderComponent,
-    TableCellComponent
+    TableCellComponent,
+    AsyncPipe
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.less',

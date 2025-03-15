@@ -12,10 +12,10 @@ import {TuiPagination} from '@taiga-ui/kit';
 })
 export class TablePaginationComponent {
   @Input() index!: number;
-  @Output()
-  indexChanged = new EventEmitter();
   @Input() size!: number;
   @Input() total!: number;
+  @Output()
+  indexChanged = new EventEmitter();
 
   get length(): number {
     return Math.ceil(this.total / this.size);

@@ -15,8 +15,28 @@ export abstract class Table<T> {
 
   constructor(settings: TableSettings<T>) {
     this.settings = settings;
-    this.pagination = new Pagination(this);
+    this.pagination = new Pagination();
     this.filters = new Filters(this);
+  }
+
+  setPage(index: number) {
+    this.pagination.index = index
+    this.update()
+  }
+
+  setSize(size: number) {
+    this.pagination.size = size
+    this.update()
+  }
+
+  update() {
+    // TODO: Асинхронщина ? + нужно обновлять данные после ответа
+    //  (это точно нужно делать тут или в лэйауте? - так как там с отображением работаем а тут с поведением =))
+    this.settings.dataProvider.update({
+      filters: this.filters,
+      pagination: this.pagination.getParams(),
+      // TODO:  sort
+    })
   }
 }
 

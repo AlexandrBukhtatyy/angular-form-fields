@@ -1,0 +1,10 @@
+<aff-table [table]="table"></aff-table>
+<div class="tui-space_top-4">
+  <aff-table-total [total]="table.pagination.total"></aff-table-total>
+  <aff-table-size [index]="table.pagination.index" [size]="table.pagination.size"
+                  (sizeChanged)="table.setSize($event)"
+  ></aff-table-size>
+  <aff-table-pagination [index]="table.pagination.index" [size]="table.pagination.size" [total]="table.pagination.total" [style.float]="'right'"
+                        (indexChanged)="table.setPage($event)"
+  ></aff-table-pagination>
+</div>

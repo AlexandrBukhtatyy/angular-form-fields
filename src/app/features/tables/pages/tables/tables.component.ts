@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {DefaultTableLayoutComponent,} from '@modules/tables';
+import {TableLayoutPaginatedComponent,} from '@modules/tables';
 import {TableFilterFormComponent} from '../../forms/table-filter-form/table-filter-form.component';
 import {TableFilterFormService} from '../../forms/table-filter-form/table-filter-form.service';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -10,7 +10,7 @@ import {tableConfig} from './table.config';
 @Component({
   selector: 'aff-tables',
   imports: [
-    DefaultTableLayoutComponent,
+    TableLayoutPaginatedComponent,
     TableFilterFormComponent,
     ReactiveFormsModule,
     TuiButton,

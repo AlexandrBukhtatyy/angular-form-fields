@@ -5,4 +5,4 @@ export * from './interfaces/teble-config';
 export * from './classes/table-factory';
 export * from './classes/data-loaders';
 export * from './classes/data-provider-factory';
-export * from './layouts/default-table-layout/default-table-layout.component';
+export * from './layouts/table-layout-paginated/table-layout-paginated.component';
