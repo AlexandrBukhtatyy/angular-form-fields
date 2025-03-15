@@ -25,8 +25,8 @@ export class PaginatedTable<T> extends Table<T> {
         pagination: this.pagination.serialize(),
         // TODO:  sort
       };
-      const {items} = this.settings.dataProvider.get(params) as DataLoaderResponse<any>;
-      this.state$$.next({...this.state$$.value, items});
+      const {items, size} = this.settings.dataProvider.get(params) as DataLoaderResponse<any>;
+      this.state$$.next({...this.state$$.value, items, limit: size});
     }
 
     if (this.settings.dataProvider.type === DATA_PROVIDERS.Preload) {
@@ -36,7 +36,7 @@ export class PaginatedTable<T> extends Table<T> {
         // TODO:  sort
       }) as Promise<DataLoaderResponse<T>>;
       dataPromise
-        .then(({items}) => this.state$$.next({...this.state$$.value, items}))
+        .then(({items, size}) => this.state$$.next({...this.state$$.value, items, limit: size}))
         .catch(() => {
           // TODO: Error
         });
@@ -49,7 +49,7 @@ export class PaginatedTable<T> extends Table<T> {
         // TODO:  sort
       }) as Promise<DataLoaderResponse<T>>;
       dataPromise
-        .then(({items}) => this.state$$.next({...this.state$$.value, items}))
+        .then(({items, size}) => this.state$$.next({...this.state$$.value, items, limit: size}))
         .catch(() => {
           // TODO: Error
         });

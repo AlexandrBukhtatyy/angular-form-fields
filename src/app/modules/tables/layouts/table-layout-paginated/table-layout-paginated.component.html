@@ -1,6 +1,7 @@
 <ng-container *ngIf="table.state$ | async as state">
   <aff-table [table]="table" [items]="state.items"></aff-table>
   <div class="tui-space_top-4">
+    {{state.limit}}
     <aff-table-total [total]="state.total"></aff-table-total>
     <aff-table-size [index]="state.offset" [size]="state.limit" (sizeChanged)="table.setSize($event)"></aff-table-size>
     <aff-table-pagination [index]="state.offset" [size]="state.limit" [total]="state.total" [style.float]="'right'"
