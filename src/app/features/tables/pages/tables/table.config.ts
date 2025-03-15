@@ -11,17 +11,13 @@ import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
 import {inject} from '@angular/core';
 import {TableFilterFormService} from '../../forms/table-filter-form/table-filter-form.service';
 import {TablesComponent} from '@features/tables';
+import {TABLE_TYPES} from '../../../../modules/tables/classes/table';
 
-// Table settings
 export function tableConfig(componentRef: TablesComponent) {
   const tableFilterForm = inject(TableFilterFormService).formGroup;
-  return TableFactory.makePaginated({
+  return TableFactory.make({
+    type: TABLE_TYPES.Paginated,
     filterProvider: tableFilterForm,
-    // TODO: you can use ONE OF THIS DataProviders:
-    //  - DataProviderFactory.makeStatic(ITEMS)
-    //  - DataProviderFactory.makePreload(preloadDataLoader)
-    //  - DataProviderFactory.makePaginated(paginatedDataLoader)
-    //  - DataProviderFactory.makeInfinite(infiniteDataLoader)
     dataProvider: DataProviderFactory.makePreload(preloadDataLoader),
     columns: [
       {

@@ -15,5 +15,4 @@ export interface DataLoaderParams {
 }
 
 export type PreloadDataLoader<T> = (params?: DataLoaderParams) => Promise<DataLoaderResponse<T>>;
-export type PaginatedDataLoader<T> = (params: DataLoaderParams) => Promise<DataLoaderResponse<T>>;
-export type InfiniteDataLoader<T> = (params: DataLoaderParams) => Promise<DataLoaderResponse<T>>;
+export type PartionalDataLoader<T> = (params: DataLoaderParams) => Promise<DataLoaderResponse<T>>;

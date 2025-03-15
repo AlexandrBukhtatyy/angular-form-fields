@@ -28,7 +28,7 @@ export class TableSizeComponent {
     `${$implicit} items per page`;
 
   sizeChangedHandler(index: number) {
-    this.index = index;
-    this.sizeChanged.emit(this.index);
+    this.size = index;
+    this.sizeChanged.emit(this.size);
   }
 }

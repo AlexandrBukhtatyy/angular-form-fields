@@ -4,7 +4,7 @@ export class Pagination {
   size: number = 10;
   total: number = 100;
 
-  getParams() {
+  serialize() {
     return {
       page: this.index,
       size: this.size

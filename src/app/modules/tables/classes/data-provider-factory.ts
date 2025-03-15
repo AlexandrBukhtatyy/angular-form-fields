@@ -1,10 +1,5 @@
-import {
-  InfiniteTableDataProvider,
-  PaginatedTableDataProvider,
-  PreloadTableDataProvider,
-  StaticTableDataProvider
-} from './data-providers';
-import {InfiniteDataLoader, PaginatedDataLoader, PreloadDataLoader} from './data-loaders';
+import {PartionalTableDataProvider, PreloadTableDataProvider, StaticTableDataProvider} from './data-providers';
+import {PartionalDataLoader, PreloadDataLoader} from './data-loaders';
 
 export class DataProviderFactory {
   static makeStatic<T>(data: Array<T>) {
@@ -15,11 +10,8 @@ export class DataProviderFactory {
     return new PreloadTableDataProvider(dataLoader);
   }
 
-  static makePaginated<T>(dataLoader: PaginatedDataLoader<T>) {
-    return new PaginatedTableDataProvider(dataLoader);
+  static makePartional<T>(dataLoader: PartionalDataLoader<T>) {
+    return new PartionalTableDataProvider(dataLoader);
   }
 
-  static makeInfinite<T>(dataLoader: InfiniteDataLoader<T>) {
-    return new InfiniteTableDataProvider(dataLoader);
-  }
 }

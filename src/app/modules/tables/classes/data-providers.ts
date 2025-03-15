@@ -1,84 +1,73 @@
-import {BehaviorSubject, Observable} from 'rxjs';
-import {
-  DataLoaderParams,
-  DataLoaderResponse,
-  InfiniteDataLoader,
-  PaginatedDataLoader,
-  PreloadDataLoader
-} from './data-loaders';
+import {DataLoaderParams, DataLoaderResponse, PartionalDataLoader, PreloadDataLoader} from './data-loaders';
 
 export enum DATA_PROVIDERS {
   Static,
   Preload,
-  Paginated,
-  Infinite,
+  Partional,
 }
 
 // TODO: Переименовать в State и хранить тут состояние таблицы
 export abstract class DataProvider<T> {
   public type?: DATA_PROVIDERS;
-  protected data$$: BehaviorSubject<T[]> = new BehaviorSubject<T[]>([]);
-  public data$: Observable<T[]> = this.data$$.asObservable();
 
-  abstract update(params: DataLoaderParams): void;
+  abstract get(params: DataLoaderParams): DataLoaderResponse<T> | Promise<DataLoaderResponse<T>>;
 }
 
 export class StaticTableDataProvider<T> extends DataProvider<T> {
   override type = DATA_PROVIDERS.Static;
 
-  constructor(data: Array<T>) {
+  constructor(private items: Array<T>) {
     super();
-    this.data$$.next(data);
   }
 
-  override update(params: DataLoaderParams) {}
+  override get(params: DataLoaderParams): DataLoaderResponse<T> {
+    return {
+      items: this.getFilteredItems(params),
+      offset: Number(params.pagination?.page),
+      size: Number(params.pagination?.size),
+      total: this.items.length,
+    };
+  }
+
+  private getFilteredItems(params: DataLoaderParams): Array<T> {
+    const page = Number(params?.pagination?.page);
+    const size = Number(params?.pagination?.size);
+    const offset = page * size;
+    const limit = size;
+
+    if (
+      !isFinite(page)
+      || !isFinite(size)
+    ) {
+      throw new Error('Invalid ppagination params');
+    }
+
+    return this.items
+      .filter((_, index) => (index >= offset && index < (offset * limit) + limit))
+      .map((item: any) => ({...item, titleTwo: `titleTwo: ${item.id}`}));
+  }
 }
 
-export class PreloadTableDataProvider extends DataProvider<any> {
+export class PreloadTableDataProvider<T> extends DataProvider<T> {
   override type = DATA_PROVIDERS.Preload;
 
   constructor(private dataLoader: PreloadDataLoader<any>) {
     super();
-    // TODO: возможно не тут надо работать с методами DataProvider
-    // TODO: обработать крайнии случаи
-    const initialParams: DataLoaderParams = {
-      pagination: {
-        page: 0,
-        size: 10,
-      }
-    }
-    this.load(initialParams)
   }
 
-  override update(params: DataLoaderParams) {
-    this.load(params)
-  }
-
-  load(params: DataLoaderParams) {
-    this.dataLoader(params).then((response: DataLoaderResponse<any>) => {
-      this.data$$.next(response.items);
-    });
+  override get(params: DataLoaderParams): Promise<DataLoaderResponse<T>> {
+    return this.dataLoader(params);
   }
 }
 
-export class PaginatedTableDataProvider extends DataProvider<any> {
-  override type = DATA_PROVIDERS.Paginated;
+export class PartionalTableDataProvider<T> extends DataProvider<T> {
+  override type = DATA_PROVIDERS.Partional;
 
-  constructor(dataLoader: PaginatedDataLoader<any>) {
+  constructor(private dataLoader: PartionalDataLoader<any>) {
     super();
   }
 
-  override update(params: DataLoaderParams) {
-  }
-}
-
-export class InfiniteTableDataProvider extends DataProvider<any> {
-  override type = DATA_PROVIDERS.Infinite;
-
-  constructor(dataLoader: InfiniteDataLoader<any>) {
-    super();
-  }
-
-  override update(params: DataLoaderParams) {
+  override get(params: DataLoaderParams): Promise<DataLoaderResponse<T>> {
+    return this.dataLoader(params);
   }
 }

@@ -2,6 +2,7 @@ import {PolymorpheusContent} from '@taiga-ui/polymorpheus/types/content';
 import {FormGroup} from '@angular/forms';
 import {DataProvider} from '../classes/data-providers';
 import {PolymorpheusTemplate} from '@tinkoff/ng-polymorpheus';
+import {TABLE_TYPES} from '../classes/table';
 
 export enum TableCellTypes {
   String,
@@ -29,6 +30,7 @@ export type FunctionParamsTableCell<T> = { row: any, config: TableCellSettings<T
 export type FunctionTableCell<T> = (context: FunctionParamsTableCell<T>) => string;
 
 export interface TableSettings<T> {
+  type: TABLE_TYPES;
   filterProvider?: FormGroup;
   dataProvider: DataProvider<T>;
   columns: TableColumnSettings<T>[];

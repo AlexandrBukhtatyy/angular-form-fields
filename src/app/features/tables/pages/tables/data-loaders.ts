@@ -1,8 +1,4 @@
-import {
-  DataLoaderParams, InfiniteDataLoader,
-  PaginatedDataLoader,
-  PreloadDataLoader
-} from '@modules/tables';
+import {DataLoaderParams, PartionalDataLoader, PreloadDataLoader} from '@modules/tables';
 
 const ITEMS = [
   {
@@ -98,21 +94,21 @@ const ITEMS = [
 ];
 
 export const preloadDataLoader: PreloadDataLoader<any> = (params?: DataLoaderParams) => {
-  const page = Number(params?.pagination?.page)
-  const size = Number(params?.pagination?.size)
-  const offset = page * size
-  const limit = size
+  const page = Number(params?.pagination?.page);
+  const size = Number(params?.pagination?.size);
+  const offset = page * size;
+  const limit = size;
 
-  if(
+  if (
     !isFinite(page)
     || !isFinite(size)
   ) {
-    throw new Error('Invalid ppagination params')
+    throw new Error('Invalid ppagination params');
   }
 
   const items = ITEMS
-    .filter((_, index) => (index >= offset && index < (offset*limit)+limit))
-    .map((item: any) => ({...item, titleTwo: `titleTwo: ${item.id}` }))
+    .filter((_, index) => (index >= offset && index < (offset * limit) + limit))
+    .map((item: any) => ({...item, titleTwo: `titleTwo: ${item.id}`}));
 
   return Promise.resolve({
     items,
@@ -122,16 +118,7 @@ export const preloadDataLoader: PreloadDataLoader<any> = (params?: DataLoaderPar
   });
 };
 
-export const paginatedDataLoader: PaginatedDataLoader<any> = (params: DataLoaderParams) => {
-  return Promise.resolve({
-    items: ITEMS,
-    offset: 0,
-    size: 2,
-    total: ITEMS.length,
-  });
-};
-
-export const infiniteDataLoader: InfiniteDataLoader<any> = (params: DataLoaderParams) => {
+export const partionalDataLoader: PartionalDataLoader<any> = (params: DataLoaderParams) => {
   return Promise.resolve({
     items: ITEMS,
     offset: 0,

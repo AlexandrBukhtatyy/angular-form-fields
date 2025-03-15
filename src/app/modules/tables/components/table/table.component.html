@@ -1,27 +1,25 @@
-<ng-container *ngIf="table.settings.dataProvider.data$ | async as data">
-  <table class="tui-table tui-table_layout_fixed"
-         cdk-table
-         [dataSource]="data"
-  >
-    <ng-container *ngFor="let column of table.settings.columns">
-      <ng-container [cdkColumnDef]="column.key">
-        <th cdk-header-cell *cdkHeaderCellDef>
-          <aff-table-header-cell [config]="column"></aff-table-header-cell>
-        </th>
-        <td cdk-cell *cdkCellDef="let row">
-          <aff-table-cell [config]="column" [value]="row"></aff-table-cell>
-        </td>
-      </ng-container>
+<table class="tui-table tui-table_layout_fixed"
+       cdk-table
+       [dataSource]="items"
+>
+  <ng-container *ngFor="let column of table.settings.columns">
+    <ng-container [cdkColumnDef]="column.key">
+      <th cdk-header-cell *cdkHeaderCellDef>
+        <aff-table-header-cell [config]="column"></aff-table-header-cell>
+      </th>
+      <td cdk-cell *cdkCellDef="let row">
+        <aff-table-cell [config]="column" [value]="row"></aff-table-cell>
+      </td>
     </ng-container>
+  </ng-container>
 
-    <ng-container *ngIf="!hideDefaultEmptyMessage">
-      <tr *cdkNoDataRow>
-        <td colspan="2">No data found</td>
-      </tr>
-    </ng-container>
+  <ng-container *ngIf="!hideDefaultEmptyMessage">
+    <tr *cdkNoDataRow>
+      <td colspan="2">No data found</td>
+    </tr>
+  </ng-container>
 
-    <tr cdk-header-row *cdkHeaderRowDef="columntsOrder"></tr>
+  <tr cdk-header-row *cdkHeaderRowDef="columntsOrder"></tr>
 
-    <tr cdk-row *cdkRowDef="let row; columns: columntsOrder"></tr>
-  </table>
-</ng-container>
+  <tr cdk-row *cdkRowDef="let row; columns: columntsOrder"></tr>
+</table>

@@ -1,7 +1,7 @@
 <div class="tui-container tui-container_adaptive tui-space_top-8">
   <h2 class="tui-text_h2 tui-space_bottom-4">Table</h2>
   <aff-table-filter-form class="tui-space_bottom-4" [formGroup]="tableFilterForm"></aff-table-filter-form>
-  <aff-default-table-layout [table]="tableRef"></aff-default-table-layout>
+  <aff-table-layout-paginated [table]="tableRef"></aff-table-layout-paginated>
   <hr>
   <h2 class="tui-text_h2 tui-space_bottom-4 tui-space_top-8">Table debug area</h2>
   <button appearance="primary" tuiButton size="xs" type="button" (click)="tableRef.filters.reset()">staticTableRef.resetFilters</button>
