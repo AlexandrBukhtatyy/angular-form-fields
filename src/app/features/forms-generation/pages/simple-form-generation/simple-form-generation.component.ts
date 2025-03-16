@@ -1,8 +1,10 @@
 import {Component} from '@angular/core';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {FormsGenerationModule} from '@modules/forms-generation';
+import {COMBOBOX_VARIANTS, FormsGenerationModule} from '@modules/forms-generation';
 import {FormlyFieldConfig, FormlyModule} from '@ngx-formly/core';
 import {TuiButton} from '@taiga-ui/core';
+import {addressDataProvider} from '../../../forms/data-providers/address.provider';
+import {labelStringify} from '@modules/forms';
 
 @Component({
   selector: 'aff-simple-form-generation',
@@ -26,12 +28,18 @@ export class SimpleFormGenerationComponent {
       fieldGroup: [
         {
           key: 'address',
-          type: 'input',
+          type: 'combobox',
           className: 'tui-form__multi-field',
           props: {
             label: 'Address',
             placeholder: 'Address',
             required: true,
+            dataProvider: addressDataProvider,
+            stringify: labelStringify,
+            variant: COMBOBOX_VARIANTS.COMPLEX,
+            variantProps: {
+              addClickCallback: (value: any) => console.log('addClickCallback: ', value)
+            }
           }
         },
         {

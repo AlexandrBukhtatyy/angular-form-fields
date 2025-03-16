@@ -28,7 +28,8 @@ import {NgClass, NgForOf} from '@angular/common';
         TuiAppearance,
         TuiButton,
         NgClass
-    ]
+    ],
+  standalone: true
 })
 export class CompositeFormComponent {
   orderFormService = inject(PizzaOrderFormService);

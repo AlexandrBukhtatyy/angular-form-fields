@@ -7,29 +7,31 @@ import {
   ComboboxWithAddButtonDirective,
   ComboboxWithHintVariantDirective,
   InputComponent,
-  labelStringify, TextareaComponent
+  labelStringify,
+  TextareaComponent
 } from '@modules/forms';
 import {addressDataProvider} from '../../data-providers/address.provider';
 import {SimpleFormService} from './simple-form.service';
 import {TuiButton} from '@taiga-ui/core';
 
 @Component({
-    selector: 'aff-simple-form',
-    imports: [
-        ReactiveFormsModule,
-        ComboboxWithAddButtonDirective,
-        ComboboxWithHintVariantDirective,
-        ComboboxDataProviderDirective,
-        ComboboxComponent,
-        InputComponent,
-        TextareaComponent,
-        TuiButton
-    ],
-    providers: [
-        SimpleFormService
-    ],
-    templateUrl: './simple-form.component.html',
-    styleUrl: './simple-form.component.less'
+  selector: 'aff-simple-form',
+  imports: [
+    ReactiveFormsModule,
+    ComboboxWithAddButtonDirective,
+    ComboboxWithHintVariantDirective,
+    ComboboxDataProviderDirective,
+    ComboboxComponent,
+    InputComponent,
+    TextareaComponent,
+    TuiButton
+  ],
+  providers: [
+    SimpleFormService
+  ],
+  templateUrl: './simple-form.component.html',
+  styleUrl: './simple-form.component.less',
+  standalone: true
 })
 export class SimpleFormComponent {
   simpleFormService = inject(SimpleFormService);

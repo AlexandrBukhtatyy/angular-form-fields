@@ -3,17 +3,14 @@ import {FormFieldBase} from '../../core/form-field.class';
 import {TUI_ITEMS_HANDLERS, TuiDataListWrapper, TuiFieldErrorPipe,} from '@taiga-ui/kit';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TuiError, TuiValueContentContext} from '@taiga-ui/core';
-import {AsyncPipe, JsonPipe, NgIf} from '@angular/common';
+import {AsyncPipe, NgIf} from '@angular/common';
 import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
 import {PolymorpheusComponent, PolymorpheusContent, PolymorpheusOutlet} from '@taiga-ui/polymorpheus';
 import {
   OptionDefaultTemplateComponent
 } from '../../templates/option-default-template/option-default-template.component';
 import {ReplaySubject} from 'rxjs';
-import {
-  ComboboxWithAddButtonContext,
-  DropdownWithAddButtonComponent,
-} from './templates/dropdown-with-add-button/dropdown-with-add-button.component';
+import {ComboboxWithAddButtonContext,} from './templates/dropdown-with-add-button/dropdown-with-add-button.component';
 import {TuiComboBoxModule} from '@taiga-ui/legacy';
 
 @Component({

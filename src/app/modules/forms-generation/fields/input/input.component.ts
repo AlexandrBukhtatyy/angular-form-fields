@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {FieldType, FieldTypeConfig} from '@ngx-formly/core';
+import {FieldType, FieldTypeConfig, FormlyModule} from '@ngx-formly/core';
 import {InputComponent as FInputComponent} from '@modules/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 interface InputProps {
   type: 'input';
@@ -10,7 +11,9 @@ interface InputProps {
 @Component({
   selector: 'fgen-input',
   imports: [
-    FInputComponent
+    FInputComponent,
+    ReactiveFormsModule,
+    FormlyModule
   ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.less',

@@ -1,1 +1,5 @@
-<aff-input [class]="field.className">{{field.props.label}}</aff-input>
+<aff-input
+  [class]="field.className"
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+>{{field.props.label}}</aff-input>
