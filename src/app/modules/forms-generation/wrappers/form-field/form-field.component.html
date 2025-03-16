@@ -1,4 +1,6 @@
-<ng-template #fieldComponent></ng-template>
+<div [class]="field.className">
+  <ng-template #fieldComponent></ng-template>
+</div>
 <!--
 <ng-template #labelTemplate>
   <label *ngIf="props.label && props.hideLabel !== true" [attr.for]="id" class="form-label">
