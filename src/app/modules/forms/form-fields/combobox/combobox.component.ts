@@ -11,7 +11,7 @@ import {
 } from '../../templates/option-default-template/option-default-template.component';
 import {ReplaySubject} from 'rxjs';
 import {ComboboxWithAddButtonContext,} from './templates/dropdown-with-add-button/dropdown-with-add-button.component';
-import {TuiComboBoxModule} from '@taiga-ui/legacy';
+import {TuiComboBoxModule, TuiTextfieldControllerModule} from '@taiga-ui/legacy';
 
 @Component({
   selector: 'aff-combobox',
@@ -21,6 +21,7 @@ import {TuiComboBoxModule} from '@taiga-ui/legacy';
     TuiComboBoxModule,
     ReactiveFormsModule,
     TuiDataListWrapper,
+    TuiTextfieldControllerModule,
     TuiError,
     TuiFieldErrorPipe,
     AsyncPipe,

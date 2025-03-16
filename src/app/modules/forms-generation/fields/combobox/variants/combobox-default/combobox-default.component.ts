@@ -10,7 +10,7 @@ import {ComboboxComponent as ComboboxComponentRef} from '../../combobox.componen
     ComboboxComponent,
     ReactiveFormsModule,
     FormlyModule,
-    ComboboxDataProviderDirective
+    ComboboxDataProviderDirective,
   ],
   templateUrl: './combobox-default.component.html',
   styleUrl: './combobox-default.component.less',

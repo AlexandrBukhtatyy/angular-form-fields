@@ -17,7 +17,7 @@ import {FormlyModule} from '@ngx-formly/core';
     FormlyModule,
     ComboboxDataProviderDirective,
     ComboboxWithHintVariantDirective,
-    ComboboxWithAddButtonDirective
+    ComboboxWithAddButtonDirective,
   ],
   templateUrl: './combobox-complex.component.html',
   styleUrl: './combobox-complex.component.less',
@@ -27,6 +27,6 @@ export class ComboboxComplexComponent {
   public comboboxComponentRef = inject(ComboboxComponentRef);
 
   addClicked($event: any) {
-    this.comboboxComponentRef.field.props.variantProps.addClickCallback($event)
+    this.comboboxComponentRef.field.props.variantProps.addClickCallback($event);
   }
 }

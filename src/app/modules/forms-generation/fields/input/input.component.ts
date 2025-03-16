@@ -2,10 +2,12 @@ import {Component} from '@angular/core';
 import {FieldType, FieldTypeConfig, FormlyModule} from '@ngx-formly/core';
 import {InputComponent as FInputComponent} from '@modules/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import {TuiTextfieldControllerModule} from '@taiga-ui/legacy';
 
 interface InputProps {
   type: 'input';
   label: string;
+  resetable: boolean;
 }
 
 @Component({
@@ -13,6 +15,7 @@ interface InputProps {
   imports: [
     FInputComponent,
     ReactiveFormsModule,
+    TuiTextfieldControllerModule,
     FormlyModule
   ],
   templateUrl: './input.component.html',

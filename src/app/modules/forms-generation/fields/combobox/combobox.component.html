@@ -1,9 +1,9 @@
 
 @switch (field.props.variant) {
   @case ('complex') {
-    <fgen-combobox-complex></fgen-combobox-complex>
+    <fgen-combobox-complex [tuiTextfieldCleaner]="field.props.resetable"></fgen-combobox-complex>
   }
   @default {
-    <fgen-combobox-default></fgen-combobox-default>
+    <fgen-combobox-default [tuiTextfieldCleaner]="field.props.resetable"></fgen-combobox-default>
   }
 }
