@@ -1,0 +1,12 @@
+<aff-combobox
+  [class]="comboboxComponentRef.field.className"
+  [formControl]="comboboxComponentRef.formControl"
+  [formlyAttributes]="comboboxComponentRef.field"
+  [dataProvider]="comboboxComponentRef.field.props.dataProvider"
+  [stringify]="comboboxComponentRef.field.props.stringify"
+>
+  <!--  optionWithHint -->
+  <!--  withAddButton -->
+  <!--  (addClicked)="addClicked()"-->
+  {{comboboxComponentRef.field.props.label}}
+</aff-combobox>
