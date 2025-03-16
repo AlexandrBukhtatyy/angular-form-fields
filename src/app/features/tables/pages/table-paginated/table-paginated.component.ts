@@ -8,7 +8,7 @@ import {PolymorpheusModule} from '@tinkoff/ng-polymorpheus';
 import {tableConfig} from './table.config';
 
 @Component({
-  selector: 'aff-tables',
+  selector: 'aff-table-paginated',
   imports: [
     TableLayoutPaginatedComponent,
     TableFilterFormComponent,
@@ -16,12 +16,12 @@ import {tableConfig} from './table.config';
     TuiButton,
     PolymorpheusModule,
   ],
-  templateUrl: './tables.component.html',
-  styleUrl: './tables.component.less',
+  templateUrl: './table-paginated.component.html',
+  styleUrl: './table-paginated.component.less',
   providers: [TableFilterFormService],
   standalone: true
 })
-export class TablesComponent {
+export class TablePaginatedComponent {
   tableFilterForm = inject(TableFilterFormService).formGroup;
   tableRef = tableConfig(this);
 

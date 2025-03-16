@@ -10,10 +10,10 @@ import {preloadDataLoader} from './data-loaders';
 import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
 import {inject} from '@angular/core';
 import {TableFilterFormService} from '../../forms/table-filter-form/table-filter-form.service';
-import {TablesComponent} from '@features/tables';
 import {TABLE_TYPES} from '../../../../modules/tables/classes/table';
+import {TablePaginatedComponent} from './table-paginated.component';
 
-export function tableConfig(componentRef: TablesComponent) {
+export function tableConfig(componentRef: TablePaginatedComponent) {
   const tableFilterForm = inject(TableFilterFormService).formGroup;
   return TableFactory.make({
     type: TABLE_TYPES.Paginated,
@@ -38,7 +38,8 @@ export function tableConfig(componentRef: TablesComponent) {
         },
         cell: {
           type: TableCellTypes.Function,
-          value: (context: FunctionParamsTableCell<any>) => `${context.row.title} (modified)`        }
+          value: (context: FunctionParamsTableCell<any>) => `${context.row.title} (modified)`
+        }
       },
       {
         key: 'titleTwo',

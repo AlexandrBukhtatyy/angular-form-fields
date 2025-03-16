@@ -11,7 +11,6 @@ import {PaginatedTable} from '../../classes/table-paginated';
   selector: 'aff-table-layout-paginated',
   imports: [
     TableComponent,
-    FormsModule,
     TablePaginationComponent,
     TableSizeComponent,
     TableTotalComponent,
