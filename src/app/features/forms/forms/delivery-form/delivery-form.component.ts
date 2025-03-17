@@ -4,7 +4,7 @@ import {
   ComboboxDataProvider,
   ComboboxDataProviderDirective,
   ComboboxWithAddButtonDirective,
-  ComboboxWithHintVariantDirective,
+  ComboboxWithHintDirective,
   FormGroupBase,
   InputComponent,
   labelStringify,
@@ -20,11 +20,11 @@ import {addressDataProvider} from '../../data-providers/address.provider';
   imports: [
     ReactiveFormsModule,
     ComboboxComponent,
-    ComboboxWithHintVariantDirective,
-    ComboboxWithAddButtonDirective,
     ComboboxDataProviderDirective,
     InputComponent,
-    TextareaComponent
+    TextareaComponent,
+    ComboboxWithHintDirective,
+    ComboboxWithAddButtonDirective
   ],
   standalone: true
 })

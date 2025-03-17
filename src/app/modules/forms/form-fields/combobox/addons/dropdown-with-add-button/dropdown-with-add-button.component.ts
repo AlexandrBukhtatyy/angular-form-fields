@@ -5,8 +5,8 @@ import {TuiDataList, TuiIcon, TuiValueContentContext} from '@taiga-ui/core';
 import {
   OptionDefaultTemplateComponent
 } from '../../../../templates/option-default-template/option-default-template.component';
-import {ComboboxWithAddButtonDirective} from '../../variants/combobox-with-add-button.directive';
 import {TuiDataListWrapper} from '@taiga-ui/kit';
+import {ComboboxWithAddButtonDirective} from '@modules/forms';
 
 export type ComboboxWithAddButtonContext<T> = {
   items: any[] | null;

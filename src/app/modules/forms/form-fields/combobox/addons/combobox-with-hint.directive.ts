@@ -1,6 +1,6 @@
 import {Directive, inject, Input} from '@angular/core';
 import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
-import {SelectComponent} from '../select.component';
+import {ComboboxComponent} from '../combobox.component';
 import {OPTION_LABEL_PROVIDER} from '../../../tokens/option-label-provider.token';
 import {OPTION_HINT_PROVIDER} from '../../../tokens/option-hint-provider.token';
 import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
@@ -12,27 +12,26 @@ import {
 } from '../../../templates/option-with-hint-value-template/option-with-hint-value-template.component';
 
 @Directive({
-  selector: 'aff-select[optionWithHint]',
+  selector: 'aff-combobox[optionWithHint]',
   standalone: true,
   providers: [
     {
       provide: OPTION_LABEL_PROVIDER,
-      useExisting: SelectWithHintVariantDirective,
+      useExisting: ComboboxWithHintDirective,
     },
     {
       provide: OPTION_HINT_PROVIDER,
-      useExisting: SelectWithHintVariantDirective,
+      useExisting: ComboboxWithHintDirective,
     },
   ],
 })
-export class SelectWithHintVariantDirective<T> {
+export class ComboboxWithHintDirective<T> {
   @Input() labelFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
   @Input() hintFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
-  selectComponentRef = inject(SelectComponent<T>);
+  comboboxComponenRef = inject(ComboboxComponent<T>);
 
   constructor() {
-    this.selectComponentRef.itemContent = new PolymorpheusComponent(OptionWithHintContentTemplateComponent);
-    this.selectComponentRef.valueContent = new PolymorpheusComponent(OptionWithHintValueTemplateComponent);
+    this.comboboxComponenRef.itemContent = new PolymorpheusComponent(OptionWithHintContentTemplateComponent);
+    this.comboboxComponenRef.valueContent = new PolymorpheusComponent(OptionWithHintValueTemplateComponent);
   }
-
 }

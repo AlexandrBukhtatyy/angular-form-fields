@@ -5,7 +5,7 @@ import {
   ComboboxDataProvider,
   ComboboxDataProviderDirective,
   ComboboxWithAddButtonDirective,
-  ComboboxWithHintVariantDirective,
+  ComboboxWithHintDirective,
   InputComponent,
   labelStringify,
   TextareaComponent
@@ -19,7 +19,7 @@ import {TuiButton} from '@taiga-ui/core';
   imports: [
     ReactiveFormsModule,
     ComboboxWithAddButtonDirective,
-    ComboboxWithHintVariantDirective,
+    ComboboxWithHintDirective,
     ComboboxDataProviderDirective,
     ComboboxComponent,
     InputComponent,

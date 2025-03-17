@@ -14,15 +14,15 @@ import {OPTION_TOOLTIP_PROVIDER} from '../../../tokens/option-tooltip-provider.t
   providers: [
     {
       provide: OPTION_LABEL_PROVIDER,
-      useExisting: SelectWithTooltipVariantDirective,
+      useExisting: SelectWithTooltipDirective,
     },
     {
       provide: OPTION_TOOLTIP_PROVIDER,
-      useExisting: SelectWithTooltipVariantDirective,
+      useExisting: SelectWithTooltipDirective,
     },
   ],
 })
-export class SelectWithTooltipVariantDirective<T> {
+export class SelectWithTooltipDirective<T> {
   @Input() labelFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
   @Input() tooltipFormatter: (TuiItemsHandlers<T>['stringify']) | null = null;
   selectComponentRef = inject(SelectComponent<T>);

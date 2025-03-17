@@ -4,7 +4,7 @@ import {
   ComboboxComponent,
   ComboboxDataProviderDirective,
   ComboboxWithAddButtonDirective,
-  ComboboxWithHintVariantDirective
+  ComboboxWithHintDirective
 } from '@modules/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormlyModule} from '@ngx-formly/core';
@@ -16,7 +16,7 @@ import {FormlyModule} from '@ngx-formly/core';
     ReactiveFormsModule,
     FormlyModule,
     ComboboxDataProviderDirective,
-    ComboboxWithHintVariantDirective,
+    ComboboxWithHintDirective,
     ComboboxWithAddButtonDirective,
   ],
   templateUrl: './combobox-complex.component.html',

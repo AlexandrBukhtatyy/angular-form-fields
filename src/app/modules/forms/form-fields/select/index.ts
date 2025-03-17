@@ -1,3 +1,3 @@
-export * from './variants/select-with-hint-variant.directive';
-export * from './variants/select-with-tooltip-variant.directive';
+export * from './addons/select-with-hint.directive';
+export * from './addons/select-with-tooltip.directive';
 export * from './select.component';

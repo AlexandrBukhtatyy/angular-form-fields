@@ -4,7 +4,7 @@ import {
   ComboboxDataProvider,
   ComboboxDataProviderDirective,
   ComboboxWithAddButtonDirective,
-  ComboboxWithHintVariantDirective,
+  ComboboxWithHintDirective,
   DateComponent,
   FormGroupBase,
   InputComponent,

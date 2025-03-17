@@ -1,7 +1,7 @@
 import {Directive, EventEmitter, inject, Output} from '@angular/core';
-import {DropdownWithAddButtonComponent} from '../templates/dropdown-with-add-button/dropdown-with-add-button.component';
-import {ComboboxComponent} from '../combobox.component';
 import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
+import {ComboboxComponent} from '../../combobox.component';
+import {DropdownWithAddButtonComponent} from './dropdown-with-add-button.component';
 
 @Directive({
   selector: '[aff-combobox[withAddButton]]',

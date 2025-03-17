@@ -10,8 +10,8 @@ import {
   OptionDefaultTemplateComponent
 } from '../../templates/option-default-template/option-default-template.component';
 import {ReplaySubject} from 'rxjs';
-import {ComboboxWithAddButtonContext,} from './templates/dropdown-with-add-button/dropdown-with-add-button.component';
 import {TuiComboBoxModule, TuiTextfieldControllerModule} from '@taiga-ui/legacy';
+import {ComboboxWithAddButtonContext} from './addons/dropdown-with-add-button/dropdown-with-add-button.component';
 
 @Component({
   selector: 'aff-combobox',
