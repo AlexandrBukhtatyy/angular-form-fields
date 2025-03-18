@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {
+  ComboboxComplexDirective,
   ComboboxComponent,
   ComboboxDataProvider,
   ComboboxDataProviderDirective,
@@ -24,7 +25,8 @@ import {addressDataProvider} from '../../data-providers/address.provider';
     InputComponent,
     TextareaComponent,
     ComboboxWithHintDirective,
-    ComboboxWithAddButtonDirective
+    ComboboxWithAddButtonDirective,
+    ComboboxComplexDirective
   ],
   standalone: true
 })

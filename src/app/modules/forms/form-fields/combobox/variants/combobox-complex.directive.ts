@@ -1,7 +1,6 @@
-import {Directive} from '@angular/core';
+import {Directive, Injectable} from '@angular/core';
 import {ComboboxWithAddButtonDirective, ComboboxWithHintDirective} from '@modules/forms';
 
-// TODO: - разобраться почему не работает Composition API
 @Directive({
   selector: '[affComboboxComplex]',
   hostDirectives: [

@@ -6,7 +6,6 @@ import {
   OptionDefaultTemplateComponent
 } from '../../../../templates/option-default-template/option-default-template.component';
 import {TuiDataListWrapper} from '@taiga-ui/kit';
-import {ComboboxWithAddButtonDirective} from '@modules/forms';
 
 export type ComboboxWithAddButtonContext<T> = {
   items: any[] | null;
@@ -33,15 +32,15 @@ export class DropdownWithAddButtonComponent<T> implements OnInit {
     new PolymorpheusComponent(OptionDefaultTemplateComponent);
 
   get items(): any[] | null {
-    return this.comboboxComponent?.items || this.inputItems || null;
+    return this.comboboxComponentRef?.items || this.inputItems || null;
   }
 
   get itemContent(): PolymorpheusContent<TuiValueContentContext<T>> {
-    return this.comboboxComponent?.itemContent || this.itemContent;
+    return this.comboboxComponentRef?.itemContent || this.itemContent;
   }
 
   constructor(
-    private comboboxWithAddButtonDirective: ComboboxWithAddButtonDirective<T>,
+    // private comboboxWithAddButtonDirective: ComboboxWithAddButtonDirective<T>,
     @Optional()
     @Inject(POLYMORPHEUS_CONTEXT)
     readonly context: {
@@ -50,7 +49,7 @@ export class DropdownWithAddButtonComponent<T> implements OnInit {
     },
     // INFO: из за последовательности рендеринга у нас нету доступа к дерективе со списком, из за чего не рендерится список
     // TODO: найти способ обходится без инжекта родителя (ComboboxComponent)
-    private comboboxComponent: ComboboxComponent<T>
+    private comboboxComponentRef: ComboboxComponent<T>
   ) {
   }
 
@@ -58,6 +57,8 @@ export class DropdownWithAddButtonComponent<T> implements OnInit {
   }
 
   addMore() {
-    this.comboboxWithAddButtonDirective.addClick();
+    // @ts-ignore
+    this.comboboxComponentRef['_test']();
+    // this.comboboxWithAddButtonDirective.addClick();
   }
 }
