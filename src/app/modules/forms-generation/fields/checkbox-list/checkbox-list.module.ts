@@ -2,30 +2,26 @@ import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormFieldModule} from '../../wrappers/form-field/form-field.module';
 import {FormlyModule} from '@ngx-formly/core';
-import {ComboboxComponent} from './combobox.component';
+import {CheckboxListComponent} from './checkbox-list.component';
 
 
 @NgModule({
   declarations: [],
   imports: [
     ReactiveFormsModule,
-    ComboboxComponent,
+    CheckboxListComponent,
     FormFieldModule,
     FormlyModule.forChild({
       types: [
         {
-          name: 'combobox',
-          component: ComboboxComponent,
+          name: 'comboboxList',
+          component: CheckboxListComponent,
           wrappers: ['form-field'],
-          defaultOptions: {
-            props: {
-              variant: 'default',
-            },
-          },
+          defaultOptions: {},
         },
       ],
     }),
   ]
 })
-export class ComboboxModule {
+export class CheckboxListModule {
 }

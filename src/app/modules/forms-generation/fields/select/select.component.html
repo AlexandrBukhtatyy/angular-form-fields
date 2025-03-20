@@ -1,6 +1,6 @@
 <aff-select
-  class="tui-form__row"
-  formControlName="paymentMethod"
+  [ngClass]="field.className"
+  [formControl]="formControl"
   [items]="field.props.options"
   [identityMatcher]="field.props.identityMatcher"
 >

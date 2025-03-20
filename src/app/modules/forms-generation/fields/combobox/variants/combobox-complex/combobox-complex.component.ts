@@ -9,6 +9,7 @@ import {
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormlyModule} from '@ngx-formly/core';
 import {TuiTextfieldOptionsDirective} from '@taiga-ui/core';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'fgen-combobox-complex',
@@ -20,6 +21,7 @@ import {TuiTextfieldOptionsDirective} from '@taiga-ui/core';
     ComboboxWithHintDirective,
     ComboboxWithAddButtonDirective,
     TuiTextfieldOptionsDirective,
+    NgClass,
   ],
   templateUrl: './combobox-complex.component.html',
   styleUrl: './combobox-complex.component.less',

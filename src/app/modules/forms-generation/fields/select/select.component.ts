@@ -5,6 +5,7 @@ import {PaymentMethodOptions} from '../../../../features/forms/models/payment-me
 import {ReactiveFormsModule} from '@angular/forms';
 import {SelectComponent as FSelectComponent} from '@modules/forms';
 import {TuiItemsHandlers} from '@taiga-ui/kit/tokens';
+import {NgClass} from '@angular/common';
 
 interface SelectProps<T> {
   type: 'select';
@@ -22,6 +23,7 @@ interface SelectProps<T> {
   imports: [
     ReactiveFormsModule,
     FSelectComponent,
+    NgClass,
   ],
   templateUrl: './select.component.html',
   styleUrl: './select.component.less',

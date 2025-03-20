@@ -2,6 +2,7 @@
 <div
   tuiCardLarge
   tuiAppearance="floating"
+  [ngClass]="field.className"
   [ngClass]="{'tui-space_bottom-8': !last}"
   *ngFor="let field of $any(field).fieldGroup; let i = index;let last = last"
 >

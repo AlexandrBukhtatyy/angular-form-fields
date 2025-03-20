@@ -3,6 +3,9 @@ import {addressDataProvider} from '../../../forms/data-providers/address.provide
 import {labelStringify} from '@modules/forms';
 import {COMBOBOX_VARIANTS} from '@modules/forms-generation';
 import {PaymentMethodOptions} from '../../../forms/models/payment-methods';
+import {PizzaSizeOptions} from '../../../forms/models/pizza-sizes';
+import {BorderSizeOptions} from '../../../forms/models/border-sizes';
+import {ToppingsDictionary} from '../../../forms/models/toppings';
 
 export const formConfig = (): FormlyFieldConfig[] => [
   {
@@ -18,23 +21,31 @@ export const formConfig = (): FormlyFieldConfig[] => [
     fieldArray: {
       fieldGroup: [
         {
-          type: 'input',
+          type: 'radioBlockList',
+          key: 'size',
+          className: 'tui-form__row',
           props: {
-            placeholder: 'Task name',
+            options: PizzaSizeOptions,
             required: true,
           }
         },
         {
-          type: 'input',
+          type: 'radioBlockList',
+          key: 'borderSize',
+          className: 'tui-form__row',
           props: {
-            placeholder: 'Task name',
+            options: BorderSizeOptions,
             required: true,
           }
         },
         {
-          type: 'input',
+          template: '<h3 class="tui-text_h5 tui-space_top-4 tui-space_bottom-2">Toppings</h3>'
+        },
+        {
+          type: 'comboboxList',
+          key: 'toppings',
           props: {
-            placeholder: 'Task name',
+            dictionary: ToppingsDictionary,
             required: true,
           }
         },

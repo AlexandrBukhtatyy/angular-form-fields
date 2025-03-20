@@ -3,6 +3,7 @@ import {FieldType, FieldTypeConfig, FormlyModule} from '@ngx-formly/core';
 import {InputComponent as FInputComponent} from '@modules/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TuiTextfieldControllerModule} from '@taiga-ui/legacy';
+import {NgClass} from '@angular/common';
 
 interface InputProps {
   type: 'input';
@@ -16,7 +17,8 @@ interface InputProps {
     FInputComponent,
     ReactiveFormsModule,
     TuiTextfieldControllerModule,
-    FormlyModule
+    FormlyModule,
+    NgClass
   ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.less',

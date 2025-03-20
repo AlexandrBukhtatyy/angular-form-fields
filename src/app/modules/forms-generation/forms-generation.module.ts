@@ -5,6 +5,8 @@ import {FormFieldModule} from './wrappers/form-field/form-field.module';
 import {ComboboxModule} from './fields/combobox/combobox.module';
 import {SelectModule} from './fields/select/select.module';
 import {RepeatModule} from './fields/repeat/repeat.module';
+import {CheckboxListModule} from './fields/checkbox-list/checkbox-list.module';
+import {RadioBlockListModule} from './fields/radio-block-list/radio-block-list.module';
 
 
 @NgModule({
@@ -13,8 +15,11 @@ import {RepeatModule} from './fields/repeat/repeat.module';
     InputModule,
     ComboboxModule,
     SelectModule,
-    RepeatModule
+    RepeatModule,
+    CheckboxListModule,
+    RadioBlockListModule
   ],
   providers: [importProvidersFrom(FormlyModule.forRoot())],
 })
-export class FormsGenerationModule { }
+export class FormsGenerationModule {
+}

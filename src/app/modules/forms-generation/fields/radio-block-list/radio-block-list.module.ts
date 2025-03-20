@@ -2,30 +2,26 @@ import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormFieldModule} from '../../wrappers/form-field/form-field.module';
 import {FormlyModule} from '@ngx-formly/core';
-import {ComboboxComponent} from './combobox.component';
+import {RadioBlockListComponent} from './radio-block-list.component';
 
 
 @NgModule({
   declarations: [],
   imports: [
     ReactiveFormsModule,
-    ComboboxComponent,
+    RadioBlockListComponent,
     FormFieldModule,
     FormlyModule.forChild({
       types: [
         {
-          name: 'combobox',
-          component: ComboboxComponent,
+          name: 'radioBlockList',
+          component: RadioBlockListComponent,
           wrappers: ['form-field'],
-          defaultOptions: {
-            props: {
-              variant: 'default',
-            },
-          },
+          defaultOptions: {},
         },
       ],
     }),
   ]
 })
-export class ComboboxModule {
+export class RadioBlockListModule {
 }

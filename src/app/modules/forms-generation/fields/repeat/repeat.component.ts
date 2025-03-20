@@ -5,7 +5,7 @@ import {TuiAppearance, TuiButton} from '@taiga-ui/core';
 import {TuiCardLarge} from '@taiga-ui/layout';
 
 @Component({
-  selector: 'aff-repeat',
+  selector: 'fgen-repeat',
   imports: [
     NgForOf,
     FormlyModule,
