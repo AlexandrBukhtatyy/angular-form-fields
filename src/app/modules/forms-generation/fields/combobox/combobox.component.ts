@@ -5,7 +5,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import type {TuiStringHandler} from '@taiga-ui/cdk/types';
 import {ComboboxDefaultComponent} from './variants/combobox-default/combobox-default.component';
 import {ComboboxComplexComponent} from './variants/combobox-complex/combobox-complex.component';
-import {TuiTextfieldOptionsDirective} from '@taiga-ui/core';
 import {TuiTextfieldControllerModule} from '@taiga-ui/legacy';
 
 interface ComboboxProps<T> {
@@ -26,7 +25,6 @@ interface ComboboxProps<T> {
     TuiTextfieldControllerModule,
     ComboboxDefaultComponent,
     ComboboxComplexComponent,
-    TuiTextfieldOptionsDirective
   ],
   templateUrl: './combobox.component.html',
   styleUrl: './combobox.component.less',

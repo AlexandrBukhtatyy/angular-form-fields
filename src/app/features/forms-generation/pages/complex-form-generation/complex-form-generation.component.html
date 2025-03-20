@@ -1,0 +1,11 @@
+<div class="tui-container tui-container_adaptive tui-space_top-8">
+  <h1 class="tui-text_h2 tui-space_bottom-4">Complex generated form</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+    <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+    <div class="tui-form__row tui-space_top-8">
+      <button tuiButton appearance="accent">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

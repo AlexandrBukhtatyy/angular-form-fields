@@ -1,0 +1,24 @@
+<!-- TODO: Избавиться от $any()-->
+<div
+  tuiCardLarge
+  tuiAppearance="floating"
+  [ngClass]="{'tui-space_bottom-8': !last}"
+  *ngFor="let field of $any(field).fieldGroup; let i = index;let last = last"
+>
+  <formly-field class="col" [field]="field"></formly-field>
+
+  <div class="tui-form__row">
+    <button
+      tuiButton
+      size="s"
+      type="button"
+      appearance="secondary-destructive"
+      (click)="remove(i)"
+    >
+      remove
+    </button>
+  </div>
+</div>
+<div class="tui-form__row">
+  <button tuiButton type="button" (click)="add()">add</button>
+</div>

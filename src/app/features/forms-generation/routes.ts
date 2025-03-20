@@ -6,6 +6,10 @@ const routes: Routes = [
     path: 'simple-form',
     loadComponent: () => import('@features/forms-generation').then(m => m.SimpleFormGenerationComponent)
   },
+  {
+    path: 'complex-form',
+    loadComponent: () => import('@features/forms-generation').then(m => m.ComplexFormGenerationComponent)
+  },
 ];
 
 @NgModule({

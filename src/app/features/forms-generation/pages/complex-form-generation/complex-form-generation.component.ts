@@ -1,23 +1,23 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {FormsGenerationModule} from '@modules/forms-generation';
 import {FormlyModule} from '@ngx-formly/core';
 import {TuiButton} from '@taiga-ui/core';
-import {formConfig} from './simple-form.config';
+import {formConfig} from './complex-form.config';
 
 @Component({
-  selector: 'aff-simple-form-generation',
+  selector: 'aff-complex-form-generation',
   imports: [
     ReactiveFormsModule,
     FormsGenerationModule,
     FormlyModule,
     TuiButton,
   ],
-  templateUrl: './simple-form-generation.component.html',
-  styleUrl: './simple-form-generation.component.less',
+  templateUrl: './complex-form-generation.component.html',
+  styleUrl: './complex-form-generation.component.less',
   standalone: true
 })
-export class SimpleFormGenerationComponent {
+export class ComplexFormGenerationComponent {
   form = new FormGroup({});
   model = {
     entrance: 1
@@ -27,5 +27,4 @@ export class SimpleFormGenerationComponent {
   onSubmit(model: any) {
     console.log(model);
   }
-
 }
