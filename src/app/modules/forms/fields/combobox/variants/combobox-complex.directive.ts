@@ -2,7 +2,7 @@ import {Directive, Injectable} from '@angular/core';
 import {ComboboxWithAddButtonDirective, ComboboxWithHintDirective} from '@modules/forms';
 
 @Directive({
-  selector: '[affComboboxComplex]',
+  selector: 'aff-combobox[variant="complex"]',
   hostDirectives: [
     {
       directive: ComboboxWithAddButtonDirective,

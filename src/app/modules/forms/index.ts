@@ -3,18 +3,18 @@ export * from './core/form-field.class';
 export * from './core/form-group-base.class';
 
 /** form-controls */
-export * from './form-controls';
+export * from './controls';
 
 /** form-fields */
-export * from './form-fields/checkbox-list';
-export * from './form-fields/combobox';
-export * from './form-fields/date';
-export * from './form-fields/input';
-export * from './form-fields/number';
-export * from './form-fields/phone';
-export * from './form-fields/radio-block-list';
-export * from './form-fields/select';
-export * from './form-fields/textarea';
+export * from './fields/checkbox-list';
+export * from './fields/combobox';
+export * from './fields/date';
+export * from './fields/input';
+export * from './fields/number';
+export * from './fields/phone';
+export * from './fields/radio-block-list';
+export * from './fields/select';
+export * from './fields/textarea';
 
 /** form-services */
 export * from './templates/option-with-hint-content-template/option-with-hint-content-template.component';

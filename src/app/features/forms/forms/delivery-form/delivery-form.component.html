@@ -3,13 +3,11 @@
     <aff-combobox
       class="tui-form__multi-field"
       formControlName="address"
-      affComboboxComplex
+      variant="complex"
       (addClicked)="addClicked()"
       [dataProvider]="addressDataProvider"
       [stringify]="addressStringify"
     >
-<!--      optionWithHint-->
-<!--      withAddButton-->
       address
     </aff-combobox>
     <aff-input class="tui-form__multi-field" formControlName="entrance"
