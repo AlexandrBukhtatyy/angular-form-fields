@@ -21,8 +21,8 @@ export const formConfig = (): FormlyFieldConfig[] => [
     fieldArray: {
       fieldGroup: [
         {
-          type: 'radioBlockList',
           key: 'size',
+          type: 'radioBlockList',
           className: 'tui-form__row',
           props: {
             options: PizzaSizeOptions,
@@ -30,8 +30,8 @@ export const formConfig = (): FormlyFieldConfig[] => [
           }
         },
         {
-          type: 'radioBlockList',
           key: 'borderSize',
+          type: 'radioBlockList',
           className: 'tui-form__row',
           props: {
             options: BorderSizeOptions,
@@ -42,8 +42,8 @@ export const formConfig = (): FormlyFieldConfig[] => [
           template: '<h3 class="tui-text_h5 tui-space_top-4 tui-space_bottom-2">Toppings</h3>'
         },
         {
-          type: 'comboboxList',
           key: 'toppings',
+          type: 'comboboxList',
           props: {
             dictionary: ToppingsDictionary,
             required: true,
