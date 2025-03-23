@@ -14,7 +14,7 @@ import {CheckboxListComponent} from './checkbox-list.component';
     FormlyModule.forChild({
       types: [
         {
-          name: 'comboboxList',
+          name: 'checkboxList',
           component: CheckboxListComponent,
           wrappers: ['form-field'],
           defaultOptions: {},

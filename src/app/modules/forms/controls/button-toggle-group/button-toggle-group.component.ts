@@ -1,8 +1,9 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {TuiBlock, TuiRadio} from '@taiga-ui/kit';
+import {Component, forwardRef, Input, OnInit, Optional} from '@angular/core';
+import {ControlContainer, ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {TuiRadio} from '@taiga-ui/kit';
 import {CommonModule} from '@angular/common';
 import {TuiGroup, TuiLabel} from '@taiga-ui/core';
+import {getFormControlName, uid} from '../../utils/get-form-control-name';
 
 export interface BtnPickerOption {
   id: string | number;
@@ -42,7 +43,13 @@ export class ButtonToggleGroupComponent implements OnInit, ControlValueAccessor 
   onBlur = (_: any) => {
   };
 
-  constructor() {
+  get name(): string {
+    return this.controlContainerRef.control && getFormControlName(this.controlContainerRef.control) || uid();
+  }
+
+  constructor(
+    @Optional() private controlContainerRef: ControlContainer
+  ) {
   }
 
   ngOnInit() {

@@ -43,7 +43,7 @@ export const formConfig = (): FormlyFieldConfig[] => [
         },
         {
           key: 'toppings',
-          type: 'comboboxList',
+          type: 'checkboxList',
           props: {
             dictionary: ToppingsDictionary,
             required: true,
