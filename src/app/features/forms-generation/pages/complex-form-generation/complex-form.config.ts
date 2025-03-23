@@ -219,6 +219,11 @@ export const formConfig = (): FormlyFieldConfig[] => [
       placeholder: 'Enter cash count',
       resetable: true,
       required: true,
-    }
+    },
+    expressions: {
+      hide: (field: FormlyFieldConfig) => {
+        return field.model?.paymentMethod?.id !== "cashToCourier";
+      }
+    },
   },
 ];
