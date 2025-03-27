@@ -1,8 +1,9 @@
 import {AbstractControl, FormGroup} from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 
 export function uid(): string {
   // TODO: реализовать
-  return ''
+  return uuidv4();
 }
 
 export function getFormControlName(control: AbstractControl): string | null {

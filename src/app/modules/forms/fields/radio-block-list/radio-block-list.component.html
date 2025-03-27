@@ -13,11 +13,11 @@
         tuiRadio
         type="radio"
         size="s"
-        [value]="option"
+        [value]="option.id"
         [formControl]="control"
-        [name]="name"
+        [name]="id"
       />
-      {{option.label}}
+      {{ option.label }}
     </label>
   </ng-container>
 </div>

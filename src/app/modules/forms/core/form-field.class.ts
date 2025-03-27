@@ -8,10 +8,12 @@ import {
   NgModel,
 } from '@angular/forms';
 import {Subscription} from "rxjs";
+import {uid} from '../utils/get-form-control-name';
 
 @Directive()
 export class FormFieldBase implements OnInit, OnDestroy, ControlValueAccessor {
   private subscription!: Subscription;
+  public id: string;
 
   constructor(
     @Optional() @Self() public ngControl: NgControl
@@ -19,6 +21,7 @@ export class FormFieldBase implements OnInit, OnDestroy, ControlValueAccessor {
     if (this.ngControl != null) {
       this.ngControl.valueAccessor = this;
     }
+    this.id = uid();
   }
 
   control!: FormControl;

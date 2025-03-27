@@ -21,7 +21,6 @@ import {getFormControlName, uid} from '../../utils/get-form-control-name';
 })
 export class RadioBlockListComponent extends FormFieldBase {
   @Input() options: any;
-
   get name(): string {
     return getFormControlName(this.control) || uid();
   }

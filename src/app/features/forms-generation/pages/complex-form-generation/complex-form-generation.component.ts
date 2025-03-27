@@ -4,6 +4,7 @@ import {FormsGenerationModule} from '@modules/forms-generation';
 import {FormlyModule} from '@ngx-formly/core';
 import {TuiButton} from '@taiga-ui/core';
 import {formConfig} from './complex-form.config';
+import {JsonPipe} from '@angular/common';
 
 @Component({
   selector: 'aff-complex-form-generation',
@@ -12,6 +13,7 @@ import {formConfig} from './complex-form.config';
     FormsGenerationModule,
     FormlyModule,
     TuiButton,
+    JsonPipe,
   ],
   templateUrl: './complex-form-generation.component.html',
   styleUrl: './complex-form-generation.component.less',
