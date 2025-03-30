@@ -7,7 +7,7 @@ import {PizzaDetailsFormComponent} from '../../forms/pizza-details-form/pizza-de
 import {ContactsShortFormComponent} from '../../forms/contacts-short-form/contacts-short-form.component';
 import {DeliveryFormComponent} from '../../forms/delivery-form/delivery-form.component';
 import {PaymentFormComponent} from '../../forms/payment-form/payment-form.component';
-import {NgClass, NgForOf} from '@angular/common';
+import {JsonPipe, NgClass, NgForOf} from '@angular/common';
 
 @Component({
     selector: 'aff-order-form',
@@ -27,7 +27,8 @@ import {NgClass, NgForOf} from '@angular/common';
         NgForOf,
         TuiAppearance,
         TuiButton,
-        NgClass
+        NgClass,
+        JsonPipe
     ],
   standalone: true
 })

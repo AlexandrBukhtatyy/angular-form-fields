@@ -4,7 +4,6 @@ import {TuiGroup} from '@taiga-ui/core';
 import {TuiBlock, TuiRadio} from '@taiga-ui/kit';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
-import {getFormControlName, uid} from '../../utils/get-form-control-name';
 
 @Component({
   selector: 'aff-radio-block-list',
@@ -21,7 +20,4 @@ import {getFormControlName, uid} from '../../utils/get-form-control-name';
 })
 export class RadioBlockListComponent extends FormFieldBase {
   @Input() options: any;
-  get name(): string {
-    return getFormControlName(this.control) || uid();
-  }
 }

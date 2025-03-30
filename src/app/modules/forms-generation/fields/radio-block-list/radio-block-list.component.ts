@@ -22,5 +22,4 @@ interface RadioBlockListProps<T> {
   standalone: true
 })
 export class RadioBlockListComponent extends FieldType<FieldTypeConfig<RadioBlockListProps<any>>> {
-
 }

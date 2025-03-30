@@ -14,13 +14,16 @@ export class CheckboxListComponent {
   @Input() dictionary: any;
 
   get form(): FormGroup {
+    debugger
     return this.controlContainerRef.control as FormGroup;
   }
 
   get list(): FormArray {
+    debugger
     return this.controlContainerRef.control as FormArray;
   }
 
   constructor(@Optional() private controlContainerRef: ControlContainer) {
+  debugger
   }
 }

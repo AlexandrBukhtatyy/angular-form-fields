@@ -1,3 +1,10 @@
-<aff-checkbox-list [formControl]="formControl"
-                   [dictionary]="field.props.dictionary"
-></aff-checkbox-list>
+<div [formGroup]="$any(form.parent)">
+  <aff-checkbox-list
+    [ngClass]="field.className"
+    [formArrayName]="$any(field.key)"
+    [dictionary]="field.props.dictionary"
+    [formlyAttributes]="field"
+  ></aff-checkbox-list>
+</div>
+{{ field.key }}
+{{ field.props.dictionary | json }}

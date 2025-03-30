@@ -47,6 +47,16 @@ export const formConfig = (): FormlyFieldConfig[] => [
           props: {
             dictionary: ToppingsDictionary,
             required: true,
+          },
+          fieldArray: {
+            fieldGroup: [
+              {
+                key: 'id'
+              },
+              {
+                key: 'selected'
+              },
+            ]
           }
         },
       ]
